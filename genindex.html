@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; Fast F1 2.1.13 documentation</title>
+  <title>Index &mdash; Fast F1 2.2.0-alpha0 documentation</title>
   
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.1.13
+                2.2.0-alpha0
               </div>
             
           
@@ -116,8 +116,17 @@
 <li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fastf1.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code> - Package functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="core.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code> - Core module</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fastf1.html#accessing-events-and-sessions">Accessing Events and Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastf1.html#caching">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastf1.html#general-functions-api-reference">General Functions - API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fastf1.html#events-api">Events API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fastf1.html#cache-api">Cache API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="core.html#data-objects">Data Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#functions">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#api-reference">API Reference</a><ul>
@@ -140,10 +149,25 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code> - Api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code> - Utils module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotting.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code> - Plotting module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="livetiming.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code> - Live Timing Client</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="events.html#event-schedule-data">Event Schedule Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events.html#supported-seasons">Supported Seasons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html#event-schedule">Event Schedule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#session-identifiers">Session identifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#functions-for-accessing-schedule-data">Functions for accessing schedule data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#data-objects">Data Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Api Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#usage-example">Usage Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#important-notes">Important Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#command-line-interface">Command Line Interface</a><ul>
@@ -155,7 +179,7 @@
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#module-fastf1.livetiming.data">Live Timing Data Object</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="legacy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code> - Provides access to legacy functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Information:</span></p>
 <ul>
@@ -177,6 +201,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -315,6 +340,8 @@
       <ul>
         <li><a href="core.html#fastf1.core.Telemetry.base_class_view">(fastf1.core.Telemetry property)</a>
 </li>
+        <li><a href="events.html#fastf1.events.EventSchedule.base_class_view">(fastf1.events.EventSchedule property)</a>
+</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -322,8 +349,12 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#fastf1.api.Cache">Cache (class in fastf1.api)</a>
+      <li><a href="fastf1.html#fastf1.Cache">Cache (class in fastf1)</a>
+
+      <ul>
+        <li><a href="api.html#fastf1.api.Cache">(class in fastf1.api)</a>
 </li>
+      </ul></li>
       <li><a href="core.html#fastf1.core.Telemetry.calculate_differential_distance">calculate_differential_distance() (fastf1.core.Telemetry method)</a>
 </li>
       <li><a href="core.html#fastf1.core.Telemetry.calculate_driver_ahead">calculate_driver_ahead() (fastf1.core.Telemetry method)</a>
@@ -335,7 +366,11 @@
       <li><a href="api.html#fastf1.api.car_data">car_data() (in module fastf1.api)</a>
 </li>
       <li><a href="api.html#fastf1.api.Cache.clear_cache">clear_cache() (fastf1.api.Cache class method)</a>
+
+      <ul>
+        <li><a href="fastf1.html#fastf1.Cache.clear_cache">(fastf1.Cache class method)</a>
 </li>
+      </ul></li>
       <li><a href="plotting.html#fastf1.plotting.COLOR_PALETTE">COLOR_PALETTE (in module fastf1.plotting)</a>
 </li>
   </ul></td>
@@ -347,11 +382,17 @@
       <li><a href="core.html#fastf1.core.Session.date">date (fastf1.core.Session attribute)</a>
 
       <ul>
-        <li><a href="core.html#fastf1.core.Weekend.date">(fastf1.core.Weekend property)</a>
+        <li><a href="events.html#fastf1.events.Event.date">(fastf1.events.Event property)</a>
 </li>
       </ul></li>
       <li><a href="utils.html#fastf1.utils.delta_time">delta_time() (in module fastf1.utils)</a>
 </li>
+      <li><a href="api.html#fastf1.api.Cache.disabled">disabled() (fastf1.api.Cache class method)</a>
+
+      <ul>
+        <li><a href="fastf1.html#fastf1.Cache.disabled">(fastf1.Cache class method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core.html#fastf1.core.Driver.dnf">dnf (fastf1.core.Driver property)</a>
@@ -369,6 +410,18 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#fastf1.api.Cache.enable_cache">enable_cache() (fastf1.api.Cache class method)</a>
+
+      <ul>
+        <li><a href="fastf1.html#fastf1.Cache.enable_cache">(fastf1.Cache class method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="events.html#fastf1.events.Event">Event (class in fastf1.events)</a>
+</li>
+      <li><a href="core.html#fastf1.core.Session.event">event (fastf1.core.Session attribute)</a>
+</li>
+      <li><a href="events.html#fastf1.events.EventSchedule">EventSchedule (class in fastf1.events)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -400,12 +453,21 @@
 </li>
       </ul></li>
       <li>
+    fastf1.events
+
+      <ul>
+        <li><a href="events.html#module-fastf1.events">module</a>
+</li>
+      </ul></li>
+      <li>
     fastf1.legacy
 
       <ul>
         <li><a href="legacy.html#module-fastf1.legacy">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     fastf1.livetiming
 
@@ -413,8 +475,6 @@
         <li><a href="livetiming.html#module-fastf1.livetiming">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     fastf1.livetiming.client
 
@@ -463,6 +523,14 @@
       </ul></li>
       <li><a href="core.html#fastf1.core.Session.get_driver">get_driver() (fastf1.core.Session method)</a>
 </li>
+      <li><a href="fastf1.html#fastf1.get_event">get_event() (in module fastf1)</a>
+</li>
+      <li><a href="events.html#fastf1.events.EventSchedule.get_event_by_name">get_event_by_name() (fastf1.events.EventSchedule method)</a>
+</li>
+      <li><a href="events.html#fastf1.events.EventSchedule.get_event_by_round">get_event_by_round() (fastf1.events.EventSchedule method)</a>
+</li>
+      <li><a href="fastf1.html#fastf1.get_event_schedule">get_event_schedule() (in module fastf1)</a>
+</li>
       <li><a href="core.html#fastf1.core.Telemetry.get_first_non_zero_time_index">get_first_non_zero_time_index() (fastf1.core.Telemetry method)</a>
 </li>
       <li><a href="core.html#fastf1.core.Lap.get_pos_data">get_pos_data() (fastf1.core.Lap method)</a>
@@ -471,17 +539,29 @@
         <li><a href="core.html#fastf1.core.Laps.get_pos_data">(fastf1.core.Laps method)</a>
 </li>
       </ul></li>
-      <li><a href="core.html#fastf1.core.Weekend.get_practice">get_practice() (fastf1.core.Weekend method)</a>
+      <li><a href="events.html#fastf1.events.Event.get_practice">get_practice() (fastf1.events.Event method)</a>
+</li>
+      <li><a href="events.html#fastf1.events.Event.get_qualifying">get_qualifying() (fastf1.events.Event method)</a>
+</li>
+      <li><a href="events.html#fastf1.events.Event.get_race">get_race() (fastf1.events.Event method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="core.html#fastf1.core.Weekend.get_quali">get_quali() (fastf1.core.Weekend method)</a>
-</li>
-      <li><a href="core.html#fastf1.core.Weekend.get_race">get_race() (fastf1.core.Weekend method)</a>
-</li>
       <li><a href="core.html#fastf1.core.get_round">get_round() (fastf1.core method)</a>
 </li>
       <li><a href="core.html#fastf1.core.get_session">get_session() (fastf1.core method)</a>
+
+      <ul>
+        <li><a href="events.html#fastf1.events.Event.get_session">(fastf1.events.Event method)</a>
+</li>
+        <li><a href="fastf1.html#fastf1.get_session">(in module fastf1)</a>
+</li>
+      </ul></li>
+      <li><a href="events.html#fastf1.events.Event.get_session_date">get_session_date() (fastf1.events.Event method)</a>
+</li>
+      <li><a href="events.html#fastf1.events.Event.get_session_name">get_session_name() (fastf1.events.Event method)</a>
+</li>
+      <li><a href="events.html#fastf1.events.Event.get_sprint">get_sprint() (fastf1.events.Event method)</a>
 </li>
       <li><a href="core.html#fastf1.core.Lap.get_telemetry">get_telemetry() (fastf1.core.Lap method)</a>
 
@@ -489,12 +569,18 @@
         <li><a href="core.html#fastf1.core.Laps.get_telemetry">(fastf1.core.Laps method)</a>
 </li>
       </ul></li>
+      <li><a href="fastf1.html#fastf1.get_testing_event">get_testing_event() (in module fastf1)</a>
+</li>
+      <li><a href="fastf1.html#fastf1.get_testing_session">get_testing_session() (in module fastf1)</a>
+</li>
       <li><a href="core.html#fastf1.core.Lap.get_weather_data">get_weather_data() (fastf1.core.Lap method)</a>
 
       <ul>
         <li><a href="core.html#fastf1.core.Laps.get_weather_data">(fastf1.core.Laps method)</a>
 </li>
       </ul></li>
+      <li><a href="events.html#fastf1.events.Event.gp">gp (fastf1.events.Event property)</a>
+</li>
       <li><a href="core.html#fastf1.core.Driver.grid">grid (fastf1.core.Driver property)</a>
 </li>
   </ul></td>
@@ -521,8 +607,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core.html#fastf1.core.InvalidSessionError">InvalidSessionError (class in fastf1.core)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Weekend.is_testing">is_testing() (fastf1.core.Weekend method)</a>
+      <li><a href="events.html#fastf1.events.Event.is_testing">is_testing() (fastf1.events.Event method)</a>
+
+      <ul>
+        <li><a href="events.html#fastf1.events.EventSchedule.is_testing">(fastf1.events.EventSchedule method)</a>
 </li>
+      </ul></li>
       <li><a href="core.html#fastf1.core.Laps.iterlaps">iterlaps() (fastf1.core.Laps method)</a>
 </li>
   </ul></td>
@@ -583,6 +673,8 @@
 </li>
         <li><a href="core.html#module-fastf1.core">fastf1.core</a>
 </li>
+        <li><a href="events.html#module-fastf1.events">fastf1.events</a>
+</li>
         <li><a href="legacy.html#module-fastf1.legacy">fastf1.legacy</a>
 </li>
         <li><a href="livetiming.html#module-fastf1.livetiming">fastf1.livetiming</a>
@@ -606,8 +698,6 @@
 
       <ul>
         <li><a href="core.html#fastf1.core.Session.name">(fastf1.core.Session attribute)</a>
-</li>
-        <li><a href="core.html#fastf1.core.Weekend.name">(fastf1.core.Weekend property)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -674,7 +764,9 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#fastf1.api.requests_session">requests_session (in module fastf1.api)</a>
+      <li><a href="api.html#fastf1.api.Cache.requests_get">requests_get() (fastf1.api.Cache class method)</a>
+</li>
+      <li><a href="api.html#fastf1.api.Cache.requests_post">requests_post() (fastf1.api.Cache class method)</a>
 </li>
       <li><a href="core.html#fastf1.core.Telemetry.resample_channels">resample_channels() (fastf1.core.Telemetry method)</a>
 </li>
@@ -696,8 +788,20 @@
 </li>
       <li><a href="api.html#fastf1.api.SessionNotAvailableError">SessionNotAvailableError</a>
 </li>
+      <li><a href="api.html#fastf1.api.Cache.set_disabled">set_disabled() (fastf1.api.Cache class method)</a>
+
+      <ul>
+        <li><a href="fastf1.html#fastf1.Cache.set_disabled">(fastf1.Cache class method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#fastf1.api.Cache.set_enabled">set_enabled() (fastf1.api.Cache class method)</a>
+
+      <ul>
+        <li><a href="fastf1.html#fastf1.Cache.set_enabled">(fastf1.Cache class method)</a>
+</li>
+      </ul></li>
       <li><a href="plotting.html#fastf1.plotting.setup_mpl">setup_mpl() (in module fastf1.plotting)</a>
 </li>
       <li><a href="livetiming.html#fastf1.livetiming.client.SignalRClient">SignalRClient (class in fastf1.livetiming.client)</a>
@@ -756,13 +860,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core.html#fastf1.core.Session.weather_data">weather_data (fastf1.core.Session attribute)</a>
 </li>
-      <li><a href="api.html#fastf1.api.weather_data">weather_data() (in module fastf1.api)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="core.html#fastf1.core.Weekend">Weekend (class in fastf1.core)</a>
+      <li><a href="api.html#fastf1.api.weather_data">weather_data() (in module fastf1.api)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Session.weekend">weekend (fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.Weekend">Weekend (class in fastf1.core)</a>
 </li>
   </ul></td>
 </tr></table>

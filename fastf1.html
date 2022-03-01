@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>fastf1 - Package functions &mdash; Fast F1 2.1.13 documentation</title>
+  <title>General Functions - fastf1 &mdash; Fast F1 2.2.0-alpha0 documentation</title>
   
 
   
@@ -46,7 +46,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="fastf1.core - Core module" href="core.html" />
+    <link rel="next" title="Timing and Telemetry Data - fastf1.core" href="core.html" />
     <link rel="prev" title="Speed visualization on track map" href="examples_gallery/plot_speed_on_track.html" /> 
 </head>
 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.1.13
+                2.2.0-alpha0
               </div>
             
           
@@ -118,8 +118,17 @@
 <li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code> - Package functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="core.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code> - Core module</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-events-and-sessions">Accessing Events and Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#caching">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-functions-api-reference">General Functions - API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#events-api">Events API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cache-api">Cache API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="core.html#data-objects">Data Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#functions">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#api-reference">API Reference</a><ul>
@@ -142,10 +151,25 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code> - Api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code> - Utils module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotting.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code> - Plotting module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="livetiming.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code> - Live Timing Client</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="events.html#event-schedule-data">Event Schedule Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events.html#supported-seasons">Supported Seasons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html#event-schedule">Event Schedule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#session-identifiers">Session identifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#functions-for-accessing-schedule-data">Functions for accessing schedule data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#data-objects">Data Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Api Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#usage-example">Usage Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#important-notes">Important Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#command-line-interface">Command Line Interface</a><ul>
@@ -157,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#module-fastf1.livetiming.data">Live Timing Data Object</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="legacy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code> - Provides access to legacy functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Information:</span></p>
 <ul>
@@ -179,6 +203,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -247,7 +272,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code> - Package functions</li>
+      <li>General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -266,62 +291,294 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <span class="target" id="module-fastf1"></span><div class="section" id="fastf1-package-functions">
-<h1><a class="reference internal" href="#module-fastf1" title="fastf1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a> - Package functions<a class="headerlink" href="#fastf1-package-functions" title="Permalink to this headline">¶</a></h1>
-<p>Available functions directly accessible from fastf1 package</p>
+  <span class="target" id="module-fastf1"></span><div class="section" id="general-functions-fastf1">
+<span id="generalfunctions"></span><h1>General Functions - <a class="reference internal" href="#module-fastf1" title="fastf1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a><a class="headerlink" href="#general-functions-fastf1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="accessing-events-and-sessions">
+<h2>Accessing Events and Sessions<a class="headerlink" href="#accessing-events-and-sessions" title="Permalink to this headline">¶</a></h2>
+<p>When using FastF1, you usually start by loading an event or a
+session. This can be done with one of the following functions:</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.get_session" title="fastf1.get_session"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastf1.get_session</span></code></a>(year, gp[, identifier, ...])</p></td>
+<td><p>Create a <a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a> object based on year, event name and session identifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.get_testing_session" title="fastf1.get_testing_session"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastf1.get_testing_session</span></code></a>(year, ...)</p></td>
+<td><p>Create a <a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a> object for testing sessions based on year, test  event number and session number.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.get_event" title="fastf1.get_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastf1.get_event</span></code></a>(year, gp, *[, force_ergast])</p></td>
+<td><p>Create an <a class="reference internal" href="events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a> object for a specific season and gp.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.get_testing_session" title="fastf1.get_testing_session"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastf1.get_testing_session</span></code></a>(year, ...)</p></td>
+<td><p>Create a <a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a> object for testing sessions based on year, test  event number and session number.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.get_event_schedule" title="fastf1.get_event_schedule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastf1.get_event_schedule</span></code></a>(year, *[, ...])</p></td>
+<td><p>Create an <a class="reference internal" href="events.html#fastf1.events.EventSchedule" title="fastf1.events.EventSchedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventSchedule</span></code></a> object for a specific season.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="caching">
+<h2>Caching<a class="headerlink" href="#caching" title="Permalink to this headline">¶</a></h2>
+<p>Caching should almost always be enabled to speed up the runtime of your
+scripts and to prevent exceeding the rate limit of api servers.
+FastF1 will print an annoyingly obnoxious warning message if you do not
+enable caching.</p>
+<p>The following class-level functions are used to setup, enable and
+(temporarily) disable caching.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.Cache.enable_cache" title="fastf1.Cache.enable_cache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastf1.Cache.enable_cache</span></code></a>(cache_dir[, ...])</p></td>
+<td><p>Enables the API cache.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.Cache.clear_cache" title="fastf1.Cache.clear_cache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastf1.Cache.clear_cache</span></code></a>(cache_dir[, deep])</p></td>
+<td><p>Clear all cached data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.Cache.disabled" title="fastf1.Cache.disabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastf1.Cache.disabled</span></code></a>()</p></td>
+<td><p>Returns a context manager object that creates a context within which the cache is temporarily disabled.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.Cache.set_disabled" title="fastf1.Cache.set_disabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastf1.Cache.set_disabled</span></code></a>()</p></td>
+<td><p>Disable the cache while keeping the configuration intact.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.Cache.set_enabled" title="fastf1.Cache.set_enabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastf1.Cache.set_enabled</span></code></a>()</p></td>
+<td><p>Enable the cache after it has been disabled with <code class="xref py py-func docutils literal notranslate"><span class="pre">set_disabled()</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="general-functions-api-reference">
+<h2>General Functions - API Reference<a class="headerlink" href="#general-functions-api-reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="events-api">
+<h3>Events API<a class="headerlink" href="#events-api" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">fastf1.core.</span></span><span class="sig-name descname"><span class="pre">get_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/core.html#get_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Create a <a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a> or <a class="reference internal" href="core.html#fastf1.core.Weekend" title="fastf1.core.Weekend"><code class="xref py py-class docutils literal notranslate"><span class="pre">Weekend</span></code></a> object based on year,
-event name and session name.
-This function will take care of crafting an object
-corresponding to the requested session.
-If no session is specified, the full weekend is returned.</p>
+<dt class="sig sig-object py" id="fastf1.get_session">
+<span class="sig-prename descclassname"><span class="pre">fastf1.</span></span><span class="sig-name descname"><span class="pre">get_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_ergast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/events.html#get_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.get_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a> object based on year, event name
+and session identifier.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.2: </span>Creating <a class="reference internal" href="events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a> objects (previously
+<a class="reference internal" href="core.html#fastf1.core.Weekend" title="fastf1.core.Weekend"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Weekend</span></code></a>) by not specifying an <code class="docutils literal notranslate"><span class="pre">identifier</span></code> has
+been deprecated. Use <a class="reference internal" href="#fastf1.get_event" title="fastf1.get_event"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_event()</span></code></a> instead.</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.2: </span>The argument <code class="docutils literal notranslate"><span class="pre">event</span></code> has been replaced with <code class="docutils literal notranslate"><span class="pre">identifier</span></code> to adhere
+to new naming conventions.</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.2: </span>Testing sessions can no longer be created by specifying
+<code class="docutils literal notranslate"><span class="pre">gp='testing'</span></code>. Use <a class="reference internal" href="#fastf1.get_testing_session" title="fastf1.get_testing_session"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_testing_session()</span></code></a> instead. There is
+<strong>no grace period</strong> for this change. This will stop working immediately
+with the release of v2.2!</p>
+</div>
+<p>To get a testing session, use <a class="reference internal" href="#fastf1.get_testing_session" title="fastf1.get_testing_session"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_testing_session()</span></code></a>.</p>
 <p class="rubric">Examples</p>
-<p>Get the second free practice of the first race of 2021:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;FP2&#39;</span><span class="p">)</span>
+<p>Get the second free practice of the first race of 2021 by its session
+name abbreviation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;FP2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Get the qualifying of the 2020 Austrian Grand Prix:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_session</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="s1">&#39;Austria&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<p>Get the qualifying of the 2020 Austrian Grand Prix by full session
+name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_session</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="s1">&#39;Austria&#39;</span><span class="p">,</span> <span class="s1">&#39;Qualifying&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Get the second day of pre-season testing of 2021:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;testing&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<p>Get the 3rd session if the 5th Grand Prix in 2021:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>year</strong> (<em>number</em>) – Session year</p></li>
-<li><p><strong>gp</strong> (<em>number</em><em> or </em><em>string</em>) – <p>Name or weekend number (1: Australia,
-…, 21: Abu Dhabi). If gp is a string,
-a fuzzy match will be performed on the
-season rounds and the most likely will be
-selected.</p>
-<p>Some examples that will be correctly
-interpreted: ‘bahrain’, ‘australia’,
-‘abudabi’, ‘monza’.</p>
-<p>Pass ‘testing’ to fetch Barcelona winter
-tests.</p>
+<li><p><strong>year</strong> (<em>int</em>) – Championship year</p></li>
+<li><p><strong>gp</strong> (<em>number</em><em> or </em><em>string</em>) – <p>Name as str or round number as int. If gp is
+a string, a fuzzy match will be performed on all events and the
+closest match will be selected.
+Fuzzy matching uses country, location, name and officialName of
+each event as reference.</p>
+<p>Some examples that will be correctly interpreted: ‘bahrain’,
+‘australia’, ‘abudabi’, ‘monza’.</p>
+<p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">get_event_by_name()</span></code> for some further remarks on the
+fuzzy matching.</p>
 </p></li>
-<li><p><strong>event</strong> (<em>=None</em>) – may be ‘FP1’, ‘FP2’, ‘FP3’, ‘Q’, ‘SQ’ or ‘R’, if not
-specified you get the full <a class="reference internal" href="core.html#fastf1.core.Weekend" title="fastf1.core.Weekend"><code class="xref py py-class docutils literal notranslate"><span class="pre">Weekend</span></code></a>.
-‘SQ’ stands for Sprint Qualifying which is only
-available in the 2021 season. Note that ‘FP3’ does
-not exist on these race weekends.
-If gp is ‘testing’ event is the test day (1 to 6)</p></li>
+<li><p><strong>identifier</strong> (<em>str</em><em> or </em><em>int</em>) – see <a class="reference internal" href="events.html#sessionidentifier"><span class="std std-ref">Session identifiers</span></a></p></li>
+<li><p><strong>force_ergast</strong> (<em>bool</em>) – Always use data from the ergast database to
+create the event schedule</p></li>
+<li><p><strong>event</strong> – deprecated; use identifier instead</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="core.html#fastf1.core.Weekend" title="fastf1.core.Weekend"><code class="xref py py-class docutils literal notranslate"><span class="pre">Weekend</span></code></a> or <a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a></p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">fastf1.api.Cache.</span></span><span class="sig-name descname"><span class="pre">enable_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_renew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_requests_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py" id="fastf1.get_testing_session">
+<span class="sig-prename descclassname"><span class="pre">fastf1.</span></span><span class="sig-name descname"><span class="pre">get_testing_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/events.html#get_testing_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.get_testing_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a> object for testing sessions
+based on year, test  event number and session number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>year</strong> (<em>int</em>) – Championship year</p></li>
+<li><p><strong>test_number</strong> (<em>int</em>) – Number of the testing event (usually at most two)</p></li>
+<li><p><strong>session_number</strong> (<em>int</em>) – Number of the session withing a specific testing
+event. Each testing event usually has three sessions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.get_event">
+<span class="sig-prename descclassname"><span class="pre">fastf1.</span></span><span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gp</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_ergast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/events.html#get_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.get_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an <a class="reference internal" href="events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a> object for a specific
+season and gp.</p>
+<p>To get a testing event, use <a class="reference internal" href="#fastf1.get_testing_event" title="fastf1.get_testing_event"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_testing_event()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>year</strong> (<em>int</em>) – Championship year</p></li>
+<li><p><strong>gp</strong> (<em>int</em><em> or </em><em>str</em>) – Name as str or round number as int. If gp is
+a string, a fuzzy match will be performed on all events and the
+closest match will be selected.
+Fuzzy matching uses country, location, name and officialName of
+each event as reference.
+Note that the round number cannot be used to get a testing event,
+as all testing event are round 0!</p></li>
+<li><p><strong>force_ergast</strong> (<em>bool</em>) – Always use data from the ergast database to
+create the event schedule</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.get_testing_event">
+<span class="sig-prename descclassname"><span class="pre">fastf1.</span></span><span class="sig-name descname"><span class="pre">get_testing_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/events.html#get_testing_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.get_testing_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.events.Event</span></code></a> object for testing sessions
+based on year and test event number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>year</strong> (<em>int</em>) – Championship year</p></li>
+<li><p><strong>test_number</strong> (<em>int</em>) – Number of the testing event (usually at most two)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.get_event_schedule">
+<span class="sig-prename descclassname"><span class="pre">fastf1.</span></span><span class="sig-name descname"><span class="pre">get_event_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_testing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_ergast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/events.html#get_event_schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.get_event_schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an <a class="reference internal" href="events.html#fastf1.events.EventSchedule" title="fastf1.events.EventSchedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventSchedule</span></code></a> object for a specific
+season.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>year</strong> (<em>int</em>) – Championship year</p></li>
+<li><p><strong>include_testing</strong> (<em>bool</em>) – Include or exclude testing sessions from the
+event schedule.</p></li>
+<li><p><strong>force_ergast</strong> (<em>bool</em>) – Always use data from the ergast database to
+create the event schedule</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="events.html#fastf1.events.EventSchedule" title="fastf1.events.EventSchedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventSchedule</span></code></a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.2.</span></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="cache-api">
+<h3>Cache API<a class="headerlink" href="#cache-api" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="fastf1.Cache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fastf1.</span></span><span class="sig-name descname"><span class="pre">Cache</span></span><a class="reference internal" href="_modules/fastf1/api.html#Cache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.Cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pickle and requests based API cache.</p>
+<p>The parsed API data will be saved as a pickled object.
+Raw GET requests are cached in a sqlite db using the ‘requests-cache’
+module.</p>
+<p>Caching should almost always be enabled to speed up the runtime of your
+scripts and to prevent exceeding the rate limit of api servers.
+FastF1 will print an annoyingly obnoxious warning message if you do not
+enable caching.</p>
+<p>The cache has two “stages”.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Stage 1: Caching of raw GET requests. This works for all requests.
+Cache control is employed to refresh the cached data periodically.</p></li>
+<li><p>Stage 2: Caching of the parsed data. This saves a lot of time when
+running your scripts,  as parsing of the data is computationally
+expensive. Stage 2 caching is only used for some api functions.</p></li>
+</ul>
+</div></blockquote>
+<p>Most commonly, you will enable caching right at the beginning of your script:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fastf1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fastf1</span><span class="o">.</span><span class="n">Cache</span><span class="o">.</span><span class="n">enable_cache</span><span class="p">(</span><span class="s1">&#39;path/to/cache&#39;</span><span class="p">)</span>  
+<span class="go"># change cache directory to an exisitng empty directory on your machine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Note that you should always enable caching except for very rare
+circumstances which are usually limited to doing core developement
+on FastF1.</p>
+<p><strong>Methods:</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.Cache.enable_cache" title="fastf1.Cache.enable_cache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable_cache</span></code></a>(cache_dir[, ignore_version, ...])</p></td>
+<td><p>Enables the API cache.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.Cache.clear_cache" title="fastf1.Cache.clear_cache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_cache</span></code></a>(cache_dir[, deep])</p></td>
+<td><p>Clear all cached data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.Cache.disabled" title="fastf1.Cache.disabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disabled</span></code></a>()</p></td>
+<td><p>Returns a context manager object that creates a context within which the cache is temporarily disabled.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.Cache.set_disabled" title="fastf1.Cache.set_disabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_disabled</span></code></a>()</p></td>
+<td><p>Disable the cache while keeping the configuration intact.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.Cache.set_enabled" title="fastf1.Cache.set_enabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_enabled</span></code></a>()</p></td>
+<td><p>Enable the cache after it has been disabled with <a class="reference internal" href="#fastf1.Cache.set_disabled" title="fastf1.Cache.set_disabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_disabled()</span></code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="fastf1.Cache.enable_cache">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enable_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_renew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_requests_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#Cache.enable_cache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.Cache.enable_cache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enables the API cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -336,9 +593,9 @@ If gp is ‘testing’ event is the test day (1 to 6)</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">fastf1.api.Cache.</span></span><span class="sig-name descname"><span class="pre">clear_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="fastf1.Cache.clear_cache">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clear_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#Cache.clear_cache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.Cache.clear_cache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear all cached data.</p>
 <p>This deletes all cache files in the provided cache directory.
 Optionally, the requests cache is cleared too.</p>
@@ -358,6 +615,64 @@ delete the sqlite file in the root of the cache directory.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="fastf1.Cache.disabled">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#Cache.disabled"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.Cache.disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a context manager object that creates a context within
+which the cache is temporarily disabled.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Cache</span><span class="o">.</span><span class="n">disabled</span><span class="p">():</span>
+    <span class="c1"># no caching takes place here</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The context manager is not multithreading-safe</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fastf1.Cache.set_disabled">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_disabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#Cache.set_disabled"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.Cache.set_disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable the cache while keeping the configuration intact.</p>
+<p>This disables stage 1 and stage 2 caching!</p>
+<p>You can enable the cache at any time using <a class="reference internal" href="#fastf1.Cache.set_enabled" title="fastf1.Cache.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may prefer to use <a class="reference internal" href="#fastf1.Cache.disabled" title="fastf1.Cache.disabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">disabled()</span></code></a> to get a context
+manager object and disable the cache only within a specific
+context.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is not multithreading-safe</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fastf1.Cache.set_enabled">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_enabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#Cache.set_enabled"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.Cache.set_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable the cache after it has been disabled with
+<a class="reference internal" href="#fastf1.Cache.set_disabled" title="fastf1.Cache.set_disabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_disabled()</span></code></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To enable the cache it needs to be configured properly. You need
+to call :func`enable_cache` once to enable the cache initially.
+<a class="reference internal" href="#fastf1.Cache.set_enabled" title="fastf1.Cache.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a> and <a class="reference internal" href="#fastf1.Cache.set_disabled" title="fastf1.Cache.set_disabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_disabled()</span></code></a> only serve to
+(temporarily) disable the cache for specific parts of code that
+should be run without caching.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is not multithreading-safe</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
 </div>
 
 
@@ -366,7 +681,7 @@ delete the sqlite file in the root of the cache directory.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="core.html" class="btn btn-neutral float-right" title="fastf1.core - Core module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="core.html" class="btn btn-neutral float-right" title="Timing and Telemetry Data - fastf1.core" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="examples_gallery/plot_speed_on_track.html" class="btn btn-neutral float-left" title="Speed visualization on track map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

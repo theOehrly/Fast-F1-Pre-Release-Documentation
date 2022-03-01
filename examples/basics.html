@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Getting started with the basics &mdash; Fast F1 2.1.13 documentation</title>
+  <title>Getting started with the basics &mdash; Fast F1 2.2.0-alpha0 documentation</title>
   
 
   
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.1.13
+                2.2.0-alpha0
               </div>
             
           
@@ -118,8 +118,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../fastf1.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code> - Package functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code> - Core module</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fastf1.html#accessing-events-and-sessions">Accessing Events and Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fastf1.html#caching">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fastf1.html#general-functions-api-reference">General Functions - API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../fastf1.html#events-api">Events API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fastf1.html#cache-api">Cache API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../core.html#data-objects">Data Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core.html#functions">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core.html#api-reference">API Reference</a><ul>
@@ -142,10 +151,24 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../api.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code> - Api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code> - Utils module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../plotting.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code> - Plotting module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../livetiming.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code> - Live Timing Client</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../events.html#event-schedule-data">Event Schedule Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../events.html#supported-seasons">Supported Seasons</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html#session-identifiers">Session identifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html#functions-for-accessing-schedule-data">Functions for accessing schedule data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html#data-objects">Data Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../events.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../events.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Api Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../livetiming.html#usage-example">Usage Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../livetiming.html#important-notes">Important Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../livetiming.html#command-line-interface">Command Line Interface</a><ul>
@@ -157,7 +180,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../livetiming.html#module-fastf1.livetiming.data">Live Timing Data Object</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../legacy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code> - Provides access to legacy functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Information:</span></p>
 <ul>
@@ -179,6 +202,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -282,30 +306,66 @@ is loading a session. For this, you should use
 <span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">name</span>
 <span class="go">&#39;Qualifying&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">date</span>
-<span class="go">&#39;2021-06-19&#39;</span>
+<span class="go">Timestamp(&#39;2021-06-19 00:00:00&#39;)</span>
 </pre></div>
 </div>
 <p>Now, which race weekend are we actually looking at here?
 For this we have the <a class="reference internal" href="../core.html#fastf1.core.Weekend" title="fastf1.core.Weekend"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Weekend</span></code></a> object which holds
 information about each race weekend. It is accessible through the
 session object.</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">weekend</span>  
-<span class="go">&lt;fastf1.core.Weekend object at ...&gt;</span>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">event</span>
+<span class="go">round_number                                                      7</span>
+<span class="go">country                                                      France</span>
+<span class="go">location                                               Le Castellet</span>
+<span class="go">official_event_name    FORMULA 1 EMIRATES GRAND PRIX DE FRANCE 2021</span>
+<span class="go">event_date                                      2021-06-20 00:00:00</span>
+<span class="go">event_name                                        French Grand Prix</span>
+<span class="go">event_format                                           conventional</span>
+<span class="go">session1                                                 Practice 1</span>
+<span class="go">session1_date                                   2021-06-18 00:00:00</span>
+<span class="go">session2                                                 Practice 2</span>
+<span class="go">session2_date                                   2021-06-18 00:00:00</span>
+<span class="go">session3                                                 Practice 3</span>
+<span class="go">session3_date                                   2021-06-19 00:00:00</span>
+<span class="go">session4                                                 Qualifying</span>
+<span class="go">session4_date                                   2021-06-19 00:00:00</span>
+<span class="go">session5                                                       Race</span>
+<span class="go">session5_date                                   2021-06-20 00:00:00</span>
+<span class="go">f1_api_support                                                 True</span>
+<span class="go">Name: French Grand Prix, dtype: object</span>
 </pre></div>
 </div>
 <p>Let’s see which race weekend this actually is.</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">event_name</span>
 <span class="go">&#39;French Grand Prix&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">date</span>  <span class="c1"># this is the date of the race day</span>
-<span class="go">&#39;2021-06-20&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">event_date</span>  <span class="c1"># this is the date of the race day</span>
+<span class="go">Timestamp(&#39;2021-06-20 00:00:00&#39;)</span>
 </pre></div>
 </div>
 <p>If you do not specify which session you want to load, <code class="docutils literal notranslate"><span class="pre">.get_session()</span></code>
 will return a <a class="reference internal" href="../core.html#fastf1.core.Weekend" title="fastf1.core.Weekend"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Weekend</span></code></a> object instead of a session.
 The weekend object provides methods which return the individual sessions.</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span> 
-<span class="go">&lt;fastf1.core.Weekend object at ...&gt;</span>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span>
+<span class="go">round_number                                                      7</span>
+<span class="go">country                                                      France</span>
+<span class="go">location                                               Le Castellet</span>
+<span class="go">official_event_name    FORMULA 1 EMIRATES GRAND PRIX DE FRANCE 2021</span>
+<span class="go">event_date                                      2021-06-20 00:00:00</span>
+<span class="go">event_name                                        French Grand Prix</span>
+<span class="go">event_format                                           conventional</span>
+<span class="go">session1                                                 Practice 1</span>
+<span class="go">session1_date                                   2021-06-18 00:00:00</span>
+<span class="go">session2                                                 Practice 2</span>
+<span class="go">session2_date                                   2021-06-18 00:00:00</span>
+<span class="go">session3                                                 Practice 3</span>
+<span class="go">session3_date                                   2021-06-19 00:00:00</span>
+<span class="go">session4                                                 Qualifying</span>
+<span class="go">session4_date                                   2021-06-19 00:00:00</span>
+<span class="go">session5                                                       Race</span>
+<span class="go">session5_date                                   2021-06-20 00:00:00</span>
+<span class="go">f1_api_support                                                 True</span>
+<span class="go">Name: French Grand Prix, dtype: object</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">weekend</span><span class="o">.</span><span class="n">get_race</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">name</span>
 <span class="go">&#39;Race&#39;</span>
@@ -316,8 +376,8 @@ The weekend object provides methods which return the individual sessions.</p>
 <h2>Loading a session by name<a class="headerlink" href="#loading-a-session-by-name" title="Permalink to this headline">¶</a></h2>
 <p>As an alternative to specifying a race weekends number you can also load
 weekends by their official name.</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;French Grand Prix&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;French Grand Prix&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event</span><span class="o">.</span><span class="n">event_name</span>
 <span class="go">&#39;French Grand Prix&#39;</span>
 </pre></div>
 </div>
@@ -325,24 +385,24 @@ weekends by their official name.</p>
 session that matches your provided name best. Even if you don’t specify the
 correct name chances are high that FastF1 will find the event you are looking
 for.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;Barcelona GP&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event</span><span class="o">.</span><span class="n">event_name</span>
 <span class="go">&#39;Spanish Grand Prix&#39;</span>
 </pre></div>
 </div>
 <p>But be aware that this does not always work. Sometimes another name just
 matches the provided string better. For example, what we actually want is the
-‘Emiligia Romagna Grand Prix’ but we get the ‘Brazilian Grand Prix’ if we don’t
-specify the name fully. Why? Because FastF1 is not a proper intelligent search
-engine. So check your results.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;Emilia Grand Prix&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span>
-<span class="go">&#39;Brazilian Grand Prix&#39;</span>
+‘Emiligia Romagna Grand Prix’ but we get the ‘Belgian Grand Prix’ if we don’t
+specify the name fully and/or correct enough. Why? Because FastF1 is not a
+proper intelligent search engine. So check your results.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;Emilian&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event</span><span class="o">.</span><span class="n">event_name</span>
+<span class="go">&#39;Belgian Grand Prix&#39;</span>
 </pre></div>
 </div>
 <p>We need to be a bit more precise here.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;Emilia Romagna Grand Prix&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;Emilia Romagna&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event</span><span class="o">.</span><span class="n">event_name</span>
 <span class="go">&#39;Emilia Romagna Grand Prix&#39;</span>
 </pre></div>
 </div>
@@ -355,19 +415,19 @@ a bit more interesting and take a look at some individual laps.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">laps</span> <span class="o">=</span> <span class="n">quali</span><span class="o">.</span><span class="n">load_laps</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">laps</span>
 <span class="go">                      Time DriverNumber  ... TrackStatus  IsAccurate</span>
-<span class="go">0   0 days 00:28:44.908000           33  ...           1       False</span>
+<span class="go">0   0 days 00:28:44.908000           33  ...          25       False</span>
 <span class="go">1   0 days 00:31:14.909000           33  ...           1       False</span>
 <span class="go">2   0 days 00:32:45.910000           33  ...           1        True</span>
 <span class="go">3   0 days 00:50:42.329000           33  ...          25       False</span>
 <span class="go">4   0 days 00:52:59.529000           33  ...           1       False</span>
 <span class="go">..                     ...          ...  ...         ...         ...</span>
-<span class="go">245 0 days 00:28:51.659000            9  ...          25       False</span>
-<span class="go">246 0 days 00:31:39.717000            9  ...           1       False</span>
-<span class="go">247 0 days 00:33:13.271000            9  ...           1        True</span>
-<span class="go">248 0 days 00:38:02.565000            9  ...           1       False</span>
-<span class="go">249 0 days 00:40:30.783000            9  ...           1       False</span>
+<span class="go">265 0 days 00:31:39.717000            9  ...           1       False</span>
+<span class="go">266 0 days 00:33:13.271000            9  ...           1        True</span>
+<span class="go">267 0 days 00:38:02.565000            9  ...           1       False</span>
+<span class="go">268 0 days 00:40:30.783000            9  ...           1       False</span>
+<span class="go">269 0 days 00:42:11.850000            9  ...          25       False</span>
 
-<span class="go">[250 rows x 25 columns]</span>
+<span class="go">[270 rows x 25 columns]</span>
 </pre></div>
 </div>
 <p>That’s 250 laps right there and 25 columns of information. If you are familiar

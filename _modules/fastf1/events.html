@@ -1,0 +1,1146 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>fastf1.events &mdash; Fast F1 2.2.0-alpha0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Fast F1
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.2.0-alpha0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/theOehrly/Fast-F1">← Back to Github</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/basics.html">Getting started with the basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/basics.html#loading-a-session">Loading a session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/basics.html#loading-a-session-by-name">Loading a session by name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../examples/basics.html#working-with-laps-and-lap-times">Working with laps and lap times</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/index.html#example-plot">Example Plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples_gallery/index.html">Examples Gallery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples_gallery/plot_speed_traces.html">Overlaying speed traces of two laps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples_gallery/plot_gear_shifts_on_track.html">Gear shifts on track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples_gallery/plot_qualifying_results.html">Qualifying results overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../fastf1.html#accessing-events-and-sessions">Accessing Events and Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fastf1.html#caching">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fastf1.html#general-functions-api-reference">General Functions - API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../fastf1.html#events-api">Events API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fastf1.html#cache-api">Cache API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../core.html#data-objects">Data Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../core.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../core.html#api-reference">API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../core.html#id1">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../core.html#get-session">get_session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core.html#get-round">get_round</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../core.html#id2">Data Objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../core.html#weekend">Weekend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core.html#session">Session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core.html#laps">Laps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core.html#lap">Lap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core.html#telemetry">Telemetry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core.html#driver">Driver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../core.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../events.html#event-schedule-data">Event Schedule Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../events.html#supported-seasons">Supported Seasons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../events.html#event-schedule">Event Schedule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../events.html#session-identifiers">Session identifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../events.html#functions-for-accessing-schedule-data">Functions for accessing schedule data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../events.html#data-objects">Data Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../events.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../events.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Api Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../livetiming.html#usage-example">Usage Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../livetiming.html#important-notes">Important Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../livetiming.html#command-line-interface">Command Line Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../livetiming.html#save">Save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../livetiming.html#extract">Extract</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../livetiming.html#module-fastf1.livetiming.client">Live Timing Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../livetiming.html#module-fastf1.livetiming.data">Live Timing Data Object</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../time_explanation.html">Time, Date and Timing - Explanation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../time_explanation.html#points-in-time">Points in Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../time_explanation.html#lap-timing">Lap timing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto_accurate_calculations.html">How to perform calculations accurately</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../howto_accurate_calculations.html#validating-results">Validating results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../howto_accurate_calculations.html#working-with-the-available-data">Working with the available data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../howto_accurate_calculations.html#slicing-data-by-lap-for-use-in-further-calculations">Slicing data by lap for use in further calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../howto_accurate_calculations.html#disclaimer">Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../known_bugs.html">Known bugs and caveats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../troubleshooting.html#something-doesn-t-work">Something doesn’t work</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-10-ergast-compatibility">v2.1.10 Ergast compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-9-general-maintenance">v2.1.9 General maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-8-add-temporary-support-for-sprint-qualifying">v2.1.8 Add temporary support for sprint qualifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-7-various-bug-fixes">v2.1.7 Various bug fixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-6-added-weather-data-general-improvements-and-bug-fixes">v2.1.6 Added weather data, general improvements and bug fixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-5-improved-robustness-and-minor-fixes">v2.1.5 Improved robustness and minor fixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-4-bug-fixes-and-various-minor-improvements">v2.1.4 Bug fixes and various minor improvements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-3-improved-error-handling">v2.1.3 Improved error handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-2-hotfixes-for-loading-live-timing-data">v2.1.2 Hotfixes for loading live timing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-1-add-support-for-recording-and-using-live-timing-data">v2.1.1 Add support for recording and using live timing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-refactoring-accuracy-improvements-and-a-more-accessible-interface">v2.1: Refactoring, accuracy improvements and a more accessible interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-0-2-api-code-overhaul">v2.0.2: API code overhaul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-0-1-integration-of-a-newer-version-of-ax6-s-old-repository">v2.0.1: Integration of a newer version of Ax6’s old repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-0-0-first-release-of-this-fork">v2.0.0: first release of this fork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v1-5-1-last-release-by-ax6">v1.5.1: last release by Ax6</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fast F1</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>fastf1.events</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fastf1.events</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Event Schedule - :mod:`fastf1.events`</span>
+<span class="sd">=====================================</span>
+
+<span class="sd">The :class:`EventSchedule` provides information about past and upcoming</span>
+<span class="sd">Formula 1 events.</span>
+
+<span class="sd">An :class:`Event` can be a race weekend or a testing event. Each event</span>
+<span class="sd">consists of multiple :class:`~fastf1.core.Session`\ s.</span>
+
+<span class="sd">The event schedule objects are built on top of pandas&#39;</span>
+<span class="sd">:class:`pandas.DataFrame` (event schedule) and :class:`pandas.Series` (event).</span>
+<span class="sd">Therefore, the usual methods of these pandas objects can be used in addition</span>
+<span class="sd">to the special methods described here.</span>
+
+<span class="sd">Event Schedule Data</span>
+<span class="sd">-------------------</span>
+
+<span class="sd">The event schedule and each event provide the following information as</span>
+<span class="sd">DataFrame columns or Series values:</span>
+
+<span class="sd">  - ``round_number`` | :class:`int` |</span>
+<span class="sd">    The number of the championship round. This is unique for race</span>
+<span class="sd">    weekends, while testing events all share the round number zero.</span>
+
+<span class="sd">  - ``country`` | :class:`str` | The country in which the event is held.</span>
+
+<span class="sd">  - ``location`` | :class:`str` |</span>
+<span class="sd">    The event location; usually the city or region in which the track is</span>
+<span class="sd">    situated.</span>
+
+<span class="sd">  - ``official_event_name`` | :class:`str` |</span>
+<span class="sd">    The official event name as advertised, including sponsor names and stuff.</span>
+
+<span class="sd">  - ``event_name`` | :class:`str` |</span>
+<span class="sd">    A shorter event name usually containing the country or location but no</span>
+<span class="sd">    no sponsor names. This name is required internally for proper api access.</span>
+
+<span class="sd">  - ``event_date`` | :class:`datetime` |</span>
+<span class="sd">    The events reference date and time. This is used mainly internally.</span>
+<span class="sd">    Usually, this is the same as the date of the last session.</span>
+
+<span class="sd">  - ``event_format`` | :class:`str` |</span>
+<span class="sd">    The format of the event. One of &#39;convetional&#39;, &#39;sprint&#39;, &#39;testing&#39;.</span>
+
+<span class="sd">  - ``session*`` | :class:`str` |</span>
+<span class="sd">    The name of the session. One of &#39;Practice 1&#39;, &#39;Practice 2&#39;, &#39;Practice 3&#39;,</span>
+<span class="sd">    &#39;Qualifying&#39;, &#39;Sprint Qualifying&#39; or &#39;Race&#39;.</span>
+<span class="sd">    Testing sessions are considered practice.</span>
+<span class="sd">    ``*`` denotes the number of</span>
+<span class="sd">    the session (1, 2, 3, 4, 5).</span>
+
+<span class="sd">  - ``session*_date`` | :class:`datetime` |</span>
+<span class="sd">    The date and time at which the session is scheduled to start or was</span>
+<span class="sd">    scheduled to start.</span>
+<span class="sd">    ``*`` denotes the number of the session (1, 2, 3, 4, 5).</span>
+
+<span class="sd">  - ``f1_api_support`` | :class:`bool` |</span>
+<span class="sd">    Denotes whether this session is supported by the official F1 API.</span>
+<span class="sd">    Lap timing data and telemetry data can only be loaded if this is true.</span>
+
+
+<span class="sd">Supported Seasons</span>
+<span class="sd">.................</span>
+
+<span class="sd">FastF1 provides its own event schedule for the 2018 season and all later</span>
+<span class="sd">seasons. The schedule for the all seasons before 2018 is built using data from</span>
+<span class="sd">the Ergast API. Only limited data is available for these seasons. Usage of the</span>
+<span class="sd">Ergast API can be enforced for all seasons, in which case the same limitations</span>
+<span class="sd">apply for the more recent seasons too.</span>
+
+<span class="sd">**Exact scheduled starting times for all sessions**:</span>
+<span class="sd">Supported starting with the 2018 season.</span>
+<span class="sd">Starting dates for sessions before 2018 (or when enforcing usage of the Ergast</span>
+<span class="sd">API) assume that each race weekend was held according to the &#39;conventional&#39;</span>
+<span class="sd">schedule (Practice 1/2 on friday, Practice 3/Qualifying on Saturday, Race on</span>
+<span class="sd">Sunday). A starting date and time can only be provided for the race session.</span>
+<span class="sd">All other sessions are calculated from this and no starting times can be</span>
+<span class="sd">provided for these. These assumptions will be incorrect for certain events!</span>
+
+<span class="sd">**Testing events**: Supported for the 2020 season and later seasons. Not</span>
+<span class="sd">supported if usage of the Ergast API is enforced.</span>
+
+
+<span class="sd">Event Schedule</span>
+<span class="sd">..............</span>
+
+<span class="sd">- &#39;conventional&#39;: Practice 1, Practice 2, Practice 3, Qualifying, Race</span>
+<span class="sd">- &#39;sprint&#39;: Practice 1, Qualifying, Practice 2, Sprint, Race</span>
+<span class="sd">- &#39;testing&#39;: no fixed session order; usually three practice sessions on</span>
+<span class="sd">  three separate days</span>
+
+
+<span class="sd">.. _SessionIdentifier:</span>
+
+<span class="sd">Session identifiers</span>
+<span class="sd">-------------------</span>
+
+<span class="sd">Multiple event (schedule) related functions and methods make use of a session</span>
+<span class="sd">identifier to differentiate between the various sessions of one event.</span>
+<span class="sd">This identifier can currently be one of the following:</span>
+
+<span class="sd">    - session name abbreviation: ``&#39;FP1&#39;, &#39;FP2&#39;, &#39;FP3&#39;, &#39;Q&#39;,</span>
+<span class="sd">      &#39;SQ&#39;, &#39;R&#39;``</span>
+<span class="sd">    - full session name: ``&#39;Practice 1&#39;, &#39;Practice 2&#39;,</span>
+<span class="sd">      &#39;Practice 3&#39;, &#39;Sprint Qualifying&#39;, &#39;Qualifying&#39;, &#39;Race&#39;``;</span>
+<span class="sd">      provided names will be normalized, so that the name is</span>
+<span class="sd">      case-insensitive</span>
+<span class="sd">    - number of the session: ``1, 2, 3, 4, 5``</span>
+
+
+<span class="sd">Functions for accessing schedule data</span>
+<span class="sd">-------------------------------------</span>
+
+<span class="sd">The functions for accessing event schedule data are documented in</span>
+<span class="sd">:ref:`GeneralFunctions`.</span>
+
+
+<span class="sd">Data Objects</span>
+<span class="sd">------------</span>
+
+
+<span class="sd">Overview</span>
+<span class="sd">........</span>
+
+
+<span class="sd">.. autosummary::</span>
+<span class="sd">    EventSchedule</span>
+<span class="sd">    Event</span>
+
+
+<span class="sd">API Reference</span>
+<span class="sd">.............</span>
+
+
+<span class="sd">.. autoclass:: EventSchedule</span>
+<span class="sd">    :members:</span>
+<span class="sd">    :undoc-members:</span>
+<span class="sd">    :show-inheritance:</span>
+<span class="sd">    :autosummary:</span>
+
+
+<span class="sd">.. autoclass:: Event</span>
+<span class="sd">    :members:</span>
+<span class="sd">    :undoc-members:</span>
+<span class="sd">    :show-inheritance:</span>
+<span class="sd">    :autosummary:</span>
+
+<span class="sd">&quot;&quot;&quot;</span>  <span class="c1"># noqa: W605 invalid escape sequence (escaped space)</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">import</span> <span class="nn">dateutil.parser</span>
+
+<span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span>
+        <span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Using slow pure-python SequenceMatcher&quot;</span>
+    <span class="p">)</span>
+    <span class="c1"># suppress that warning, it&#39;s confusing at best here, we don&#39;t need fast</span>
+    <span class="c1"># sequence matching and the installation (on windows) requires some effort</span>
+    <span class="kn">from</span> <span class="nn">thefuzz</span> <span class="kn">import</span> <span class="n">fuzz</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">fastf1.api</span> <span class="kn">import</span> <span class="n">Cache</span>
+<span class="kn">from</span> <span class="nn">fastf1.core</span> <span class="kn">import</span> <span class="n">Session</span>
+<span class="kn">import</span> <span class="nn">fastf1.ergast</span>
+<span class="kn">from</span> <span class="nn">fastf1.utils</span> <span class="kn">import</span> <span class="n">recursive_dict_get</span>
+
+
+<span class="n">_SESSION_TYPE_ABBREVIATIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="s1">&#39;Race&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Q&#39;</span><span class="p">:</span> <span class="s1">&#39;Qualifying&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SQ&#39;</span><span class="p">:</span> <span class="s1">&#39;Sprint Qualifying&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;FP1&#39;</span><span class="p">:</span> <span class="s1">&#39;Practice 1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;FP2&#39;</span><span class="p">:</span> <span class="s1">&#39;Practice 2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;FP3&#39;</span><span class="p">:</span> <span class="s1">&#39;Practice 3&#39;</span>
+<span class="p">}</span>
+
+<span class="n">_SCHEDULE_BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/&quot;</span> \
+                     <span class="s2">&quot;theOehrly/f1schedule/master/&quot;</span>
+
+
+<div class="viewcode-block" id="get_session"><a class="viewcode-back" href="../../fastf1.html#fastf1.events.get_session">[docs]</a><span class="k">def</span> <span class="nf">get_session</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">gp</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">force_ergast</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create a :class:`~fastf1.core.Session` object based on year, event name</span>
+<span class="sd">    and session identifier.</span>
+
+<span class="sd">    .. deprecated:: 2.2</span>
+<span class="sd">        Creating :class:`~fastf1.events.Event` objects (previously</span>
+<span class="sd">        :class:`fastf1.core.Weekend`) by not specifying an ``identifier`` has</span>
+<span class="sd">        been deprecated. Use :func:`get_event` instead.</span>
+
+<span class="sd">    .. deprecated:: 2.2</span>
+<span class="sd">        The argument ``event`` has been replaced with ``identifier`` to adhere</span>
+<span class="sd">        to new naming conventions.</span>
+
+<span class="sd">    .. deprecated:: 2.2</span>
+<span class="sd">        Testing sessions can no longer be created by specifying</span>
+<span class="sd">        ``gp=&#39;testing&#39;``. Use :func:`get_testing_session` instead. There is</span>
+<span class="sd">        **no grace period** for this change. This will stop working immediately</span>
+<span class="sd">        with the release of v2.2!</span>
+
+<span class="sd">    To get a testing session, use :func:`get_testing_session`.</span>
+
+<span class="sd">    Examples:</span>
+
+<span class="sd">        Get the second free practice of the first race of 2021 by its session</span>
+<span class="sd">        name abbreviation::</span>
+
+<span class="sd">            &gt;&gt;&gt; get_session(2021, 1, &#39;FP2&#39;)</span>
+
+<span class="sd">        Get the qualifying of the 2020 Austrian Grand Prix by full session</span>
+<span class="sd">        name::</span>
+
+<span class="sd">            &gt;&gt;&gt; get_session(2020, &#39;Austria&#39;, &#39;Qualifying&#39;)</span>
+
+<span class="sd">        Get the 3rd session if the 5th Grand Prix in 2021::</span>
+
+<span class="sd">            &gt;&gt;&gt; get_session(2021, 5, 3)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        year (int): Championship year</span>
+<span class="sd">        gp (number or string): Name as str or round number as int. If gp is</span>
+<span class="sd">            a string, a fuzzy match will be performed on all events and the</span>
+<span class="sd">            closest match will be selected.</span>
+<span class="sd">            Fuzzy matching uses country, location, name and officialName of</span>
+<span class="sd">            each event as reference.</span>
+
+<span class="sd">            Some examples that will be correctly interpreted: &#39;bahrain&#39;,</span>
+<span class="sd">            &#39;australia&#39;, &#39;abudabi&#39;, &#39;monza&#39;.</span>
+
+<span class="sd">            See :func:`get_event_by_name` for some further remarks on the</span>
+<span class="sd">            fuzzy matching.</span>
+
+<span class="sd">        identifier (str or int): see :ref:`SessionIdentifier`</span>
+
+<span class="sd">        force_ergast (bool): Always use data from the ergast database to</span>
+<span class="sd">            create the event schedule</span>
+
+<span class="sd">        event: deprecated; use identifier instead</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        :class:`~fastf1.core.Session`:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">identifier</span> <span class="ow">and</span> <span class="n">event</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The arguments &#39;identifier&#39; and &#39;event&#39; are &quot;</span>
+                         <span class="s2">&quot;mutually exclusive!&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">gp</span> <span class="o">==</span> <span class="s1">&#39;testing&#39;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">DeprecationWarning</span><span class="p">(</span><span class="s1">&#39;Accessing test sessions through &#39;</span>
+                                 <span class="s1">&#39;`get_session` has been deprecated!</span><span class="se">\n</span><span class="s1">Use &#39;</span>
+                                 <span class="s1">&#39;`get_testing_session` instead.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The keyword argument &#39;event&#39; has been deprecated and &quot;</span>
+                      <span class="s2">&quot;will be removed in a future version.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                      <span class="s2">&quot;Use &#39;identifier&#39; instead.&quot;</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">)</span>
+        <span class="n">identifier</span> <span class="o">=</span> <span class="n">event</span>
+
+    <span class="n">event</span> <span class="o">=</span> <span class="n">get_event</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">gp</span><span class="p">,</span> <span class="n">force_ergast</span><span class="o">=</span><span class="n">force_ergast</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Getting `Event` objects (previously `Session`) through &quot;</span>
+                      <span class="s2">&quot;`get_session` has been deprecated.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                      <span class="s2">&quot;Use `fastf1.get_event` instead.&quot;</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">event</span>  <span class="c1"># TODO: remove in v2.3</span>
+
+    <span class="k">return</span> <span class="n">event</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_testing_session"><a class="viewcode-back" href="../../fastf1.html#fastf1.events.get_testing_session">[docs]</a><span class="k">def</span> <span class="nf">get_testing_session</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">test_number</span><span class="p">,</span> <span class="n">session_number</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create a :class:`~fastf1.core.Session` object for testing sessions</span>
+<span class="sd">    based on year, test  event number and session number.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        year (int): Championship year</span>
+<span class="sd">        test_number (int): Number of the testing event (usually at most two)</span>
+<span class="sd">        session_number (int): Number of the session withing a specific testing</span>
+<span class="sd">            event. Each testing event usually has three sessions.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        :class:`~fastf1.core.Session`</span>
+
+<span class="sd">    .. versionadded:: 2.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">get_testing_event</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">test_number</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">event</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="n">session_number</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_event"><a class="viewcode-back" href="../../fastf1.html#fastf1.events.get_event">[docs]</a><span class="k">def</span> <span class="nf">get_event</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">gp</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">force_ergast</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create an :class:`~fastf1.events.Event` object for a specific</span>
+<span class="sd">    season and gp.</span>
+
+<span class="sd">    To get a testing event, use :func:`get_testing_event`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        year (int): Championship year</span>
+<span class="sd">        gp (int or str): Name as str or round number as int. If gp is</span>
+<span class="sd">            a string, a fuzzy match will be performed on all events and the</span>
+<span class="sd">            closest match will be selected.</span>
+<span class="sd">            Fuzzy matching uses country, location, name and officialName of</span>
+<span class="sd">            each event as reference.</span>
+<span class="sd">            Note that the round number cannot be used to get a testing event,</span>
+<span class="sd">            as all testing event are round 0!</span>
+<span class="sd">        force_ergast (bool): Always use data from the ergast database to</span>
+<span class="sd">            create the event schedule</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        :class:`~fastf1.events.Event`</span>
+
+<span class="sd">    .. versionadded:: 2.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">schedule</span> <span class="o">=</span> <span class="n">get_event_schedule</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">,</span> <span class="n">include_testing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                  <span class="n">force_ergast</span><span class="o">=</span><span class="n">force_ergast</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get_event_by_name</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get_event_by_round</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">event</span></div>
+
+
+<div class="viewcode-block" id="get_testing_event"><a class="viewcode-back" href="../../fastf1.html#fastf1.events.get_testing_event">[docs]</a><span class="k">def</span> <span class="nf">get_testing_event</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">test_number</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create a :class:`fastf1.events.Event` object for testing sessions</span>
+<span class="sd">    based on year and test event number.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        year (int): Championship year</span>
+<span class="sd">        test_number (int): Number of the testing event (usually at most two)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        :class:`~fastf1.events.Event`</span>
+
+<span class="sd">    .. versionadded:: 2.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">schedule</span> <span class="o">=</span> <span class="n">get_event_schedule</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">schedule</span> <span class="o">=</span> <span class="n">schedule</span><span class="p">[</span><span class="n">schedule</span><span class="o">.</span><span class="n">is_testing</span><span class="p">()]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">test_number</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">schedule</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_number</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">IndexError</span><span class="p">,</span> <span class="ne">AssertionError</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test event number </span><span class="si">{</span><span class="n">test_number</span><span class="si">}</span><span class="s2"> does not exist&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_event_schedule"><a class="viewcode-back" href="../../fastf1.html#fastf1.events.get_event_schedule">[docs]</a><span class="k">def</span> <span class="nf">get_event_schedule</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">include_testing</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_ergast</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create an :class:`~fastf1.events.EventSchedule` object for a specific</span>
+<span class="sd">    season.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        year (int): Championship year</span>
+<span class="sd">        include_testing (bool): Include or exclude testing sessions from the</span>
+<span class="sd">            event schedule.</span>
+<span class="sd">        force_ergast (bool): Always use data from the ergast database to</span>
+<span class="sd">            create the event schedule</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        :class:`~fastf1.events.EventSchedule`</span>
+
+<span class="sd">    .. versionadded:: 2.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">year</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+            <span class="ow">or</span> <span class="n">force_ergast</span><span class="p">):</span>
+        <span class="n">schedule</span> <span class="o">=</span> <span class="n">_get_schedule_from_ergast</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">schedule</span> <span class="o">=</span> <span class="n">_get_schedule</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to access primary schedule backend. &quot;</span>
+                          <span class="sa">f</span><span class="s2">&quot;Falling back to Ergast! Reason: </span><span class="si">{</span><span class="n">exc</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+            <span class="n">schedule</span> <span class="o">=</span> <span class="n">_get_schedule_from_ergast</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">include_testing</span><span class="p">:</span>
+        <span class="n">schedule</span> <span class="o">=</span> <span class="n">schedule</span><span class="p">[</span><span class="o">~</span><span class="n">schedule</span><span class="o">.</span><span class="n">is_testing</span><span class="p">()]</span>
+    <span class="k">return</span> <span class="n">schedule</span></div>
+
+
+<span class="k">def</span> <span class="nf">_get_schedule</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">requests_get</span><span class="p">(</span>
+        <span class="n">_SCHEDULE_BASE_URL</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;schedule_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">.json&quot;</span>
+    <span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">schedule</span> <span class="o">=</span> <span class="n">EventSchedule</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">schedule</span>
+
+
+<span class="k">def</span> <span class="nf">_get_schedule_from_ergast</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="c1"># create an event schedule using data from the ergast database</span>
+    <span class="n">season</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">ergast</span><span class="o">.</span><span class="n">fetch_season</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">rnd</span> <span class="ow">in</span> <span class="n">season</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;round_number&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">rnd</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;round&#39;</span><span class="p">)))</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">recursive_dict_get</span><span class="p">(</span><span class="n">rnd</span><span class="p">,</span> <span class="s1">&#39;Circuit&#39;</span><span class="p">,</span> <span class="s1">&#39;Location&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">recursive_dict_get</span><span class="p">(</span><span class="n">rnd</span><span class="p">,</span> <span class="s1">&#39;Circuit&#39;</span><span class="p">,</span> <span class="s1">&#39;Location&#39;</span><span class="p">,</span> <span class="s1">&#39;locality&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;event_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rnd</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;raceName&#39;</span><span class="p">))</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;official_event_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">rnd</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">T</span><span class="si">{</span><span class="n">rnd</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">dateutil</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">ParserError</span><span class="p">:</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">NaT</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;event_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+
+        <span class="c1"># add sessions by assuming a &#39;conventional&#39; and unchanged schedule</span>
+        <span class="c1"># only date but not time can be assumed for non race sessions,</span>
+        <span class="c1">#   therefore .floor to daily resolution</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;event_format&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;conventional&quot;</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;session1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Practice 1&#39;</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;session1_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;session2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Practice 2&#39;</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;session2_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;session3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Practice 3&#39;</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;session3_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;session4&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Qualifying&#39;</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;session4_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;session5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Race&#39;</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;session5_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;f1_api_support&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">True</span> <span class="k">if</span> <span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">2018</span> <span class="k">else</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="c1"># simplified; this is only true most of the time</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">schedule</span> <span class="o">=</span> <span class="n">EventSchedule</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">schedule</span>
+
+
+<div class="viewcode-block" id="EventSchedule"><a class="viewcode-back" href="../../events.html#fastf1.events.EventSchedule">[docs]</a><span class="k">class</span> <span class="nc">EventSchedule</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This class implements a per-season event schedule.</span>
+
+<span class="sd">    This class is usually not instantiated directly. You should use</span>
+<span class="sd">    :func:`get_event_schedule` to get an event schedule for a specific</span>
+<span class="sd">    season.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        *args: passed on to :class:`pandas.DataFrame` superclass</span>
+<span class="sd">        year (int): Championship year</span>
+<span class="sd">        **kwargs: passed on to :class:`pandas.DataFrame` superclass</span>
+<span class="sd">            (except &#39;columns&#39; which is unsupported for the event schedule)</span>
+
+<span class="sd">    .. versionadded:: 2.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_COL_TYPES</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;round_number&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s1">&#39;official_event_name&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s1">&#39;event_date&#39;</span><span class="p">:</span> <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;event_name&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s1">&#39;event_format&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s1">&#39;session1&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s1">&#39;session1_date&#39;</span><span class="p">:</span> <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;session2&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s1">&#39;session2_date&#39;</span><span class="p">:</span> <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;session3&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s1">&#39;session3_date&#39;</span><span class="p">:</span> <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;session4&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s1">&#39;session4_date&#39;</span><span class="p">:</span> <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;session5&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s1">&#39;session5_date&#39;</span><span class="p">:</span> <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;f1_api_support&#39;</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="p">}</span>
+
+    <span class="n">_metadata</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span>
+
+    <span class="n">_internal_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;base_class_view&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;columns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_COL_TYPES</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+
+        <span class="c1"># apply column specific dtypes</span>
+        <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">_type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_COL_TYPES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">_type</span> <span class="o">==</span> <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">NaT</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">_type</span><span class="p">()</span>
+            <span class="bp">self</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">_type</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_class_view</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_constructor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_new</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">EventSchedule</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_new</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_constructor_sliced</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_new</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Event</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_new</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">base_class_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;For a nicer debugging experience; can view DataFrame through</span>
+<span class="sd">        this property in various IDEs&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="EventSchedule.is_testing"><a class="viewcode-back" href="../../events.html#fastf1.events.EventSchedule.is_testing">[docs]</a>    <span class="k">def</span> <span class="nf">is_testing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return `True` or `False`, depending on whether each event is a</span>
+<span class="sd">        testing event.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s1">&#39;event_format&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EventSchedule.get_event_by_round"><a class="viewcode-back" href="../../events.html#fastf1.events.EventSchedule.get_event_by_round">[docs]</a>    <span class="k">def</span> <span class="nf">get_event_by_round</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">round</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get an :class:`Event` by its round number.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            round (int): The round number</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            :class:`Event`</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: The round does not exist in the event schedule</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">round</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot get testing event by round number!&quot;</span><span class="p">)</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;round_number&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">round</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid round: </span><span class="si">{</span><span class="nb">round</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="EventSchedule.get_event_by_name"><a class="viewcode-back" href="../../events.html#fastf1.events.EventSchedule.get_event_by_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_event_by_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get an :class:`Event` by its name.</span>
+
+<span class="sd">        A fuzzy match is performed to find the event that best matches the</span>
+<span class="sd">        given name. Fuzzy matching is performed using the country, location,</span>
+<span class="sd">        name and officialName of each event. This is not guaranteed to return</span>
+<span class="sd">        the correct result. You should therefore always check if the function</span>
+<span class="sd">        actually returns the event you had wanted.</span>
+
+<span class="sd">        .. warning:: You should avoid adding common words to ``name`` to avoid</span>
+<span class="sd">            false string matches.</span>
+<span class="sd">            For example, you should rather use &quot;Belgium&quot; instead of &quot;Belgian</span>
+<span class="sd">            Grand Prix&quot; as ``name``.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): The name of the event. For example,</span>
+<span class="sd">                ``.get_event_by_name(&quot;british&quot;)`` and</span>
+<span class="sd">                ``.get_event_by_name(&quot;silverstone&quot;)`` will both return the</span>
+<span class="sd">                event for the British Grand Prix.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            :class:`Event`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">_matcher_strings</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+            <span class="n">strings</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="n">strings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ev</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">])</span>
+            <span class="n">strings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ev</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">])</span>
+            <span class="n">strings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ev</span><span class="p">[</span><span class="s1">&#39;event_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Grand Prix&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+            <span class="n">strings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ev</span><span class="p">[</span><span class="s1">&#39;official_event_name&#39;</span><span class="p">]</span>
+                           <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;FORMULA 1&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                           <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                           <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;GRAND PRIX&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">strings</span>
+
+        <span class="n">max_ratio</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">event</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="n">ratio</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">fuzz</span><span class="o">.</span><span class="n">ratio</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">casefold</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">casefold</span><span class="p">())</span>
+                 <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">_matcher_strings</span><span class="p">(</span><span class="n">event</span><span class="p">)]</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">ratio</span> <span class="o">&gt;</span> <span class="n">max_ratio</span><span class="p">:</span>
+                <span class="n">max_ratio</span> <span class="o">=</span> <span class="n">ratio</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="Event"><a class="viewcode-back" href="../../events.html#fastf1.events.Event">[docs]</a><span class="k">class</span> <span class="nc">Event</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This class represents a single event (race weekend or testing event).</span>
+
+<span class="sd">    Each event consists of one or multiple sessions, depending on the type</span>
+<span class="sd">    of event and depending on the event format.</span>
+
+<span class="sd">    This class is usually not instantiated directly. You should use</span>
+<span class="sd">    :func:`get_event` or similar to get a specific event.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">          year (int): Championship year</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_metadata</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span>
+
+    <span class="n">_internal_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;gp&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_getattr_override</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># TODO: remove in v2.3</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_constructor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_new</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Event</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_new</span>
+
+    <span class="k">def</span> <span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="c1"># TODO: remove in v2.3</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;name&#39;</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_getattr_override&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s1">&#39;event_name&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                    <span class="s2">&quot;The `Weekend.name` property is deprecated and will be&quot;</span>
+                    <span class="s2">&quot;removed in a future version.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot;Use `Event[&#39;event_name&#39;]` or `Event.event_name` instead.&quot;</span><span class="p">,</span>
+                    <span class="ne">FutureWarning</span>
+                <span class="p">)</span>
+                <span class="c1"># name may be accessed by pandas internals to, when data</span>
+                <span class="c1"># does not exist yet</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;event_name&#39;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># don&#39;t show .name deprecation message when .name is accessed internally</span>
+        <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span>
+                                    <span class="n">message</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;.*property is deprecated.*&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Weekend race date (YYYY-MM-DD)</span>
+
+<span class="sd">        This wraps ``self[&#39;event_date&#39;].strftime(&#39;%Y-%m-%d&#39;)``</span>
+
+<span class="sd">        .. deprecated:: 2.2</span>
+<span class="sd">            use :attr:`Event.event_date` or :attr:`Event[&#39;event_date&#39;]` and</span>
+<span class="sd">            use :func:`datetime.datetime.strftime` to format the desired</span>
+<span class="sd">            string representation of the datetime object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The `Weekend.date` property is deprecated and will be&quot;</span>
+                      <span class="s2">&quot;removed in a future version.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                      <span class="s2">&quot;Use `Event[&#39;event_date&#39;]` or `Event.event_date` instead.&quot;</span><span class="p">,</span>
+                      <span class="ne">FutureWarning</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;event_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Weekend round number</span>
+
+<span class="sd">        .. deprecated:: 2.2</span>
+<span class="sd">            use :attr:`Event.eventNumber` or :attr:`Event[&#39;eventNumber&#39;]`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The `Weekend.gp` property is deprecated and will be&quot;</span>
+                      <span class="s2">&quot;removed in a future version.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                      <span class="s2">&quot;Use `Event[&#39;round_number&#39;]` or `Event.round_number` &quot;</span>
+                      <span class="s2">&quot;instead.&quot;</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;round_number&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Event.is_testing"><a class="viewcode-back" href="../../events.html#fastf1.events.Event.is_testing">[docs]</a>    <span class="k">def</span> <span class="nf">is_testing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return `True` or `False`, depending on whether this event is a</span>
+<span class="sd">        testing event.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;event_format&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;testing&#39;</span></div>
+
+<div class="viewcode-block" id="Event.get_session_name"><a class="viewcode-back" href="../../events.html#fastf1.events.Event.get_session_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_session_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the full session name of a specific session from this event.</span>
+
+<span class="sd">        Examples:</span>
+
+<span class="sd">            &gt;&gt;&gt; import fastf1</span>
+<span class="sd">            &gt;&gt;&gt; event = fastf1.get_event(2021, 1)</span>
+<span class="sd">            &gt;&gt;&gt; event.get_session_name(3)</span>
+<span class="sd">            &#39;Practice 3&#39;</span>
+<span class="sd">            &gt;&gt;&gt; event.get_session_name(&#39;Q&#39;)</span>
+<span class="sd">            &#39;Qualifying&#39;</span>
+<span class="sd">            &gt;&gt;&gt; event.get_session_name(&#39;praCtice 1&#39;)</span>
+<span class="sd">            &#39;Practice 1&#39;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            identifier (str or int): see :ref:`SessionIdentifier`</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :class:`str`</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: No matching session or invalid identifier</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="c1"># by name or abbreviation</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_SESSION_TYPE_ABBREVIATIONS</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">identifier</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="o">==</span> <span class="n">name</span><span class="o">.</span><span class="n">casefold</span><span class="p">():</span>
+                    <span class="n">session_name</span> <span class="o">=</span> <span class="n">name</span>
+                    <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">session_name</span> <span class="o">=</span> \
+                        <span class="n">_SESSION_TYPE_ABBREVIATIONS</span><span class="p">[</span><span class="n">identifier</span><span class="o">.</span><span class="n">upper</span><span class="p">()]</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid session type &#39;</span><span class="si">{</span><span class="n">identifier</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">session_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No session of type &#39;</span><span class="si">{</span><span class="n">identifier</span><span class="si">}</span><span class="s2">&#39; for &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;this event&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># by number</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span>
+                    <span class="ow">and</span> <span class="p">(</span><span class="n">num</span> <span class="o">:=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">))</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)):</span>
+                <span class="n">session_name</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;session</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid session type &#39;</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">session_name</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Session number </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> does not &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;exist for this event&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">session_name</span></div>
+
+<div class="viewcode-block" id="Event.get_session_date"><a class="viewcode-back" href="../../events.html#fastf1.events.Event.get_session_date">[docs]</a>    <span class="k">def</span> <span class="nf">get_session_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the date and time (if available) at which a specific session</span>
+<span class="sd">        of this event is or was held.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            identifier (str or int): see :ref:`SessionIdentifier`</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :class:`datetime.datetime`</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: No matching session or invalid identifier</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">session_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_session_name</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+        <span class="n">relevant_columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;session1&#39;</span><span class="p">,</span> <span class="s1">&#39;session2&#39;</span><span class="p">,</span> <span class="s1">&#39;session3&#39;</span><span class="p">,</span>
+                                     <span class="s1">&#39;session4&#39;</span><span class="p">,</span> <span class="s1">&#39;session5&#39;</span><span class="p">]]</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">relevant_columns</span> <span class="o">==</span> <span class="n">session_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Session type &#39;</span><span class="si">{</span><span class="n">identifier</span><span class="si">}</span><span class="s2">&#39; does not exist &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;for this event&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_name</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">_name</span><span class="si">}</span><span class="s2">_date&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Event.get_session"><a class="viewcode-back" href="../../events.html#fastf1.events.Event.get_session">[docs]</a>    <span class="k">def</span> <span class="nf">get_session</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a session from this event.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            identifier (str or int): see :ref:`SessionIdentifier`</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :class:`Session` instance</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: No matching session or invalid identifier</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="c1"># by name or abbreviation</span>
+            <span class="n">session_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_session_name</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">session_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No session of type &#39;</span><span class="si">{</span><span class="n">identifier</span><span class="si">}</span><span class="s2">&#39; for &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;this event&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># by number</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span>
+                    <span class="ow">and</span> <span class="p">(</span><span class="n">num</span> <span class="o">:=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">))</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)):</span>
+                <span class="n">session_name</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;session</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid session type &#39;</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">session_name</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Session number </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> does not &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;exist for this event&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="n">event</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_name</span><span class="o">=</span><span class="n">session_name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Event.get_race"><a class="viewcode-back" href="../../events.html#fastf1.events.Event.get_race">[docs]</a>    <span class="k">def</span> <span class="nf">get_race</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the race session.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :class:`Session` instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="s1">&#39;Race&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Event.get_qualifying"><a class="viewcode-back" href="../../events.html#fastf1.events.Event.get_qualifying">[docs]</a>    <span class="k">def</span> <span class="nf">get_qualifying</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the qualifying session.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :class:`Session` instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="s1">&#39;Qualifying&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Event.get_sprint"><a class="viewcode-back" href="../../events.html#fastf1.events.Event.get_sprint">[docs]</a>    <span class="k">def</span> <span class="nf">get_sprint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the sprint session.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            :class:`Session` instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="s1">&#39;Sprint Qualifying&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Event.get_practice"><a class="viewcode-back" href="../../events.html#fastf1.events.Event.get_practice">[docs]</a>    <span class="k">def</span> <span class="nf">get_practice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the specified practice session.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            number: 1, 2 or 3 - Free practice session number</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            :class:`Session` instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Practice </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, theOehrly.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

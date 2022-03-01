@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Changelog &mdash; Fast F1 2.1.13 documentation</title>
+  <title>Changelog &mdash; Fast F1 2.2.0-alpha0 documentation</title>
   
 
   
@@ -70,7 +70,7 @@
             
             
               <div class="version">
-                2.1.13
+                2.2.0-alpha0
               </div>
             
           
@@ -117,8 +117,17 @@
 <li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fastf1.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code> - Package functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="core.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code> - Core module</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fastf1.html#accessing-events-and-sessions">Accessing Events and Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastf1.html#caching">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastf1.html#general-functions-api-reference">General Functions - API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fastf1.html#events-api">Events API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fastf1.html#cache-api">Cache API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="core.html#data-objects">Data Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#functions">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#api-reference">API Reference</a><ul>
@@ -141,10 +150,25 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code> - Api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code> - Utils module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotting.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code> - Plotting module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="livetiming.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code> - Live Timing Client</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="events.html#event-schedule-data">Event Schedule Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events.html#supported-seasons">Supported Seasons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html#event-schedule">Event Schedule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#session-identifiers">Session identifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#functions-for-accessing-schedule-data">Functions for accessing schedule data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#data-objects">Data Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Api Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#usage-example">Usage Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#important-notes">Important Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#command-line-interface">Command Line Interface</a><ul>
@@ -156,7 +180,7 @@
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#module-fastf1.livetiming.data">Live Timing Data Object</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="legacy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code> - Provides access to legacy functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Information:</span></p>
 <ul class="current">
@@ -178,6 +202,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -267,6 +292,97 @@
             
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v2-2-0-alpha-220228">
+<h2>v2.2.0-alpha-220228<a class="headerlink" href="#v2-2-0-alpha-220228" title="Permalink to this headline">¶</a></h2>
+<p>This release introduces a range of new features, bug fixes and improvements.
+While backwards compatibility has been kept in mind, some breaking changes
+are required.</p>
+<p>Changes and New Features:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>New <a class="reference internal" href="events.html#fastf1.events.EventSchedule" title="fastf1.events.EventSchedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.events.EventSchedule</span></code></a>: The event schedule provides
+information about session start times, event format, name and location of
+upcoming events as well as previous event. The schedule data for the
+current season is pulled from an external source that is updated regularly.
+This should solve issues caused by schedule changes during the seasons
+or even during a race weekend.</p></li>
+<li><p>New <a class="reference internal" href="events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.events.Event</span></code></a>: This object represents a single event
+and holds the same information as the event schedule, but for individual
+events.</p></li>
+<li><p>New methods <a class="reference internal" href="fastf1.html#fastf1.get_testing_session" title="fastf1.get_testing_session"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fastf1.get_testing_session()</span></code></a>,
+<a class="reference internal" href="fastf1.html#fastf1.get_event" title="fastf1.get_event"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fastf1.get_event()</span></code></a>, <a class="reference internal" href="fastf1.html#fastf1.get_testing_event" title="fastf1.get_testing_event"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fastf1.get_testing_event()</span></code></a> and
+<a class="reference internal" href="fastf1.html#fastf1.get_event_schedule" title="fastf1.get_event_schedule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fastf1.get_event_schedule()</span></code></a></p></li>
+<li><p>The cache now implements better automatic cache control and is used for
+all requests throughout FastF1.</p></li>
+<li><p>The combination of improved caching and the implementation of the new
+event schedule now allow fastf1 to be used even if the Ergast API is not
+accessible. This improves reliability in case of temporary server or
+network problems.</p></li>
+<li><p>Full offline support: Scripts can be run offline if they have been run
+at least once with an active internet connection and caching enabled.</p></li>
+</ul>
+</div></blockquote>
+<p>Bug Fixes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fixed a bug that caused rain fall to always be true in weather data (#76)</p></li>
+</ul>
+</div></blockquote>
+<p>Breaking Changes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For testing events <a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Session</span></code></a> objects can no longer be
+created through <a class="reference internal" href="fastf1.html#fastf1.get_session" title="fastf1.get_session"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.get_session()</span></code></a>. You need to use
+<a class="reference internal" href="fastf1.html#fastf1.get_testing_session" title="fastf1.get_testing_session"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.get_testing_session()</span></code></a> instead.</p></li>
+<li><p><a class="reference internal" href="core.html#fastf1.core.Session.date" title="fastf1.core.Session.date"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fastf1.core.Session.date</span></code></a> is now a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code>
+instead of a string.</p></li>
+</ul>
+</div></blockquote>
+<p>Potentially breaking changes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The signature <code class="docutils literal notranslate"><span class="pre">fastf1.core.Session.__init__(weekend,</span> <span class="pre">session_name)</span></code>
+has been changed to
+<code class="docutils literal notranslate"><span class="pre">fastf1.core.Session.__init__(event,</span> <span class="pre">session_name)</span></code> to adhere to
+new naming conventions. This is a breaking change if the arguments are
+given as keyword arguments.</p></li>
+<li><p><a class="reference internal" href="fastf1.html#fastf1.get_session" title="fastf1.get_session"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.get_session()</span></code></a> may return a different session now for some
+edge cases, if you load sessions by name instead of by round number.</p></li>
+</ul>
+</div></blockquote>
+<p>Deprecations:</p>
+<blockquote>
+<div><p><strong>Objects, methods and attributes deprecated in v2.2 will be removed
+in v2.3.</strong> Until then accessing them will still work but a FutureWarning
+is shown, reminding you of the deprecation.</p>
+<ul>
+<li><p><a class="reference internal" href="core.html#fastf1.core.Weekend" title="fastf1.core.Weekend"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Weekend</span></code></a> has been replaced with
+<a class="reference internal" href="events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.events.Event</span></code></a>. All previously available methods and
+properties are implemented by the replacement object, although they have
+been partially deprecated.</p></li>
+<li><p>The attributes <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code> and <code class="docutils literal notranslate"><span class="pre">gp</span></code> of
+<a class="reference internal" href="core.html#fastf1.core.Weekend" title="fastf1.core.Weekend"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Weekend</span></code></a> have been deprecated.
+The replacement object <a class="reference internal" href="events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.events.Event</span></code></a> subclasses
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Series</span></code>. The standard ways for accessing pandas Series’
+values should be used. The attributes have been additionally renamed in
+their Series representation.
+For example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Weekend.name</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">Event.event_name</span></code> or <code class="docutils literal notranslate"><span class="pre">Event['event_name']</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Weekend.date</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">Event.event_date</span></code> or <code class="docutils literal notranslate"><span class="pre">Event['event_date']</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Weekend.gp</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">Event.round_number</span></code> or <code class="docutils literal notranslate"><span class="pre">Event['round_number']</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">fastf1.core.Session.weekend</span></code> has been replaced by
+<a class="reference internal" href="core.html#fastf1.core.Session.event" title="fastf1.core.Session.event"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fastf1.core.Session.event</span></code></a> to adhere to new naming conventions.</p></li>
+<li><p>The function <a class="reference internal" href="core.html#fastf1.core.get_round" title="fastf1.core.get_round"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.core.get_round()</span></code></a> has been deprecated and will be
+removed without replacement in v2.3. Use <a class="reference internal" href="fastf1.html#fastf1.get_event" title="fastf1.get_event"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.get_event()</span></code></a>
+instead and and get the round number from the returned event object.</p></li>
+</ul>
+</div></blockquote>
+</div>
 <div class="section" id="v2-1-13-more-bug-fixes">
 <h2>v2.1.13 More Bug Fixes<a class="headerlink" href="#v2-1-13-more-bug-fixes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">

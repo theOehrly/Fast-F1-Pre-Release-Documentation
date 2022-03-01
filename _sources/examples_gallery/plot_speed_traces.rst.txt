@@ -111,17 +111,27 @@ We color the individual lines with the driver's team colors.
 
     ax.legend()
     plt.suptitle(f"Fastest Lap Comparison \n "
-                 f"{quali.weekend.name} {quali.weekend.year} Qualifying")
+                 f"{quali.event.name} {quali.event.year} Qualifying")
 
     plt.show()
 
 
 
 .. image-sg:: /examples_gallery/images/sphx_glr_plot_speed_traces_001.png
-   :alt: Fastest Lap Comparison   Spanish Grand Prix 2021 Qualifying
+   :alt: Fastest Lap Comparison   Russian Grand Prix 2021 Qualifying
    :srcset: /examples_gallery/images/sphx_glr_plot_speed_traces_001.png
    :class: sphx-glr-single-img
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:351: UserWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
+    Use `Event['eventName']` or `Event.eventName` instead.
+      warnings.warn(
 
 
 
@@ -129,7 +139,7 @@ We color the individual lines with the driver's team colors.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.399 seconds)
+   **Total running time of the script:** ( 0 minutes  1.801 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_plot_speed_traces.py:

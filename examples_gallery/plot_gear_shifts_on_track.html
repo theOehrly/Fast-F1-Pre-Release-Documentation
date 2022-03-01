@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Gear shifts on track &mdash; Fast F1 2.1.13 documentation</title>
+  <title>Gear shifts on track &mdash; Fast F1 2.2.0-alpha0 documentation</title>
   
 
   
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.1.13
+                2.2.0-alpha0
               </div>
             
           
@@ -142,6 +142,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code> - Events module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code> - Api module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code> - Utils module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../plotting.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code> - Plotting module</a></li>
@@ -179,6 +180,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -319,8 +321,14 @@ to full integer values of the colormap</p>
 
 <span class="n">title</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">&quot;Fastest Lap Gear Shift Visualization</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lap</span><span class="p">[</span><span class="s1">&#39;Driver&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">session</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">session</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lap</span><span class="p">[</span><span class="s1">&#39;Driver&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">session</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">session</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:351: UserWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
+Use `Event[&#39;eventName&#39;]` or `Event.eventName` instead.
+  warnings.warn(
 </pre></div>
 </div>
 <p>Add a colorbar to the plot. Shift the colorbar ticks by +0.5 so that they
@@ -333,7 +341,7 @@ are centered for each color segment.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_gear_shifts_on_track_001.png" srcset="../_images/sphx_glr_plot_gear_shifts_on_track_001.png" alt="Fastest Lap Gear Shift Visualization VER - Austrian Grand Prix 2021" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  13.744 seconds)</p>
+<img src="../_images/sphx_glr_plot_gear_shifts_on_track_001.png" srcset="../_images/sphx_glr_plot_gear_shifts_on_track_001.png" alt="Fastest Lap Gear Shift Visualization LEC - Azerbaijan Grand Prix 2021" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.992 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-gallery-plot-gear-shifts-on-track-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/8f44d0c3a99a14c645b20a9c97960e5e/plot_gear_shifts_on_track.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_gear_shifts_on_track.py</span></code></a></p>

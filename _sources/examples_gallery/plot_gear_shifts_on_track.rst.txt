@@ -115,13 +115,23 @@ Create the plot
 
     title = plt.suptitle(
         f"Fastest Lap Gear Shift Visualization\n"
-        f"{lap['Driver']} - {session.weekend.name} {session.weekend.year}"
+        f"{lap['Driver']} - {session.event.name} {session.event.year}"
     )
 
 
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:351: UserWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
+    Use `Event['eventName']` or `Event.eventName` instead.
+      warnings.warn(
 
 
 
@@ -146,7 +156,7 @@ are centered for each color segment.
 
 
 .. image-sg:: /examples_gallery/images/sphx_glr_plot_gear_shifts_on_track_001.png
-   :alt: Fastest Lap Gear Shift Visualization VER - Austrian Grand Prix 2021
+   :alt: Fastest Lap Gear Shift Visualization LEC - Azerbaijan Grand Prix 2021
    :srcset: /examples_gallery/images/sphx_glr_plot_gear_shifts_on_track_001.png
    :class: sphx-glr-single-img
 
@@ -157,7 +167,7 @@ are centered for each color segment.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.744 seconds)
+   **Total running time of the script:** ( 0 minutes  1.992 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_plot_gear_shifts_on_track.py:

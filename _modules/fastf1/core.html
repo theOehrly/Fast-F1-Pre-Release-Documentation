@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>fastf1.core &mdash; Fast F1 2.1.13 documentation</title>
+  <title>fastf1.core &mdash; Fast F1 2.2.0-alpha0 documentation</title>
   
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.1.13
+                2.2.0-alpha0
               </div>
             
           
@@ -116,8 +116,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../../examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../fastf1.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code> - Package functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code> - Core module</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../fastf1.html#accessing-events-and-sessions">Accessing Events and Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fastf1.html#caching">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fastf1.html#general-functions-api-reference">General Functions - API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../fastf1.html#events-api">Events API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fastf1.html#cache-api">Cache API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../core.html#data-objects">Data Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../core.html#functions">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../core.html#api-reference">API Reference</a><ul>
@@ -140,10 +149,24 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code> - Api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code> - Utils module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../plotting.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code> - Plotting module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../livetiming.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code> - Live Timing Client</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../events.html#event-schedule-data">Event Schedule Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../events.html#supported-seasons">Supported Seasons</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../events.html#session-identifiers">Session identifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../events.html#functions-for-accessing-schedule-data">Functions for accessing schedule data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../events.html#data-objects">Data Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../events.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../events.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Api Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../livetiming.html#usage-example">Usage Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../livetiming.html#important-notes">Important Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../livetiming.html#command-line-interface">Command Line Interface</a><ul>
@@ -155,7 +178,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../livetiming.html#module-fastf1.livetiming.data">Live Timing Data Object</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../legacy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code> - Provides access to legacy functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Information:</span></p>
 <ul>
@@ -177,6 +200,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -264,8 +288,8 @@
             
   <h1>Source code for fastf1.core</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">:mod:`fastf1.core` - Core module</span>
-<span class="sd">================================</span>
+<span class="sd">Timing and Telemetry Data - :mod:`fastf1.core`</span>
+<span class="sd">==============================================</span>
 
 <span class="sd">The Fast-F1 core is a collection of functions and data objects for accessing</span>
 <span class="sd">and analyzing F1 timing and telemetry data.</span>
@@ -286,22 +310,18 @@
 <span class="sd">       Driver</span>
 
 
-<span class="sd">The :class:`Weekend` object holds some generic information about the race</span>
-<span class="sd">weekend. Furthermore, :class:`Session` objects for the various sessions of</span>
-<span class="sd">a weekend can be created from a :class:`Weekend` object.</span>
-
 <span class="sd">The :class:`Session` object is mainly used as an entry point for loading</span>
 <span class="sd">timing data and telemetry data. The :class:`Session` can create a</span>
 <span class="sd">:class:`Laps` object which contains all timing, track and session status</span>
 <span class="sd">data for a whole session.</span>
 
-<span class="sd">Usually you will be using :func:`get_session` to to get a :class:`Session`</span>
-<span class="sd">or :class:`Weekend` object.</span>
+<span class="sd">Usually you will be using :func:`get_session` to get a :class:`Session`</span>
+<span class="sd">object.</span>
 
 <span class="sd">The :class:`Laps` object holds detailed information about multiples laps.</span>
 
 <span class="sd">The :class:`Lap` object holds the same information as :class:`Laps` but only</span>
-<span class="sd">for one single lap. When selecting a singel lap from a :class:`Laps` object,</span>
+<span class="sd">for one single lap. When selecting a single lap from a :class:`Laps` object,</span>
 <span class="sd">an object of type :class:`Lap` will be returned.</span>
 
 <span class="sd">Apart from only providing data, the :class:`Laps`, :class:`Lap` and</span>
@@ -329,30 +349,10 @@
 
 <span class="kn">import</span> <span class="nn">warnings</span>
 
-<span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Using slow pure-python SequenceMatcher&quot;</span><span class="p">)</span>
-    <span class="c1"># suppress that warning, it&#39;s confusing at best here, we don&#39;t need fast sequence matching</span>
-    <span class="c1"># and the installation (on windows) some effort</span>
-    <span class="kn">from</span> <span class="nn">thefuzz</span> <span class="kn">import</span> <span class="n">fuzz</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;{&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{module: &lt;8}</span><span class="s2"> </span><span class="si">{levelname: &gt;10}</span><span class="s2"> </span><span class="se">\t</span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;{&#39;</span><span class="p">,</span>
+                    <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{module: &lt;8}</span><span class="s2"> </span><span class="si">{levelname: &gt;10}</span><span class="s2"> </span><span class="se">\t</span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="n">TESTING_LOOKUP</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;2020&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;2020-02-19&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-02-20&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-02-21&#39;</span><span class="p">],</span>
-                           <span class="p">[</span><span class="s1">&#39;2020-02-26&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-02-27&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-02-28&#39;</span><span class="p">]],</span>
-                  <span class="s1">&#39;2021&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;2021-03-12&#39;</span><span class="p">,</span> <span class="s1">&#39;2021-03-13&#39;</span><span class="p">,</span> <span class="s1">&#39;2021-03-14&#39;</span><span class="p">]]}</span>
-
-<span class="c1"># TODO: remove; temporary patch to support sprint qualifying</span>
-<span class="n">SPRINT_QUALIFYING_LOOKUP</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="mi">10</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Practice 1&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-16&#39;</span><span class="p">,</span> <span class="s1">&#39;Qualifying&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-16&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;Practice 2&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-17&#39;</span><span class="p">,</span> <span class="s1">&#39;Sprint Qualifying&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-17&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;Race&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-18&#39;</span><span class="p">},</span>
-    <span class="mi">14</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Practice 1&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-09-10&#39;</span><span class="p">,</span> <span class="s1">&#39;Qualifying&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-09-10&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;Practice 2&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-09-11&#39;</span><span class="p">,</span> <span class="s1">&#39;Sprint Qualifying&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-09-11&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;Race&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-09-12&#39;</span><span class="p">},</span>
-    <span class="mi">19</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Practice 1&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-11-12&#39;</span><span class="p">,</span> <span class="s1">&#39;Qualifying&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-11-12&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;Practice 2&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-11-13&#39;</span><span class="p">,</span> <span class="s1">&#39;Sprint Qualifying&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-11-13&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;Race&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-11-14&#39;</span><span class="p">}</span>
-<span class="p">}</span>
 
 <span class="n">D_LOOKUP</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;HAM&#39;</span><span class="p">,</span> <span class="s1">&#39;Mercedes&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">77</span><span class="p">,</span> <span class="s1">&#39;BOT&#39;</span><span class="p">,</span> <span class="s1">&#39;Mercedes&#39;</span><span class="p">],</span>
             <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="s1">&#39;SAI&#39;</span><span class="p">,</span> <span class="s1">&#39;Ferrari&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;LEC&#39;</span><span class="p">,</span> <span class="s1">&#39;Ferrari&#39;</span><span class="p">],</span>
@@ -366,129 +366,37 @@
             <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;LAT&#39;</span><span class="p">,</span> <span class="s1">&#39;Williams&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">63</span><span class="p">,</span> <span class="s1">&#39;RUS&#39;</span><span class="p">,</span> <span class="s1">&#39;Williams&#39;</span><span class="p">]]</span>
 
 
-<div class="viewcode-block" id="get_session"><a class="viewcode-back" href="../../fastf1.html#fastf1.get_session">[docs]</a><span class="k">def</span> <span class="nf">get_session</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">gp</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Create a :class:`Session` or :class:`Weekend` object based on year,</span>
-<span class="sd">    event name and session name.</span>
-<span class="sd">    This function will take care of crafting an object</span>
-<span class="sd">    corresponding to the requested session.</span>
-<span class="sd">    If no session is specified, the full weekend is returned.</span>
-
-<span class="sd">    Examples:</span>
-
-<span class="sd">        Get the second free practice of the first race of 2021::</span>
-
-<span class="sd">            get_session(2021, 1, &#39;FP2&#39;)</span>
-
-<span class="sd">        Get the qualifying of the 2020 Austrian Grand Prix::</span>
-
-<span class="sd">            get_session(2020, &#39;Austria&#39;, &#39;Q&#39;)</span>
-
-<span class="sd">        Get the second day of pre-season testing of 2021::</span>
-
-<span class="sd">            get_session(2021, &#39;testing&#39;, 2)</span>
-
-
-<span class="sd">    Args:</span>
-<span class="sd">        year (number): Session year</span>
-<span class="sd">        gp (number or string): Name or weekend number (1: Australia,</span>
-<span class="sd">                               ..., 21: Abu Dhabi). If gp is a string,</span>
-<span class="sd">                               a fuzzy match will be performed on the</span>
-<span class="sd">                               season rounds and the most likely will be</span>
-<span class="sd">                               selected.</span>
-
-<span class="sd">                               Some examples that will be correctly</span>
-<span class="sd">                               interpreted: &#39;bahrain&#39;, &#39;australia&#39;,</span>
-<span class="sd">                               &#39;abudabi&#39;, &#39;monza&#39;.</span>
-
-<span class="sd">                               Pass &#39;testing&#39; to fetch Barcelona winter</span>
-<span class="sd">                               tests.</span>
-
-<span class="sd">        event (=None): may be &#39;FP1&#39;, &#39;FP2&#39;, &#39;FP3&#39;, &#39;Q&#39;, &#39;SQ&#39; or &#39;R&#39;, if not</span>
-<span class="sd">                       specified you get the full :class:`Weekend`.</span>
-<span class="sd">                       &#39;SQ&#39; stands for Sprint Qualifying which is only</span>
-<span class="sd">                       available in the 2021 season. Note that &#39;FP3&#39; does</span>
-<span class="sd">                       not exist on these race weekends.</span>
-<span class="sd">                       If gp is &#39;testing&#39; event is the test day (1 to 6)</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        :class:`Weekend` or :class:`Session`</span>
-
+<span class="k">def</span> <span class="nf">get_session</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    .. deprecated:: 2.2</span>
+<span class="sd">        replaced by :func:`fastf1.get_session`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span> <span class="ow">and</span> <span class="n">gp</span> <span class="o">==</span> <span class="s1">&#39;testing&#39;</span><span class="p">:</span>
-        <span class="n">pre_season_week</span><span class="p">,</span> <span class="n">event</span> <span class="o">=</span> <span class="n">_get_testing_week_event</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
-        <span class="n">weekend</span> <span class="o">=</span> <span class="n">Weekend</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">pre_season_week</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="n">weekend</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="n">gp</span> <span class="o">=</span> <span class="n">get_round</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">gp</span><span class="p">)</span>
-    <span class="n">weekend</span> <span class="o">=</span> <span class="n">Weekend</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">gp</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;R&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="n">weekend</span><span class="p">,</span> <span class="s1">&#39;Race&#39;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="n">weekend</span><span class="p">,</span> <span class="s1">&#39;Qualifying&#39;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;SQ&#39;</span><span class="p">:</span>  <span class="c1"># TODO: remove; temporary patch to support sprint qualifying</span>
-        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="n">weekend</span><span class="p">,</span> <span class="s1">&#39;Sprint Qualifying&#39;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;FP3&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="n">weekend</span><span class="p">,</span> <span class="s1">&#39;Practice 3&#39;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;FP2&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="n">weekend</span><span class="p">,</span> <span class="s1">&#39;Practice 2&#39;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;FP1&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="n">weekend</span><span class="p">,</span> <span class="s1">&#39;Practice 1&#39;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">event</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid name &#39;</span><span class="si">{</span><span class="n">event</span><span class="si">}</span><span class="s2">&#39; given for argument &quot;</span>
-                         <span class="sa">f</span><span class="s2">&quot;&#39;event&#39;. Valid options are: &quot;</span>
-                         <span class="sa">f</span><span class="s2">&quot;[&#39;R&#39;, &#39;Q&#39;, &#39;SQ&#39;, &#39;FP1&#39;, &#39;FP2&#39;, &#39;FP3&#39;]&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">weekend</span></div>
+    <span class="c1"># TODO remove</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;`fastf1.core.get_session` has been deprecated and will be&quot;</span>
+                  <span class="s2">&quot;removed in a future version.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                  <span class="s2">&quot;Use `fastf1.get_session` instead.&quot;</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">fastf1</span> <span class="kn">import</span> <span class="n">events</span>
+    <span class="k">return</span> <span class="n">events</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">get_round</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">match</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get event number by year and (partial) event name</span>
-
-<span class="sd">    A fuzzy match is performed to find the most likely event for the provided name.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        year (int): Year of the event</span>
-<span class="sd">        match (string): Name of the race or gp (e.g. &#39;Bahrain&#39;)</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        The round number. (2019, &#39;Bahrain&#39;) -&gt; 2</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    .. deprecated:: 2.2</span>
+<span class="sd">        will be removed without replacement;</span>
+<span class="sd">        Use :func:`fastf1.get_event` instead to get an</span>
+<span class="sd">        :class:`~fastf1.events.Event` object which provides</span>
+<span class="sd">        information including the round number for the event.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">build_string</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/&#39;</span><span class="p">)</span>  <span class="c1"># TODO what the hell is this</span>
-        <span class="n">c</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;Circuit&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;Circuit&#39;</span><span class="p">][</span><span class="s1">&#39;Location&#39;</span><span class="p">]</span>  <span class="c1"># noqa: E741 (for now...)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">][</span><span class="n">r</span><span class="p">:]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;raceName&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;circuitId&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
-                <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">][</span><span class="n">r</span><span class="p">:]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;circuitName&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">l</span><span class="p">[</span><span class="s1">&#39;locality&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
-                <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="n">races</span> <span class="o">=</span> <span class="n">ergast</span><span class="o">.</span><span class="n">fetch_season</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
-    <span class="n">to_match</span> <span class="o">=</span> <span class="p">[</span><span class="n">build_string</span><span class="p">(</span><span class="n">block</span><span class="p">)</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">races</span><span class="p">]</span>
-    <span class="n">ratios</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fuzz</span><span class="o">.</span><span class="n">partial_ratio</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">casefold</span><span class="p">(),</span> <span class="n">ref</span><span class="o">.</span><span class="n">casefold</span><span class="p">())</span>
-                       <span class="k">for</span> <span class="n">ref</span> <span class="ow">in</span> <span class="n">to_match</span><span class="p">])</span>
-
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">races</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">ratios</span><span class="p">)][</span><span class="s1">&#39;round&#39;</span><span class="p">])</span>
-
-
-<span class="k">def</span> <span class="nf">_get_testing_week_event</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the correct weekend and event for testing from the</span>
-<span class="sd">    year and day of the test. (where day is 1, 2, 3, ...)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">year</span> <span class="o">==</span> <span class="mi">2020</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">day</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
-            <span class="n">week</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">day</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="k">else</span> <span class="mi">2</span>
-        <span class="k">except</span><span class="p">:</span>  <span class="c1"># noqa: E722 TODO: improve</span>
-            <span class="k">raise</span> <span class="n">InvalidSessionError</span>
-        <span class="n">week_day</span> <span class="o">=</span> <span class="p">((</span><span class="n">day</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="n">pre_season_week</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Pre-Season Test </span><span class="si">{</span><span class="n">week</span><span class="si">}</span><span class="s1">&#39;</span>
-        <span class="n">event</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Practice </span><span class="si">{</span><span class="n">week_day</span><span class="si">}</span><span class="s1">&#39;</span>
-    <span class="k">elif</span> <span class="n">year</span> <span class="o">==</span> <span class="mi">2021</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">day</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
-        <span class="n">pre_season_week</span> <span class="o">=</span> <span class="s1">&#39;Pre-Season Test&#39;</span>
-        <span class="n">event</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Practice </span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s1">&#39;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">InvalidSessionError</span>
-
-    <span class="k">return</span> <span class="n">pre_season_week</span><span class="p">,</span> <span class="n">event</span>
+    <span class="c1"># TODO remove</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;_func:`fastf1.core.get_round` has been deprecated and will &quot;</span>
+                  <span class="s2">&quot;be removed without replacement in a future version.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                  <span class="s2">&quot;Use :func:`fastf1.get_event` instead to get an &quot;</span>
+                  <span class="s2">&quot;:class:`~fastf1.events.Event` object which provides &quot;</span>
+                  <span class="s2">&quot;information including the round number for the event.&quot;</span><span class="p">,</span>
+                  <span class="ne">FutureWarning</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">fastf1</span> <span class="kn">import</span> <span class="n">events</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">match</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">event</span><span class="o">.</span><span class="n">round_number</span>
 
 
 <div class="viewcode-block" id="Telemetry"><a class="viewcode-back" href="../../core.html#fastf1.Telemetry">[docs]</a><span class="k">class</span> <span class="nc">Telemetry</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
@@ -1225,89 +1133,16 @@
 
 
 <div class="viewcode-block" id="Weekend"><a class="viewcode-back" href="../../core.html#fastf1.Weekend">[docs]</a><span class="k">class</span> <span class="nc">Weekend</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Object for accessing weekend specific data.</span>
-
-<span class="sd">    If you want to handle multiple sessions from the same race event you can use a :class:Weekend instance.</span>
-
-<span class="sd">    For example you could do the following::</span>
-
-<span class="sd">        import fastf1 as ff1</span>
-
-<span class="sd">        weekend = ff1.get_session(2019, &#39;Monza&#39;)</span>
-<span class="sd">        quali = weekend.get_quali() # Q Session</span>
-<span class="sd">        race = weekend.get_race() # R Session</span>
-
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    .. deprecated:: 2.2</span>
+<span class="sd">        Use :class:`fastf1.events.Event` instead</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gp</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gp</span> <span class="o">=</span> <span class="n">gp</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_testing</span><span class="p">():</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The Ergast API is not supported for testing&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">year</span> <span class="o">==</span> <span class="mi">2020</span><span class="p">:</span>
-                <span class="n">date</span> <span class="o">=</span> <span class="n">TESTING_LOOKUP</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)][</span><span class="nb">int</span><span class="p">(</span><span class="n">gp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-            <span class="k">elif</span> <span class="n">year</span> <span class="o">==</span> <span class="mi">2021</span><span class="p">:</span>
-                <span class="n">date</span> <span class="o">=</span> <span class="n">TESTING_LOOKUP</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)][</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">InvalidSessionError</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;raceName&#39;</span><span class="p">:</span> <span class="n">gp</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">}</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">ergast</span><span class="o">.</span><span class="n">fetch_weekend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gp</span><span class="p">)</span>
-            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
-                <span class="n">logging</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;Failed to load critical data from Ergast!</span><span class="se">\n\n</span><span class="s2"> Cannot determine the date and name &quot;</span>
-                                 <span class="s2">&quot;of the event. Cannot proceed!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># TODO some backup strategy for this</span>
-                <span class="n">logging</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exception</span><span class="p">))</span>
-                <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">exception</span><span class="p">)</span>
-                <span class="n">exit</span><span class="p">()</span>
-
-<div class="viewcode-block" id="Weekend.get_practice"><a class="viewcode-back" href="../../core.html#fastf1.Weekend.get_practice">[docs]</a>    <span class="k">def</span> <span class="nf">get_practice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the specified practice session.</span>
-<span class="sd">        Args:</span>
-<span class="sd">            number: 1, 2 or 3 - Free practice session number</span>
-<span class="sd">        Returns:</span>
-<span class="sd">            :class:`Session` instance</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;Practice </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="Weekend.get_quali"><a class="viewcode-back" href="../../core.html#fastf1.Weekend.get_quali">[docs]</a>    <span class="k">def</span> <span class="nf">get_quali</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the qualifying session.</span>
-
-<span class="sd">        Returns:</span>
-<span class="sd">            :class:`Session` instance</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;Qualifying&#39;</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="Weekend.get_race"><a class="viewcode-back" href="../../core.html#fastf1.Weekend.get_race">[docs]</a>    <span class="k">def</span> <span class="nf">get_race</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the race session.</span>
-
-<span class="sd">        Returns:</span>
-<span class="sd">            :class:`Session` instance</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">Session</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;Race&#39;</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="Weekend.is_testing"><a class="viewcode-back" href="../../core.html#fastf1.Weekend.is_testing">[docs]</a>    <span class="k">def</span> <span class="nf">is_testing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Indicates whether this &#39;weekend&#39; is a testing event. (In which case is usually is not an actual weekend.)</span>
-
-<span class="sd">        Returns:</span>
-<span class="sd">            bool</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gp</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s1">&#39;Test&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">gp</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span></div>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Weekend name, e.g. &quot;British Grand Prix&quot;</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;raceName&#39;</span><span class="p">]</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Weekend race date (YYYY-MM-DD)</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span></div>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gp</span><span class="p">):</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;`fastf1.core.Weekend` has been deprecated and will be&quot;</span>
+                      <span class="s2">&quot;removed in a future version.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                      <span class="s2">&quot;Use `fastf1.events.Event` instead.&quot;</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">)</span>
+        <span class="kn">from</span> <span class="nn">fastf1</span> <span class="kn">import</span> <span class="n">events</span>
+        <span class="k">return</span> <span class="n">events</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">gp</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Session"><a class="viewcode-back" href="../../core.html#fastf1.Session">[docs]</a><span class="k">class</span> <span class="nc">Session</span><span class="p">:</span>
@@ -1319,16 +1154,17 @@
 <span class="sd">    .. note:: For full functionality lap and telemetry data need to be loaded.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weekend</span><span class="p">,</span> <span class="n">session_name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weekend</span> <span class="o">=</span> <span class="n">weekend</span>
-        <span class="sd">&quot;&quot;&quot;:class:`.Weekend`: Reference to the associated weekend object.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">session_name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="n">event</span>
+        <span class="sd">&quot;&quot;&quot;:class:`~fastf1.events.Event`: Reference to the associated event</span>
+<span class="sd">        object.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">session_name</span>
         <span class="sd">&quot;&quot;&quot;str: Name of this session, for example &#39;Qualifying&#39;, &#39;Race&#39;, &#39;FP1&#39;, ...&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_session_date</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get_session_date</span><span class="p">(</span><span class="n">session_name</span><span class="p">)</span>
         <span class="sd">&quot;&quot;&quot;pandas.Datetime: Date at which this session took place.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">api_path</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">make_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                                      <span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
-                                      <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_path</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">make_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">event_name</span><span class="p">,</span>
+                                      <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">event_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),</span>
+                                      <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span>
         <span class="sd">&quot;&quot;&quot;str: API base path for this session&quot;&quot;&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -1339,12 +1175,12 @@
 <span class="sd">        `fastf1.api.session_status_data()` as dataframe. Available after</span>
 <span class="sd">        calling `Session.load_laps()`&quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">is_testing</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">is_testing</span><span class="p">():</span>
             <span class="c1"># The Ergast API can provide some general information about weekends, drivers, ...</span>
             <span class="c1"># See ergast.com</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="n">ergast</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
-                                           <span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">gp</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="n">ergast</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+                                           <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">round_number</span><span class="p">,</span>
                                            <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
                 <span class="c1"># Ergast will take some time after a session until the data is available</span>
@@ -1368,7 +1204,8 @@
 <span class="sd">        data stream. This value needs to be calculated from telemetry data</span>
 <span class="sd">        and is therefore only available after telemetry data was loaded.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">session_start_time</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="sd">&quot;&quot;&quot;pandas.Timedelta: Session time at which the session was started.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;pandas.Timedelta: Session time at which the session was started</span>
+<span class="sd">        according to the session status data.&quot;&quot;&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">car_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="sd">&quot;&quot;&quot;Dictionary of car telemetry (Speed, RPM, etc.) as received from</span>
@@ -1398,36 +1235,12 @@
                 <span class="s1">&#39;Driver&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="n">driver</span><span class="p">[</span><span class="mi">1</span><span class="p">]},</span>
                 <span class="s1">&#39;Constructor&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">driver</span><span class="p">[</span><span class="mi">2</span><span class="p">]}})</span>
 
-    <span class="k">def</span> <span class="nf">_get_session_date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Session date formatted as &#39;%Y-%m-%d&#39; (e.g. &#39;2019-03-12&#39;)&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">is_testing</span><span class="p">():</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">:=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">year</span><span class="p">))</span> <span class="o">==</span> <span class="s1">&#39;2020&#39;</span><span class="p">:</span>
-                <span class="n">week_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>
-                <span class="n">day_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>
-                <span class="n">date</span> <span class="o">=</span> <span class="n">TESTING_LOOKUP</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="n">week_index</span><span class="p">][</span><span class="n">day_index</span><span class="p">]</span>
-            <span class="k">elif</span> <span class="n">year</span> <span class="o">==</span> <span class="s1">&#39;2021&#39;</span><span class="p">:</span>
-                <span class="n">day_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>
-                <span class="n">date</span> <span class="o">=</span> <span class="n">TESTING_LOOKUP</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">day_index</span><span class="p">]</span>
-
-        <span class="c1"># TODO: remove; temporary patch to support sprint qualifying</span>
-        <span class="k">elif</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2021</span><span class="p">)</span> <span class="ow">and</span>
-              <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">gp</span> <span class="ow">in</span> <span class="n">SPRINT_QUALIFYING_LOOKUP</span><span class="o">.</span><span class="n">keys</span><span class="p">())):</span>
-            <span class="n">date</span> <span class="o">=</span> <span class="n">SPRINT_QUALIFYING_LOOKUP</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">gp</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
-
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Qualifying&#39;</span><span class="p">,</span> <span class="s1">&#39;Practice 3&#39;</span><span class="p">):</span>
-            <span class="c1"># Assuming that quali was one day before race which is not always correct</span>
-            <span class="c1"># TODO Should check if also formula1 makes this assumption</span>
-            <span class="n">offset_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">date</span><span class="p">)</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">DateOffset</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">date</span> <span class="o">=</span> <span class="n">offset_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Practice 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Practice 2&#39;</span><span class="p">):</span>
-            <span class="c1"># Again, assuming that practice 1/2 are the day before quali (except Monaco)</span>
-            <span class="n">_</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Monaco Grand Prix&#39;</span> <span class="k">else</span> <span class="o">-</span><span class="mi">2</span>
-            <span class="n">offset_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">date</span><span class="p">)</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
-            <span class="n">date</span> <span class="o">=</span> <span class="n">offset_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>  <span class="c1"># Race</span>
-            <span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">date</span>
-
-        <span class="k">return</span> <span class="n">date</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weekend</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The property `Session.weekend` has been renamed to &quot;</span>
+                      <span class="s2">&quot;`Session.event`.</span><span class="se">\n</span><span class="s2"> The old property will be removed in&quot;</span>
+                      <span class="s2">&quot;a future version.&quot;</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span>
 
 <div class="viewcode-block" id="Session.load_laps"><a class="viewcode-back" href="../../core.html#fastf1.Session.load_laps">[docs]</a>    <span class="k">def</span> <span class="nf">load_laps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">with_telemetry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">livedata</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Load lap timing information and telemetry data.</span>
@@ -1475,7 +1288,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            instance of :class:`Laps`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading laps for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading laps for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">event_name</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
                      <span class="sa">f</span><span class="s2">&quot; [v</span><span class="si">{</span><span class="n">fastf1</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
 
         <span class="sd">&quot;&quot;&quot;From `timing_data` and `timing_app_data` a summary table is</span>
@@ -2061,11 +1874,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            pandas.DataFrame</span>
 
-<span class="sd">        .. testsetup::</span>
-
-<span class="sd">                &gt;&gt;&gt; fastf1.Cache.enable_cache(&#39;doc_cache&#39;)</span>
-
-<span class="sd">        Example::</span>
+<span class="sd">        .. doctest::</span>
 
 <span class="sd">            &gt;&gt;&gt; session = fastf1.get_session(2019, &#39;Monza&#39;, &#39;Q&#39;)</span>
 <span class="sd">            &gt;&gt;&gt; laps = session.load_laps()</span>
@@ -2083,15 +1892,20 @@
 <span class="sd">            34 0 days 00:34:14.385000    23.0     51.7  ...      37.7           272       0.8</span>
 <span class="sd">            36 0 days 00:36:14.426000    23.0     51.1  ...      38.3           192       0.9</span>
 <span class="sd">            37 0 days 00:37:14.391000    23.3     50.0  ...      38.7           213       0.9</span>
+<span class="sd">            &lt;BLANKLINE&gt;</span>
 <span class="sd">            [275 rows x 8 columns]</span>
 
-<span class="sd">        Joining weather data with lap timing data::</span>
+<span class="sd">        Joining weather data with lap timing data:</span>
 
-<span class="sd">            &gt;&gt;&gt; # prepare the data for joining</span>
+<span class="sd">        .. doctest::</span>
+
+<span class="sd">            &gt;&gt;&gt; import pandas as pd  # needed additionally to fastf1</span>
+
+<span class="sd">            # prepare the data for joining</span>
 <span class="sd">            &gt;&gt;&gt; laps = laps.reset_index(drop=True)</span>
 <span class="sd">            &gt;&gt;&gt; weather_data = weather_data.reset_index(drop=True)</span>
 
-<span class="sd">            &gt;&gt;&gt; # exclude the &#39;Time&#39; column from weather data when joining</span>
+<span class="sd">            # exclude the &#39;Time&#39; column from weather data when joining</span>
 <span class="sd">            &gt;&gt;&gt; joined = pd.concat([laps, weather_data.loc[:, ~(weather_data.columns == &#39;Time&#39;)]], axis=1)</span>
 <span class="sd">            &gt;&gt;&gt; print(joined)</span>
 <span class="sd">                                  Time DriverNumber  ... WindDirection  WindSpeed</span>
@@ -2106,6 +1920,7 @@
 <span class="sd">            272 0 days 00:35:15.794000           88  ...           272        0.8</span>
 <span class="sd">            273 0 days 00:36:38.150000           88  ...           192        0.9</span>
 <span class="sd">            274 0 days 00:38:37.508000           88  ...           213        0.9</span>
+<span class="sd">            &lt;BLANKLINE&gt;</span>
 <span class="sd">            [275 rows x 32 columns]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">wd</span> <span class="o">=</span> <span class="p">[</span><span class="n">lap</span><span class="o">.</span><span class="n">get_weather_data</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">lap</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()]</span>
@@ -2410,11 +2225,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            pandas.Series</span>
 
-<span class="sd">        .. testsetup::</span>
-
-<span class="sd">            &gt;&gt;&gt; fastf1.Cache.enable_cache(&#39;doc_cache&#39;)</span>
-
-<span class="sd">        Example::</span>
+<span class="sd">        .. doctest::</span>
 
 <span class="sd">            &gt;&gt;&gt; session = fastf1.get_session(2019, &#39;Monza&#39;, &#39;Q&#39;)</span>
 <span class="sd">            &gt;&gt;&gt; laps = session.load_laps()</span>
