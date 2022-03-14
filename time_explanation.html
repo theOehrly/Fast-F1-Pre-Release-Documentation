@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Time, Date and Timing - Explanation &mdash; Fast F1 2.2.0-alpha0 documentation</title>
+  <title>Time, Date and Timing - Explanation &mdash; Fast F1 2.2.0-alpha1 documentation</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="How to perform calculations accurately" href="howto_accurate_calculations.html" />
-    <link rel="prev" title="fastf1.legacy - Provides access to legacy functionality" href="legacy.html" /> 
+    <link rel="prev" title="Legacy Functionality - fastf1.legacy" href="legacy.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2.0-alpha0
+                2.2.0-alpha1
               </div>
             
           
@@ -118,8 +118,17 @@
 <li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fastf1.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code> - Package functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="core.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code> - Core module</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fastf1.html#accessing-events-and-sessions">Accessing Events and Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastf1.html#caching">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastf1.html#general-functions-api-reference">General Functions - API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fastf1.html#events-api">Events API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fastf1.html#cache-api">Cache API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="core.html#data-objects">Data Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#functions">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#api-reference">API Reference</a><ul>
@@ -142,11 +151,25 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="events.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code> - Events module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code> - Api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code> - Utils module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotting.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code> - Plotting module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="livetiming.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code> - Live Timing Client</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="events.html#event-schedule-data">Event Schedule Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events.html#supported-seasons">Supported Seasons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html#event-schedule">Event Schedule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#session-identifiers">Session identifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#functions-for-accessing-schedule-data">Functions for accessing schedule data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#data-objects">Data Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Api Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#usage-example">Usage Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#important-notes">Important Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#command-line-interface">Command Line Interface</a><ul>
@@ -158,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="livetiming.html#module-fastf1.livetiming.data">Live Timing Data Object</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="legacy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code> - Provides access to legacy functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Information:</span></p>
 <ul class="current">
@@ -180,7 +203,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha1">v2.2.0-alpha1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha0">v2.2.0-alpha0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -395,7 +419,7 @@ data but the accuracy can not be verified to millisecond precision.</p>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="howto_accurate_calculations.html" class="btn btn-neutral float-right" title="How to perform calculations accurately" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="legacy.html" class="btn btn-neutral float-left" title="fastf1.legacy - Provides access to legacy functionality" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="legacy.html" class="btn btn-neutral float-left" title="Legacy Functionality - fastf1.legacy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Speed visualization on track map &mdash; Fast F1 2.2.0-alpha0 documentation</title>
+  <title>Speed visualization on track map &mdash; Fast F1 2.2.0-alpha1 documentation</title>
   
 
   
@@ -46,7 +46,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="fastf1 - Package functions" href="../fastf1.html" />
+    <link rel="next" title="General Functions - fastf1" href="../fastf1.html" />
     <link rel="prev" title="Qualifying results overview" href="plot_qualifying_results.html" /> 
 </head>
 
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2.0-alpha0
+                2.2.0-alpha1
               </div>
             
           
@@ -118,8 +118,17 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Speed visualization on track map</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../fastf1.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code> - Package functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code> - Core module</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fastf1.html#accessing-events-and-sessions">Accessing Events and Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fastf1.html#caching">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fastf1.html#general-functions-api-reference">General Functions - API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../fastf1.html#events-api">Events API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fastf1.html#cache-api">Cache API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../core.html#data-objects">Data Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core.html#functions">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core.html#api-reference">API Reference</a><ul>
@@ -134,7 +143,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../core.html#laps">Laps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../core.html#lap">Lap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../core.html#telemetry">Telemetry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../core.html#driver">Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../core.html#results">Results</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../core.html#exceptions">Exceptions</a></li>
@@ -142,11 +151,25 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../events.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code> - Events module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code> - Api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code> - Utils module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../plotting.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code> - Plotting module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../livetiming.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code> - Live Timing Client</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../events.html#event-schedule-data">Event Schedule Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../events.html#supported-seasons">Supported Seasons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../events.html#event-schedule">Event Schedule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html#session-identifiers">Session identifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html#functions-for-accessing-schedule-data">Functions for accessing schedule data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html#data-objects">Data Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../events.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../events.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Api Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../livetiming.html#usage-example">Usage Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../livetiming.html#important-notes">Important Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../livetiming.html#command-line-interface">Command Line Interface</a><ul>
@@ -158,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../livetiming.html#module-fastf1.livetiming.data">Live Timing Data Object</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../legacy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code> - Provides access to legacy functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Information:</span></p>
 <ul>
@@ -180,7 +203,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha1">v2.2.0-alpha1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha0">v2.2.0-alpha0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -301,8 +325,8 @@ we want to plot.</p>
 <p>Next, we load the session and select the desired data.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">session</span> <span class="o">=</span> <span class="n">ff1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">wknd</span><span class="p">,</span> <span class="n">ses</span><span class="p">)</span>
 <span class="n">weekend</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">event</span>
-<span class="n">laps</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">load_laps</span><span class="p">(</span><span class="n">with_telemetry</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">lap</span> <span class="o">=</span> <span class="n">laps</span><span class="o">.</span><span class="n">pick_driver</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span><span class="o">.</span><span class="n">pick_fastest</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="n">lap</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">laps</span><span class="o">.</span><span class="n">pick_driver</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span><span class="o">.</span><span class="n">pick_fastest</span><span class="p">()</span>
 
 <span class="c1"># Get telemetry data</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">lap</span><span class="o">.</span><span class="n">telemetry</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span>              <span class="c1"># values for x-axis</span>
@@ -354,12 +378,12 @@ line collection needs to be (numlines) x (points per line) x 2 (for x and y)</p>
 </pre></div>
 </div>
 <img src="../_images/sphx_glr_plot_speed_on_track_001.png" srcset="../_images/sphx_glr_plot_speed_on_track_001.png" alt="Austrian Grand Prix 2021 - RIC - Speed" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:351: UserWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
-Use `Event[&#39;eventName&#39;]` or `Event.eventName` instead.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:614: FutureWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
+Use `Event[&#39;event_name&#39;]` or `Event.event_name` instead.
   warnings.warn(
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.874 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  22.658 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-gallery-plot-speed-on-track-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/d3da706681ce1bd2d428a095e614b0b2/plot_speed_on_track.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_speed_on_track.py</span></code></a></p>
@@ -377,7 +401,7 @@ Use `Event[&#39;eventName&#39;]` or `Event.eventName` instead.
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../fastf1.html" class="btn btn-neutral float-right" title="fastf1 - Package functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../fastf1.html" class="btn btn-neutral float-right" title="General Functions - fastf1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="plot_qualifying_results.html" class="btn btn-neutral float-left" title="Qualifying results overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

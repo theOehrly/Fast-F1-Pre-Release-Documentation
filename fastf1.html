@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>General Functions - fastf1 &mdash; Fast F1 2.2.0-alpha0 documentation</title>
+  <title>General Functions - fastf1 &mdash; Fast F1 2.2.0-alpha1 documentation</title>
   
 
   
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2.0-alpha0
+                2.2.0-alpha1
               </div>
             
           
@@ -143,7 +143,7 @@
 <li class="toctree-l4"><a class="reference internal" href="core.html#laps">Laps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core.html#lap">Lap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core.html#telemetry">Telemetry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core.html#driver">Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core.html#results">Results</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="core.html#exceptions">Exceptions</a></li>
@@ -203,7 +203,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha1">v2.2.0-alpha1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha0">v2.2.0-alpha0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -362,6 +363,13 @@ enable caching.</p>
 <span class="sig-prename descclassname"><span class="pre">fastf1.</span></span><span class="sig-name descname"><span class="pre">get_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_ergast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/events.html#get_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.get_session" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a> object based on year, event name
 and session identifier.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function will return a <a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a>
+object, but it will not load any session specific data like lap timing,
+telemetry, … yet. For this, you will need to call
+<a class="reference internal" href="core.html#fastf1.core.Session.load" title="fastf1.core.Session.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">load()</span></code></a> on the returned object.</p>
+</div>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 2.2: </span>Creating <a class="reference internal" href="events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a> objects (previously
 <a class="reference internal" href="core.html#fastf1.core.Weekend" title="fastf1.core.Weekend"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Weekend</span></code></a>) by not specifying an <code class="docutils literal notranslate"><span class="pre">identifier</span></code> has

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>fastf1.legacy &mdash; Fast F1 2.2.0-alpha0 documentation</title>
+  <title>fastf1.legacy &mdash; Fast F1 2.2.0-alpha1 documentation</title>
   
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2.0-alpha0
+                2.2.0-alpha1
               </div>
             
           
@@ -141,7 +141,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../core.html#laps">Laps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core.html#lap">Lap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../core.html#telemetry">Telemetry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../core.html#driver">Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core.html#results">Results</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../core.html#exceptions">Exceptions</a></li>
@@ -152,6 +152,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../events.html#event-schedule-data">Event Schedule Data</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../events.html#supported-seasons">Supported Seasons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../events.html#event-schedule">Event Schedule</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../events.html#session-identifiers">Session identifiers</a></li>
@@ -200,7 +201,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-2-0-alpha1">v2.2.0-alpha1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-2-0-alpha0">v2.2.0-alpha0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -317,13 +319,13 @@
 <span class="sd">    # fastf1.Cache.enable_cache(&quot;path/to/cache&quot;)</span>
 
 <span class="sd">    session = fastf1.get_session(2020, &#39;Italy&#39;, &#39;R&#39;)</span>
-<span class="sd">    laps = session.load_laps(with_telemetry=True)</span>
+<span class="sd">    session.load()</span>
 
 <span class="sd">    DRIVER = &#39;VER&#39;  # which driver; need to specify number and abbreviation</span>
 <span class="sd">    DRIVER_NUMBER = &#39;33&#39;</span>
 <span class="sd">    LAP_N = 10  # which lap number to plot</span>
 
-<span class="sd">    drv_laps = laps.pick_driver(DRIVER)</span>
+<span class="sd">    drv_laps = session.laps.pick_driver(DRIVER)</span>
 <span class="sd">    drv_lap = drv_laps[(drv_laps[&#39;LapNumber&#39;] == LAP_N)]  # select the lap</span>
 
 <span class="sd">    # create a matplotlib figure</span>
@@ -449,7 +451,7 @@
         <span class="n">track</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">reference_z</span>
 
         <span class="n">track_tree</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">cKDTree</span><span class="p">(</span><span class="n">track</span><span class="p">)</span>
-        <span class="n">drivers_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">drivers</span><span class="p">))</span>
+        <span class="n">drivers_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">drivers</span><span class="o">.</span><span class="n">driver_number</span><span class="p">))</span>
         <span class="n">stream_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">pos_data</span><span class="p">[</span><span class="n">drivers_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
         <span class="n">dmap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">stream_length</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">drivers_list</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 
@@ -531,7 +533,7 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># no data to base calculations on; create empty results</span>
         <span class="n">driver_ahead</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">drv</span> <span class="ow">in</span> <span class="n">session</span><span class="o">.</span><span class="n">drivers</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">drv</span> <span class="ow">in</span> <span class="n">session</span><span class="o">.</span><span class="n">drivers</span><span class="o">.</span><span class="n">driver_number</span><span class="p">:</span>
             <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;DistanceToDriverAhead&#39;</span><span class="p">:</span> <span class="p">(),</span> <span class="s1">&#39;DriverAhead&#39;</span><span class="p">:</span> <span class="p">()}</span>
             <span class="n">driver_ahead</span><span class="p">[</span><span class="n">drv</span><span class="p">]</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">pos_data</span><span class="p">[</span><span class="n">drv</span><span class="p">]</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
 

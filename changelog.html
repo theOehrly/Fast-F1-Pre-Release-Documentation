@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Changelog &mdash; Fast F1 2.2.0-alpha0 documentation</title>
+  <title>Changelog &mdash; Fast F1 2.2.0-alpha1 documentation</title>
   
 
   
@@ -70,7 +70,7 @@
             
             
               <div class="version">
-                2.2.0-alpha0
+                2.2.0-alpha1
               </div>
             
           
@@ -142,7 +142,7 @@
 <li class="toctree-l4"><a class="reference internal" href="core.html#laps">Laps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core.html#lap">Lap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core.html#telemetry">Telemetry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core.html#driver">Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core.html#results">Results</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="core.html#exceptions">Exceptions</a></li>
@@ -202,7 +202,8 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v2-2-0-alpha1">v2.2.0-alpha1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v2-2-0-alpha0">v2.2.0-alpha0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -292,8 +293,75 @@
             
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="v2-2-0-alpha-220228">
-<h2>v2.2.0-alpha-220228<a class="headerlink" href="#v2-2-0-alpha-220228" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v2-2-0-alpha1">
+<h2>v2.2.0-alpha1<a class="headerlink" href="#v2-2-0-alpha1" title="Permalink to this headline">¶</a></h2>
+<p>Changes and New Features:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Introduces the new objects <a class="reference internal" href="core.html#fastf1.core.SessionResults" title="fastf1.core.SessionResults"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.SessionResults</span></code></a> and
+<a class="reference internal" href="core.html#fastf1.core.DriverResult" title="fastf1.core.DriverResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.DriverResult</span></code></a>. These classes are built on top of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Series</span></code>. They provide
+information about all drivers that participated in a session.
+This information includes driver numbers, names, team names, finishing
+results, …
+Session results are available for all sessions supported by the
+Ergast database.</p></li>
+<li><p>A hard coded list of drivers is no longer required for testing sessions.
+This data can now be pulled from the api as well.</p></li>
+<li><p>A more understandable error will be raised if properties of the
+<a class="reference internal" href="core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a> object are accessed which are not yet
+available because the relevant data has not been loaded.</p></li>
+</ul>
+</div></blockquote>
+<p>Breaking Changes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The property <a class="reference internal" href="core.html#fastf1.core.Session.results" title="fastf1.core.Session.results"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fastf1.core.Session.results</span></code></a> is now an instance of
+<a class="reference internal" href="core.html#fastf1.core.SessionResults" title="fastf1.core.SessionResults"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.SessionResults</span></code></a> instead of <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>.</p></li>
+<li><p>The datatype of the telemetry ‘Brake’ data channel is changed from
+<code class="docutils literal notranslate"><span class="pre">int</span></code> to <code class="docutils literal notranslate"><span class="pre">bool</span></code>, as brake data was never actually more accurate
+than this. The representation as integer (percentage) values was
+misleading.</p></li>
+</ul>
+</div></blockquote>
+<p>Deprecations:</p>
+<blockquote>
+<div><ul>
+<li><p><a class="reference internal" href="core.html#fastf1.core.Session.load_laps" title="fastf1.core.Session.load_laps"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.core.Session.load_laps()</span></code></a> has been deprecated. Use
+<a class="reference internal" href="core.html#fastf1.core.Session.load" title="fastf1.core.Session.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.core.Session.load()</span></code></a> instead, which offers more flexibility
+for deciding which data should be loaded. The new method will no longer
+return a <a class="reference internal" href="core.html#fastf1.core.Laps" title="fastf1.core.Laps"><code class="xref py py-class docutils literal notranslate"><span class="pre">Laps</span></code></a> object! You should access the
+<a class="reference internal" href="core.html#fastf1.core.Laps" title="fastf1.core.Laps"><code class="xref py py-class docutils literal notranslate"><span class="pre">Laps</span></code></a> object through
+<a class="reference internal" href="core.html#fastf1.core.Session.laps" title="fastf1.core.Session.laps"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fastf1.core.Session.laps</span></code></a></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Driver</span></code> has been replace with
+<a class="reference internal" href="core.html#fastf1.core.DriverResult" title="fastf1.core.DriverResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.DriverResult</span></code></a> which has a different signature.</p></li>
+<li><p>The attributes <code class="docutils literal notranslate"><span class="pre">grid</span></code>, <code class="docutils literal notranslate"><span class="pre">position</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">familyname</span></code> and
+<code class="docutils literal notranslate"><span class="pre">team</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Driver</span></code> have been deprecated.
+The replacement object <a class="reference internal" href="core.html#fastf1.core.DriverResult" title="fastf1.core.DriverResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.DriverResult</span></code></a> subclasses
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Series</span></code>. The standard ways for accessing pandas Series’
+values should be used. The attributes have been additionally renamed in
+their Series representation.
+For example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Driver.name</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">DriverResult.FirstName</span></code> or
+<code class="docutils literal notranslate"><span class="pre">DriverResult['FirstName']</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Driver.familyname</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">DriverResult.LastName</span></code> or
+<code class="docutils literal notranslate"><span class="pre">DriverResult['LastName']</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Driver.team</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">DriverResult.TeamName</span></code> or
+<code class="docutils literal notranslate"><span class="pre">DriverResult['TeamName']</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Driver.grid</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">DriverResult.GridPosition</span></code> or
+<code class="docutils literal notranslate"><span class="pre">DriverResult['GridPosition']</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Driver.position</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">DriverResult.Position</span></code> or
+<code class="docutils literal notranslate"><span class="pre">DriverResult['Position']</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="v2-2-0-alpha0">
+<h2>v2.2.0-alpha0<a class="headerlink" href="#v2-2-0-alpha0" title="Permalink to this headline">¶</a></h2>
 <p>This release introduces a range of new features, bug fixes and improvements.
 While backwards compatibility has been kept in mind, some breaking changes
 are required.</p>
@@ -336,11 +404,6 @@ created through <a class="reference internal" href="fastf1.html#fastf1.get_sessi
 <a class="reference internal" href="fastf1.html#fastf1.get_testing_session" title="fastf1.get_testing_session"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.get_testing_session()</span></code></a> instead.</p></li>
 <li><p><a class="reference internal" href="core.html#fastf1.core.Session.date" title="fastf1.core.Session.date"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fastf1.core.Session.date</span></code></a> is now a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code>
 instead of a string.</p></li>
-</ul>
-</div></blockquote>
-<p>Potentially breaking changes:</p>
-<blockquote>
-<div><ul class="simple">
 <li><p>The signature <code class="docutils literal notranslate"><span class="pre">fastf1.core.Session.__init__(weekend,</span> <span class="pre">session_name)</span></code>
 has been changed to
 <code class="docutils literal notranslate"><span class="pre">fastf1.core.Session.__init__(event,</span> <span class="pre">session_name)</span></code> to adhere to
@@ -375,7 +438,7 @@ For example:</p>
 </ul>
 </div></blockquote>
 </li>
-<li><p>The attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">fastf1.core.Session.weekend</span></code> has been replaced by
+<li><p>The attribute <a class="reference internal" href="core.html#fastf1.core.Session.weekend" title="fastf1.core.Session.weekend"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fastf1.core.Session.weekend</span></code></a> has been replaced by
 <a class="reference internal" href="core.html#fastf1.core.Session.event" title="fastf1.core.Session.event"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fastf1.core.Session.event</span></code></a> to adhere to new naming conventions.</p></li>
 <li><p>The function <a class="reference internal" href="core.html#fastf1.core.get_round" title="fastf1.core.get_round"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.core.get_round()</span></code></a> has been deprecated and will be
 removed without replacement in v2.3. Use <a class="reference internal" href="fastf1.html#fastf1.get_event" title="fastf1.get_event"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.get_event()</span></code></a>

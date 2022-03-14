@@ -77,8 +77,8 @@ Next, we load the session and select the desired data.
 
     session = ff1.get_session(year, wknd, ses)
     weekend = session.event
-    laps = session.load_laps(with_telemetry=True)
-    lap = laps.pick_driver(driver).pick_fastest()
+    session.load()
+    lap = session.laps.pick_driver(driver).pick_fastest()
 
     # Get telemetry data
     x = lap.telemetry['X']              # values for x-axis
@@ -171,8 +171,8 @@ After this, we can actually plot the data.
 
  .. code-block:: none
 
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:351: UserWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
-    Use `Event['eventName']` or `Event.eventName` instead.
+    C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:614: FutureWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
+    Use `Event['event_name']` or `Event.event_name` instead.
       warnings.warn(
 
 
@@ -181,7 +181,7 @@ After this, we can actually plot the data.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.874 seconds)
+   **Total running time of the script:** ( 0 minutes  22.658 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_plot_speed_on_track.py:

@@ -41,8 +41,8 @@ Plot the qualifying result with visualization the fastest times.
     # we only want support for timedelta plotting in this example
     fastf1.plotting.setup_mpl(mpl_timedelta_support=True, color_scheme=None, misc_mpl_mods=False)
 
-    quali = fastf1.get_session(2021, 'Spanish Grand Prix', 'Q')
-    laps = quali.load_laps()
+    session = fastf1.get_session(2021, 'Spanish Grand Prix', 'Q')
+    session.load()
 
 
 
@@ -61,7 +61,7 @@ First, we need to get an array of all drivers.
 .. code-block:: default
 
 
-    drivers = pd.unique(laps['Driver'])
+    drivers = pd.unique(session.laps['Driver'])
     print(drivers)
 
 
@@ -75,8 +75,8 @@ First, we need to get an array of all drivers.
 
  .. code-block:: none
 
-    ['RIC' 'NOR' 'VET' 'LAT' 'RAI' 'MAZ' 'GAS' 'PER' 'ALO' 'LEC' 'STR' 'TSU'
-     'OCO' 'VER' 'HAM' 'MSC' 'SAI' 'RUS' 'BOT' 'GIO']
+    ['HAM' 'VER' 'BOT' 'LEC' 'OCO' 'SAI' 'RIC' 'PER' 'NOR' 'ALO' 'STR' 'GAS'
+     'VET' 'GIO' 'RUS' 'TSU' 'RAI' 'MSC' 'LAT' 'MAZ']
 
 
 
@@ -94,7 +94,7 @@ number them nicely by starting position.
 
     list_fastest_laps = list()
     for drv in drivers:
-        drvs_fastest_lap = laps.pick_driver(drv).pick_fastest()
+        drvs_fastest_lap = session.laps.pick_driver(drv).pick_fastest()
         list_fastest_laps.append(drvs_fastest_lap)
     fastest_laps = Laps(list_fastest_laps).sort_values(by='LapTime').reset_index(drop=True)
 
@@ -153,26 +153,26 @@ and 'LapTimeDelta' columns.
  .. code-block:: none
 
        Driver                LapTime           LapTimeDelta
-    0     NOR 0 days 00:01:41.993000        0 days 00:00:00
-    1     SAI 0 days 00:01:42.510000 0 days 00:00:00.517000
-    2     RUS 0 days 00:01:42.983000 0 days 00:00:00.990000
-    3     HAM 0 days 00:01:44.050000 0 days 00:00:02.057000
-    4     RIC 0 days 00:01:44.156000 0 days 00:00:02.163000
-    5     ALO 0 days 00:01:44.204000 0 days 00:00:02.211000
-    6     BOT 0 days 00:01:44.710000 0 days 00:00:02.717000
-    7     STR 0 days 00:01:44.956000 0 days 00:00:02.963000
-    8     PER 0 days 00:01:45.337000 0 days 00:00:03.344000
-    9     OCO 0 days 00:01:45.865000 0 days 00:00:03.872000
-    10    VET 0 days 00:01:46.573000 0 days 00:00:04.580000
-    11    GAS 0 days 00:01:46.641000 0 days 00:00:04.648000
-    12    TSU 0 days 00:01:46.751000 0 days 00:00:04.758000
-    13    LAT 0 days 00:01:48.252000 0 days 00:00:06.259000
-    14    LEC 0 days 00:01:48.470000 0 days 00:00:06.477000
-    15    RAI 0 days 00:01:49.586000 0 days 00:00:07.593000
-    16    MSC 0 days 00:01:49.830000 0 days 00:00:07.837000
-    17    GIO 0 days 00:01:51.023000 0 days 00:00:09.030000
-    18    MAZ 0 days 00:01:53.764000 0 days 00:00:11.771000
-    19    VER 0 days 00:01:59.522000 0 days 00:00:17.529000
+    0     HAM 0 days 00:01:16.741000        0 days 00:00:00
+    1     VER 0 days 00:01:16.777000 0 days 00:00:00.036000
+    2     BOT 0 days 00:01:16.873000 0 days 00:00:00.132000
+    3     LEC 0 days 00:01:17.510000 0 days 00:00:00.769000
+    4     OCO 0 days 00:01:17.580000 0 days 00:00:00.839000
+    5     SAI 0 days 00:01:17.620000 0 days 00:00:00.879000
+    6     RIC 0 days 00:01:17.622000 0 days 00:00:00.881000
+    7     PER 0 days 00:01:17.669000 0 days 00:00:00.928000
+    8     NOR 0 days 00:01:17.696000 0 days 00:00:00.955000
+    9     ALO 0 days 00:01:17.966000 0 days 00:00:01.225000
+    10    STR 0 days 00:01:17.974000 0 days 00:00:01.233000
+    11    GAS 0 days 00:01:17.982000 0 days 00:00:01.241000
+    12    VET 0 days 00:01:18.079000 0 days 00:00:01.338000
+    13    GIO 0 days 00:01:18.356000 0 days 00:00:01.615000
+    14    RUS 0 days 00:01:18.445000 0 days 00:00:01.704000
+    15    TSU 0 days 00:01:18.556000 0 days 00:00:01.815000
+    16    RAI 0 days 00:01:18.917000 0 days 00:00:02.176000
+    17    MSC 0 days 00:01:19.117000 0 days 00:00:02.376000
+    18    LAT 0 days 00:01:19.219000 0 days 00:00:02.478000
+    19    MAZ 0 days 00:01:19.807000 0 days 00:00:03.066000
 
 
 
@@ -238,7 +238,7 @@ Finally, give the plot a meaningful title
 
     lap_time_string = strftimedelta(pole_lap['LapTime'], '%m:%s.%ms')
 
-    plt.suptitle(f"{quali.event.name} {quali.event.year} Qualifying\n"
+    plt.suptitle(f"{session.event.name} {session.event.year} Qualifying\n"
                  f"Fastest Lap: {lap_time_string} ({pole_lap['Driver']})")
 
     plt.show()
@@ -246,7 +246,7 @@ Finally, give the plot a meaningful title
 
 
 .. image-sg:: /examples_gallery/images/sphx_glr_plot_qualifying_results_001.png
-   :alt: Russian Grand Prix 2021 Qualifying Fastest Lap: 01:41.993 (NOR)
+   :alt: Spanish Grand Prix 2021 Qualifying Fastest Lap: 01:16.741 (HAM)
    :srcset: /examples_gallery/images/sphx_glr_plot_qualifying_results_001.png
    :class: sphx-glr-single-img
 
@@ -257,8 +257,8 @@ Finally, give the plot a meaningful title
 
  .. code-block:: none
 
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:351: UserWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
-    Use `Event['eventName']` or `Event.eventName` instead.
+    C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:614: FutureWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
+    Use `Event['event_name']` or `Event.event_name` instead.
       warnings.warn(
 
 
@@ -267,7 +267,7 @@ Finally, give the plot a meaningful title
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.675 seconds)
+   **Total running time of the script:** ( 0 minutes  1.573 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_plot_qualifying_results.py:

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Getting started with the basics &mdash; Fast F1 2.2.0-alpha0 documentation</title>
+  <title>Getting started with the basics &mdash; Fast F1 2.2.0-alpha1 documentation</title>
   
 
   
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2.0-alpha0
+                2.2.0-alpha1
               </div>
             
           
@@ -143,7 +143,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../core.html#laps">Laps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../core.html#lap">Lap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../core.html#telemetry">Telemetry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../core.html#driver">Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../core.html#results">Results</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../core.html#exceptions">Exceptions</a></li>
@@ -154,6 +154,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../events.html#event-schedule-data">Event Schedule Data</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../events.html#supported-seasons">Supported Seasons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../events.html#event-schedule">Event Schedule</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../events.html#session-identifiers">Session identifiers</a></li>
@@ -202,7 +203,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha1">v2.2.0-alpha1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha0">v2.2.0-alpha0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -345,8 +347,8 @@ session object.</p>
 <p>If you do not specify which session you want to load, <code class="docutils literal notranslate"><span class="pre">.get_session()</span></code>
 will return a <a class="reference internal" href="../core.html#fastf1.core.Weekend" title="fastf1.core.Weekend"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Weekend</span></code></a> object instead of a session.
 The weekend object provides methods which return the individual sessions.</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">weekend</span>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event</span>
 <span class="go">round_number                                                      7</span>
 <span class="go">country                                                      France</span>
 <span class="go">location                                               Le Castellet</span>
@@ -366,7 +368,7 @@ The weekend object provides methods which return the individual sessions.</p>
 <span class="go">session5_date                                   2021-06-20 00:00:00</span>
 <span class="go">f1_api_support                                                 True</span>
 <span class="go">Name: French Grand Prix, dtype: object</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">weekend</span><span class="o">.</span><span class="n">get_race</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">get_race</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">name</span>
 <span class="go">&#39;Race&#39;</span>
 </pre></div>
@@ -411,23 +413,23 @@ proper intelligent search engine. So check your results.</p>
 <h2>Working with laps and lap times<a class="headerlink" href="#working-with-laps-and-lap-times" title="Permalink to this headline">¶</a></h2>
 <p>We have loaded a session now but it has been rather boring so far. So lets make it
 a bit more interesting and take a look at some individual laps.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">quali</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;French Grand Prix&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">laps</span> <span class="o">=</span> <span class="n">quali</span><span class="o">.</span><span class="n">load_laps</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">laps</span>
-<span class="go">                      Time DriverNumber  ... TrackStatus  IsAccurate</span>
-<span class="go">0   0 days 00:28:44.908000           33  ...          25       False</span>
-<span class="go">1   0 days 00:31:14.909000           33  ...           1       False</span>
-<span class="go">2   0 days 00:32:45.910000           33  ...           1        True</span>
-<span class="go">3   0 days 00:50:42.329000           33  ...          25       False</span>
-<span class="go">4   0 days 00:52:59.529000           33  ...           1       False</span>
-<span class="go">..                     ...          ...  ...         ...         ...</span>
-<span class="go">265 0 days 00:31:39.717000            9  ...           1       False</span>
-<span class="go">266 0 days 00:33:13.271000            9  ...           1        True</span>
-<span class="go">267 0 days 00:38:02.565000            9  ...           1       False</span>
-<span class="go">268 0 days 00:40:30.783000            9  ...           1       False</span>
-<span class="go">269 0 days 00:42:11.850000            9  ...          25       False</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;French Grand Prix&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">laps</span>
+<span class="go">                      Time DriverNumber  ... IsAccurate            LapStartDate</span>
+<span class="go">0   0 days 00:28:44.908000           33  ...      False 2021-06-19 13:03:06.950</span>
+<span class="go">1   0 days 00:31:14.909000           33  ...      False 2021-06-19 13:14:12.111</span>
+<span class="go">2   0 days 00:32:45.910000           33  ...       True 2021-06-19 13:16:42.112</span>
+<span class="go">3   0 days 00:50:42.329000           33  ...      False 2021-06-19 13:18:13.113</span>
+<span class="go">4   0 days 00:52:59.529000           33  ...      False 2021-06-19 13:36:09.532</span>
+<span class="go">..                     ...          ...  ...        ...                     ...</span>
+<span class="go">265 0 days 00:39:10.594000           18  ...      False 2021-06-19 13:22:15.102</span>
+<span class="go">266 0 days 00:41:23.178000           18  ...       True 2021-06-19 13:24:37.797</span>
+<span class="go">267 0 days 00:41:30.642000           18  ...      False 2021-06-19 13:26:50.381</span>
+<span class="go">268 0 days 00:17:40.791000           22  ...      False 2021-06-19 13:00:22.952</span>
+<span class="go">269 0 days 00:26:20.982000           22  ...      False 2021-06-19 13:03:07.994</span>
 
-<span class="go">[270 rows x 25 columns]</span>
+<span class="go">[270 rows x 26 columns]</span>
 </pre></div>
 </div>
 <p>That’s 250 laps right there and 25 columns of information. If you are familiar
@@ -436,14 +438,14 @@ not familiar with Pandas at all, it might be helpful to check out a short
 tutorial.)</p>
 <p>As this is basically a Pandas DataFrame we can take a look at what columns
 there are.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">laps</span><span class="o">.</span><span class="n">columns</span>  
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">laps</span><span class="o">.</span><span class="n">columns</span>  
 <span class="go">Index([&#39;Time&#39;, &#39;DriverNumber&#39;, &#39;LapTime&#39;, &#39;LapNumber&#39;, &#39;Stint&#39;, &#39;PitOutTime&#39;,</span>
 <span class="go">       &#39;PitInTime&#39;, &#39;Sector1Time&#39;, &#39;Sector2Time&#39;, &#39;Sector3Time&#39;,</span>
 <span class="go">       &#39;Sector1SessionTime&#39;, &#39;Sector2SessionTime&#39;, &#39;Sector3SessionTime&#39;,</span>
 <span class="go">       &#39;SpeedI1&#39;, &#39;SpeedI2&#39;, &#39;SpeedFL&#39;, &#39;SpeedST&#39;, &#39;Compound&#39;, &#39;TyreLife&#39;,</span>
 <span class="go">       &#39;FreshTyre&#39;, &#39;LapStartTime&#39;, &#39;Team&#39;, &#39;Driver&#39;, &#39;TrackStatus&#39;,</span>
-<span class="go">       &#39;IsAccurate&#39;],</span>
-<span class="go">       dtype=&#39;object&#39;)</span>
+<span class="go">       &#39;IsAccurate&#39;, &#39;LapStartDate&#39;],</span>
+<span class="go">      dtype=&#39;object&#39;)</span>
 </pre></div>
 </div>
 <p>The detailed explanation for all these columns can be found in the
@@ -453,7 +455,7 @@ other data objects it provides some more features specifically for working
 with F1 data.</p>
 <p>One of these additional features are methods for selecting specific laps.
 So let’s see what the fastest laptime was and who is on pole.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fastest_lap</span> <span class="o">=</span> <span class="n">laps</span><span class="o">.</span><span class="n">pick_fastest</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fastest_lap</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">laps</span><span class="o">.</span><span class="n">pick_fastest</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fastest_lap</span><span class="p">[</span><span class="s1">&#39;LapTime&#39;</span><span class="p">]</span>
 <span class="go">Timedelta(&#39;0 days 00:01:29.990000&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fastest_lap</span><span class="p">[</span><span class="s1">&#39;Compound&#39;</span><span class="p">]</span>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Getting Started &mdash; Fast F1 2.2.0-alpha0 documentation</title>
+  <title>Getting Started &mdash; Fast F1 2.2.0-alpha1 documentation</title>
   
 
   
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.2.0-alpha0
+                2.2.0-alpha1
               </div>
             
           
@@ -143,7 +143,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../core.html#laps">Laps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../core.html#lap">Lap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../core.html#telemetry">Telemetry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../core.html#driver">Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../core.html#results">Results</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../core.html#exceptions">Exceptions</a></li>
@@ -154,6 +154,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../events.html#event-schedule-data">Event Schedule Data</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../events.html#supported-seasons">Supported Seasons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../events.html#event-schedule">Event Schedule</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../events.html#session-identifiers">Session identifiers</a></li>
@@ -202,7 +203,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha1">v2.2.0-alpha1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-2-0-alpha0">v2.2.0-alpha0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -313,9 +315,10 @@ have all the capabilities of Pandas at hand whenever you need them.</p>
 <p>Let’s get started with a very simple script:</p>
 <div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fastf1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fastf1</span><span class="o">.</span><span class="n">Cache</span><span class="o">.</span><span class="n">enable_cache</span><span class="p">(</span><span class="s1">&#39;path/to/folder/for/cache&#39;</span><span class="p">)</span>  
-<span class="gp">&gt;&gt;&gt; </span><span class="n">monza_quali</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="s1">&#39;Monza&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vettel</span> <span class="o">=</span> <span class="n">monza_quali</span><span class="o">.</span><span class="n">get_driver</span><span class="p">(</span><span class="s1">&#39;VET&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pronto </span><span class="si">{</span><span class="n">vettel</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="s1">&#39;Monza&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">telemetry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">laps</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">weather</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vettel</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get_driver</span><span class="p">(</span><span class="s1">&#39;VET&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pronto </span><span class="si">{</span><span class="n">vettel</span><span class="p">[</span><span class="s1">&#39;FirstName&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">?&quot;</span><span class="p">)</span>
 <span class="go">Pronto Sebastian?</span>
 </pre></div>
 </div>
@@ -326,10 +329,10 @@ have all the capabilities of Pandas at hand whenever you need them.</p>
 
 <span class="n">fastf1</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">setup_mpl</span><span class="p">()</span>
 
-<span class="n">monza_quali</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="s1">&#39;Monza&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="s1">&#39;Monza&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
 
-<span class="n">laps</span> <span class="o">=</span> <span class="n">monza_quali</span><span class="o">.</span><span class="n">load_laps</span><span class="p">(</span><span class="n">with_telemetry</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">fast_leclerc</span> <span class="o">=</span> <span class="n">laps</span><span class="o">.</span><span class="n">pick_driver</span><span class="p">(</span><span class="s1">&#39;LEC&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pick_fastest</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="n">fast_leclerc</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">laps</span><span class="o">.</span><span class="n">pick_driver</span><span class="p">(</span><span class="s1">&#39;LEC&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pick_fastest</span><span class="p">()</span>
 <span class="n">lec_car_data</span> <span class="o">=</span> <span class="n">fast_leclerc</span><span class="o">.</span><span class="n">get_car_data</span><span class="p">()</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">lec_car_data</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span>
 <span class="n">vCar</span> <span class="o">=</span> <span class="n">lec_car_data</span><span class="p">[</span><span class="s1">&#39;Speed&#39;</span><span class="p">]</span>

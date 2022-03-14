@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; Fast F1 2.2.0-alpha0 documentation</title>
+  <title>Index &mdash; Fast F1 2.2.0-alpha1 documentation</title>
   
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                2.2.0-alpha0
+                2.2.0-alpha1
               </div>
             
           
@@ -141,7 +141,7 @@
 <li class="toctree-l4"><a class="reference internal" href="core.html#laps">Laps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core.html#lap">Lap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="core.html#telemetry">Telemetry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="core.html#driver">Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core.html#results">Results</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="core.html#exceptions">Exceptions</a></li>
@@ -201,7 +201,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha-220228">v2.2.0-alpha-220228</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha1">v2.2.0-alpha1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-2-0-alpha0">v2.2.0-alpha0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-13-more-bug-fixes">v2.1.13 More Bug Fixes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-12-fixes-and-patches">v2.1.12 Fixes and Patches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#v2-1-11-fixes-and-patches">v2.1.11 Fixes and Patches</a></li>
@@ -338,6 +339,8 @@
       <li><a href="core.html#fastf1.core.Laps.base_class_view">base_class_view (fastf1.core.Laps property)</a>
 
       <ul>
+        <li><a href="core.html#fastf1.core.SessionResults.base_class_view">(fastf1.core.SessionResults property)</a>
+</li>
         <li><a href="core.html#fastf1.core.Telemetry.base_class_view">(fastf1.core.Telemetry property)</a>
 </li>
         <li><a href="events.html#fastf1.events.EventSchedule.base_class_view">(fastf1.events.EventSchedule property)</a>
@@ -361,7 +364,7 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="core.html#fastf1.core.Session.car_data">car_data (fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.Session.car_data">car_data (fastf1.core.Session property)</a>
 </li>
       <li><a href="api.html#fastf1.api.car_data">car_data() (in module fastf1.api)</a>
 </li>
@@ -395,13 +398,13 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="core.html#fastf1.core.Driver.dnf">dnf (fastf1.core.Driver property)</a>
-</li>
-      <li><a href="core.html#fastf1.core.Driver">Driver (class in fastf1.core)</a>
+      <li><a href="core.html#fastf1.core.DriverResult.dnf">dnf (fastf1.core.DriverResult property)</a>
 </li>
       <li><a href="api.html#fastf1.api.driver_info">driver_info() (in module fastf1.api)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Session.drivers">drivers (fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.DriverResult">DriverResult (class in fastf1.core)</a>
+</li>
+      <li><a href="core.html#fastf1.core.Session.drivers">drivers (fastf1.core.Session property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -429,7 +432,9 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="core.html#fastf1.core.Driver.familyname">familyname (fastf1.core.Driver property)</a>
+      <li><a href="core.html#fastf1.core.Session.f1_api_support">f1_api_support (fastf1.core.Session attribute)</a>
+</li>
+      <li><a href="core.html#fastf1.core.DriverResult.familyname">familyname (fastf1.core.DriverResult property)</a>
 </li>
       <li>
     fastf1
@@ -581,7 +586,7 @@
       </ul></li>
       <li><a href="events.html#fastf1.events.Event.gp">gp (fastf1.events.Event property)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Driver.grid">grid (fastf1.core.Driver property)</a>
+      <li><a href="core.html#fastf1.core.DriverResult.grid">grid (fastf1.core.DriverResult property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -597,16 +602,14 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="core.html#fastf1.core.Driver.info">info (fastf1.core.Driver attribute)</a>
-</li>
       <li><a href="legacy.html#fastf1.legacy.inject_driver_ahead">inject_driver_ahead() (in module fastf1.legacy)</a>
 </li>
       <li><a href="core.html#fastf1.core.Telemetry.integrate_distance">integrate_distance() (fastf1.core.Telemetry method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core.html#fastf1.core.InvalidSessionError">InvalidSessionError (class in fastf1.core)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="events.html#fastf1.events.Event.is_testing">is_testing() (fastf1.events.Event method)</a>
 
       <ul>
@@ -635,16 +638,20 @@
 </li>
       <li><a href="core.html#fastf1.core.Laps">Laps (class in fastf1.core)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Session.laps">laps (fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.Session.laps">laps (fastf1.core.Session property)</a>
+</li>
+      <li><a href="livetiming.html#fastf1.livetiming.data.LiveTimingData.list_categories">list_categories() (fastf1.livetiming.data.LiveTimingData method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="livetiming.html#fastf1.livetiming.data.LiveTimingData.list_categories">list_categories() (fastf1.livetiming.data.LiveTimingData method)</a>
-</li>
       <li><a href="livetiming.html#fastf1.livetiming.data.LiveTimingData">LiveTimingData (class in fastf1.livetiming.data)</a>
 </li>
-      <li><a href="livetiming.html#fastf1.livetiming.data.LiveTimingData.load">load() (fastf1.livetiming.data.LiveTimingData method)</a>
+      <li><a href="core.html#fastf1.core.Session.load">load() (fastf1.core.Session method)</a>
+
+      <ul>
+        <li><a href="livetiming.html#fastf1.livetiming.data.LiveTimingData.load">(fastf1.livetiming.data.LiveTimingData method)</a>
 </li>
+      </ul></li>
       <li><a href="core.html#fastf1.core.Session.load_laps">load_laps() (fastf1.core.Session method)</a>
 </li>
       <li><a href="core.html#fastf1.core.Session.load_telemetry">load_telemetry() (fastf1.core.Session method)</a>
@@ -694,12 +701,8 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="core.html#fastf1.core.Driver.name">name (fastf1.core.Driver property)</a>
-
-      <ul>
-        <li><a href="core.html#fastf1.core.Session.name">(fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.Session.name">name (fastf1.core.Session attribute)</a>
 </li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core.html#fastf1.core.NoLapDataError">NoLapDataError (class in fastf1.core)</a>
@@ -736,9 +739,9 @@
 </li>
       <li><a href="core.html#fastf1.core.Laps.pick_wo_box">pick_wo_box() (fastf1.core.Laps method)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Session.pos_data">pos_data (fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.Session.pos_data">pos_data (fastf1.core.Session property)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Driver.position">position (fastf1.core.Driver property)</a>
+      <li><a href="core.html#fastf1.core.DriverResult.position">position (fastf1.core.DriverResult property)</a>
 </li>
       <li><a href="api.html#fastf1.api.position_data">position_data() (in module fastf1.api)</a>
 </li>
@@ -770,7 +773,7 @@
 </li>
       <li><a href="core.html#fastf1.core.Telemetry.resample_channels">resample_channels() (fastf1.core.Telemetry method)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Session.results">results (fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.Session.results">results (fastf1.core.Session property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -780,13 +783,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core.html#fastf1.core.Session">Session (class in fastf1.core)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Session.session_start_time">session_start_time (fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.Session.session_start_time">session_start_time (fastf1.core.Session property)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Session.session_status">session_status (fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.Session.session_status">session_status (fastf1.core.Session property)</a>
 </li>
       <li><a href="api.html#fastf1.api.session_status_data">session_status_data() (in module fastf1.api)</a>
 </li>
       <li><a href="api.html#fastf1.api.SessionNotAvailableError">SessionNotAvailableError</a>
+</li>
+      <li><a href="core.html#fastf1.core.SessionResults">SessionResults (class in fastf1.core)</a>
 </li>
       <li><a href="api.html#fastf1.api.Cache.set_disabled">set_disabled() (fastf1.api.Cache class method)</a>
 
@@ -820,9 +825,9 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="core.html#fastf1.core.Session.t0_date">t0_date (fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.Session.t0_date">t0_date (fastf1.core.Session property)</a>
 </li>
-      <li><a href="core.html#fastf1.core.Driver.team">team (fastf1.core.Driver property)</a>
+      <li><a href="core.html#fastf1.core.DriverResult.team">team (fastf1.core.DriverResult property)</a>
 </li>
       <li><a href="plotting.html#fastf1.plotting.team_color">team_color() (in module fastf1.plotting)</a>
 </li>
@@ -858,13 +863,15 @@
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="core.html#fastf1.core.Session.weather_data">weather_data (fastf1.core.Session attribute)</a>
+      <li><a href="core.html#fastf1.core.Session.weather_data">weather_data (fastf1.core.Session property)</a>
+</li>
+      <li><a href="api.html#fastf1.api.weather_data">weather_data() (in module fastf1.api)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#fastf1.api.weather_data">weather_data() (in module fastf1.api)</a>
-</li>
       <li><a href="core.html#fastf1.core.Weekend">Weekend (class in fastf1.core)</a>
+</li>
+      <li><a href="core.html#fastf1.core.Session.weekend">weekend (fastf1.core.Session property)</a>
 </li>
   </ul></td>
 </tr></table>

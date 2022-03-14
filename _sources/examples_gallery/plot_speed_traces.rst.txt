@@ -22,7 +22,7 @@ Overlaying speed traces of two laps
 
 Compare two fastest laps by overlaying their speed traces.
 
-.. GENERATED FROM PYTHON SOURCE LINES 6-23
+.. GENERATED FROM PYTHON SOURCE LINES 6-22
 
 .. code-block:: default
 
@@ -39,8 +39,8 @@ Compare two fastest laps by overlaying their speed traces.
     fastf1.plotting.setup_mpl()
 
     # load a session and its telemetry data
-    quali = fastf1.get_session(2021, 'Spanish Grand Prix', 'Q')
-    laps = quali.load_laps(with_telemetry=True)
+    session = fastf1.get_session(2021, 'Spanish Grand Prix', 'Q')
+    session.load()
 
 
 
@@ -49,18 +49,17 @@ Compare two fastest laps by overlaying their speed traces.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 24-25
+.. GENERATED FROM PYTHON SOURCE LINES 23-24
 
 First, we select the two laps that we want to compare
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-29
+.. GENERATED FROM PYTHON SOURCE LINES 24-28
 
 .. code-block:: default
 
 
-    ver_lap = laps.pick_driver('VER').pick_fastest()
-    ham_lap = laps.pick_driver('HAM').pick_fastest()
+    ver_lap = session.laps.pick_driver('VER').pick_fastest()
+    ham_lap = session.laps.pick_driver('HAM').pick_fastest()
 
 
 
@@ -69,12 +68,12 @@ First, we select the two laps that we want to compare
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-32
+.. GENERATED FROM PYTHON SOURCE LINES 29-31
 
 Next we get the telemetry data for each lap. We also add a 'Distance' column
 to the telemetry dataframe as this makes it easier to compare the laps.
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-36
+.. GENERATED FROM PYTHON SOURCE LINES 31-35
 
 .. code-block:: default
 
@@ -89,12 +88,12 @@ to the telemetry dataframe as this makes it easier to compare the laps.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-39
+.. GENERATED FROM PYTHON SOURCE LINES 36-38
 
 Finally, we create a plot and plot both speed traces.
 We color the individual lines with the driver's team colors.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-55
+.. GENERATED FROM PYTHON SOURCE LINES 38-54
 
 .. code-block:: default
 
@@ -111,14 +110,14 @@ We color the individual lines with the driver's team colors.
 
     ax.legend()
     plt.suptitle(f"Fastest Lap Comparison \n "
-                 f"{quali.event.name} {quali.event.year} Qualifying")
+                 f"{session.event.name} {session.event.year} Qualifying")
 
     plt.show()
 
 
 
 .. image-sg:: /examples_gallery/images/sphx_glr_plot_speed_traces_001.png
-   :alt: Fastest Lap Comparison   Russian Grand Prix 2021 Qualifying
+   :alt: Fastest Lap Comparison   Spanish Grand Prix 2021 Qualifying
    :srcset: /examples_gallery/images/sphx_glr_plot_speed_traces_001.png
    :class: sphx-glr-single-img
 
@@ -129,8 +128,8 @@ We color the individual lines with the driver's team colors.
 
  .. code-block:: none
 
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:351: UserWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
-    Use `Event['eventName']` or `Event.eventName` instead.
+    C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:614: FutureWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
+    Use `Event['event_name']` or `Event.event_name` instead.
       warnings.warn(
 
 
@@ -139,7 +138,7 @@ We color the individual lines with the driver's team colors.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.801 seconds)
+   **Total running time of the script:** ( 0 minutes  12.759 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_plot_speed_traces.py:
