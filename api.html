@@ -1,0 +1,921 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Ergast API Interface - fastf1.ergast" href="ergast.html" /><link rel="prev" title="Event Schedule - fastf1.events" href="events.html" />
+
+    <!-- Generated with Sphinx 6.1.2 and Furo 2022.12.07 -->
+        <title>F1 API - fastf1.api - Fast F1 3.0.0-ergast-a0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Fast F1 3.0.0-ergast-a0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Fast F1 3.0.0-ergast-a0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/theOehrly/Fast-F1">← Back to Github</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/basics.html">Getting started with the basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples_gallery/index.html">Examples Gallery</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/example_fastf1_signalrclient.html">Using the Fast-F1 signalr client?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_speed_traces.html">Overlaying speed traces of two laps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_gear_shifts_on_track.html">Gear shifts on track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_qualifying_results.html">Qualifying results overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_who_can_still_win_wdc.html">Who can still win the drivers WDC?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html#api-reference">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">F1 API - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ergast.html">Ergast API Interface - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.ergast</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="time_explanation.html">Time, Date and Timing - Explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto_accurate_calculations.html">How to perform calculations accurately</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known_bugs.html">Known bugs and caveats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/devenv_setup.html">Setting up FastF1 for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/documenting_fastf1.html">Writing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/coding_guide.html">Pull request guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-fastf1.api">
+<span id="f1-api-fastf1-api"></span><h1>F1 API - <a class="reference internal" href="#module-fastf1.api" title="fastf1.api"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a><a class="headerlink" href="#module-fastf1.api" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The functions listed here are primarily for internal use within
+FastF1. While you can use these functions directly, it is usually
+better to use the functionality provided by the data objects
+in <a class="reference internal" href="core.html#module-fastf1.core" title="fastf1.core"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a> instead.</p>
+</div>
+<p>A collection of functions to interface with the F1 web api.</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.api.timing_data" title="fastf1.api.timing_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timing_data</span></code></a></p></td>
+<td><p>Fetch and parse timing data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.api.timing_app_data" title="fastf1.api.timing_app_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timing_app_data</span></code></a></p></td>
+<td><p>Fetch and parse 'timing app data'.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.api.car_data" title="fastf1.api.car_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">car_data</span></code></a></p></td>
+<td><p>Fetch and parse car data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.api.position_data" title="fastf1.api.position_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">position_data</span></code></a></p></td>
+<td><p>Fetch and parse position data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.api.track_status_data" title="fastf1.api.track_status_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">track_status_data</span></code></a></p></td>
+<td><p>Fetch and parse track status data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.api.session_status_data" title="fastf1.api.session_status_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">session_status_data</span></code></a></p></td>
+<td><p>Fetch and parse session status data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.api.race_control_messages" title="fastf1.api.race_control_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">race_control_messages</span></code></a></p></td>
+<td><p>Fetch and parse race control messages.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.api.lap_count" title="fastf1.api.lap_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lap_count</span></code></a></p></td>
+<td><p>Fetch and parse lap count data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.api.driver_info" title="fastf1.api.driver_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">driver_info</span></code></a></p></td>
+<td><p>Fetch driver information.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.api.weather_data" title="fastf1.api.weather_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weather_data</span></code></a></p></td>
+<td><p>Fetch and parse weather data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fastf1.api.fetch_page" title="fastf1.api.fetch_page"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_page</span></code></a></p></td>
+<td><p>Fetch data from the formula1 livetiming web api, given url base path and page name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fastf1.api.parse" title="fastf1.api.parse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse</span></code></a></p></td>
+<td><p>Parse json and jsonStream as returned by livetiming.formula1.com</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="fastf1.api.pages">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">pages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'archive_status':</span> <span class="pre">'ArchiveStatus.json',</span> <span class="pre">'audio_streams':</span> <span class="pre">'AudioStreams.jsonStream',</span> <span class="pre">'car_data':</span> <span class="pre">'CarData.z.jsonStream',</span> <span class="pre">'championship_prediction':</span> <span class="pre">'ChampionshipPrediction.jsonStream',</span> <span class="pre">'content_streams':</span> <span class="pre">'ContentStreams.jsonStream',</span> <span class="pre">'driver_list':</span> <span class="pre">'DriverList.jsonStream',</span> <span class="pre">'extrapolated_clock':</span> <span class="pre">'ExtrapolatedClock.jsonStream',</span> <span class="pre">'heartbeat':</span> <span class="pre">'Heartbeat.jsonStream',</span> <span class="pre">'lap_count':</span> <span class="pre">'LapCount.jsonStream',</span> <span class="pre">'position':</span> <span class="pre">'Position.z.jsonStream',</span> <span class="pre">'race_control_messages':</span> <span class="pre">'RaceControlMessages.json',</span> <span class="pre">'session_data':</span> <span class="pre">'SessionData.json',</span> <span class="pre">'session_info':</span> <span class="pre">'SessionInfo.json',</span> <span class="pre">'session_status':</span> <span class="pre">'SessionStatus.jsonStream',</span> <span class="pre">'team_radio':</span> <span class="pre">'TeamRadio.jsonStream',</span> <span class="pre">'timing_app_data':</span> <span class="pre">'TimingAppData.jsonStream',</span> <span class="pre">'timing_data':</span> <span class="pre">'TimingData.jsonStream',</span> <span class="pre">'timing_stats':</span> <span class="pre">'TimingStats.jsonStream',</span> <span class="pre">'track_status':</span> <span class="pre">'TrackStatus.jsonStream',</span> <span class="pre">'weather_data':</span> <span class="pre">'WeatherData.jsonStream'}</span></em><a class="headerlink" href="#fastf1.api.pages" title="Permalink to this definition">#</a></dt>
+<dd><p>Known API requests</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="fastf1.api.Cache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">Cache</span></span><a class="reference internal" href="_modules/fastf1/api.html#Cache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.Cache" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Meta-private<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.make_path">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">make_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wdate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sdate</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#make_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.make_path" title="Permalink to this definition">#</a></dt>
+<dd><p>Create the api path base string to append on livetiming.formula1.com for api
+requests.</p>
+<p>The api path base string changes for every session only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wname</strong> – Weekend name (e.g. ‘Italian Grand Prix’)</p></li>
+<li><p><strong>wdate</strong> – Weekend date (e.g. ‘2019-09-08’)</p></li>
+<li><p><strong>sname</strong> – Session name ‘Qualifying’ or ‘Race’</p></li>
+<li><p><strong>sdate</strong> – Session date (formatted as wdate)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>relative url path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.timing_data">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">timing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livedata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#timing_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.timing_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch and parse timing data.</p>
+<p>Timing data is a mixed stream of information. At a given time a packet of data may indicate position, lap time,
+speed trap, sector times and so on.</p>
+<p>While most of this data can be mapped lap by lap giving a readable and usable data structure (-&gt; laps_data),
+other entries like position and time gaps are provided on a more frequent time base. Those values are separated
+and returned as a separate object (-&gt; stream_data).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function does not actually return “raw” API data. This is because of the need to process a mixed
+linear data stream into a usable object and because of frequent errors and inaccuracies in said stream.
+Occasionally an “educated guess” needs to be made for judging whether a value belongs to this lap or to another
+lap. Additionally, some values which are considered “obviously” wrong are removed from the data. This can happen
+with or without warnings, depending on the reason and severity.</p>
+<ul class="simple">
+<li><p>Timestamps (‘SessionTime’) marking start or end of a lap are
+post-processed as the provided values are inaccurate.</p></li>
+<li><p>Lap and sector times are not modified ever! They are considered as the
+absolute truth. If necessary, other values are adjusted to fit.</p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>response</strong> (<em>optional</em>) – api response can be passed if data was already downloaded</p></li>
+<li><p><strong>livedata</strong> – An instance of <a class="reference internal" href="livetiming.html#fastf1.livetiming.data.LiveTimingData" title="fastf1.livetiming.data.LiveTimingData"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.livetiming.data.LiveTimingData</span></code></a>
+to use as a source instead of the api</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><dl>
+<dt>laps_data (DataFrame):</dt><dd><p>contains the following columns of data (one row per driver and lap)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Time (pandas.Timedelta): Session time at which the lap was set (i.e. finished)</p></li>
+<li><p>LapTime (pandas.Timedelta): Lap time of the last finished lap (the lap in this row)</p></li>
+<li><p>Driver (str): Driver number</p></li>
+<li><p>NumberOfLaps (int): Number of laps driven by this driver including the lap in this row</p></li>
+<li><p>NumberOfPitStops (int): Number of pit stops of this driver</p></li>
+<li><p>PitInTime (pandas.Timedelta): Session time at which the driver entered the pits. Consequentially,
+if this value is not NaT the lap in this row is an inlap.</p></li>
+<li><p>PitOutTime (pandas.Timedelta): Session time at which the driver exited the pits. Consequentially,
+if this value is not NaT  the lap in this row is an outlap.</p></li>
+<li><p>Sector1/2/3Time (pandas.Timedelta): Sector times (one column for each sector time)</p></li>
+<li><p>Sector1/2/3SessionTime (pandas.Timedelta): Session time at which the corresponding sector time
+was set (one column for each sector’s session time)</p></li>
+<li><p>SpeedI1/I2/FL/ST: Speed trap speeds; FL is speed at the finish line; I1 and I2 are speed traps in
+sector 1 and 2 respectively; ST maybe a speed trap on the longest straight (?)</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>stream_data (DataFrame):</dt><dd><p>contains the following columns of data</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Time (pandas.Timedelta): Session time at which this sample was created</p></li>
+<li><p>Driver (str): Driver number</p></li>
+<li><p>Position (int): Position in the field</p></li>
+<li><p>GapToLeader (pandas.Timedelta): Time gap to leader in seconds</p></li>
+<li><p>IntervalToPositionAhead (pandas.Timedelta): Time gap to car ahead</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(DataFrame, DataFrame)</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#fastf1.api.SessionNotAvailableError" title="fastf1.api.SessionNotAvailableError"><strong>SessionNotAvailableError</strong></a> – in case the F1 livetiming api returns no data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.timing_app_data">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">timing_app_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livedata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#timing_app_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.timing_app_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch and parse ‘timing app data’.</p>
+<dl class="simple">
+<dt>Timing app data provides the following data channels per sample:</dt><dd><ul class="simple">
+<li><p>LapNumber (float or nan): Current lap number</p></li>
+<li><p>Driver (str): Driver number</p></li>
+<li><p>LapTime (pandas.Timedelta or None): Lap time of last lap</p></li>
+<li><p>Stint (int): Counter for the number of driven stints</p></li>
+<li><p>TotalLaps (float or nan): Total number of laps driven on this set of tires (includes laps driven in
+other sessions!)</p></li>
+<li><p>Compound (str or None): Tire compound</p></li>
+<li><p>New (bool or None): Whether the tire was new when fitted</p></li>
+<li><p>TyresNotChanged (int or None): ??? Probably a flag to mark pit stops without tire changes</p></li>
+<li><p>Time (pandas.Timedelta): Session time</p></li>
+<li><p>LapFlags (float or nan): ??? unknown</p></li>
+<li><p>LapCountTime (None or ???): ??? unknown; no data</p></li>
+<li><p>StartLaps (float or nan): ??? Tire age when fitted (same as ‘TotalLaps’ in the same sample?!?)</p></li>
+<li><p>Outlap (None or ???): ??? unknown; no data</p></li>
+</ul>
+</dd>
+</dl>
+<p>Only a few values are present per timestamp. Somewhat comprehensive information can therefore only be obtained by
+aggregating data (usually over the course of one lap). Some values are sent even less
+frequently (for example ‘Compound’ only after tire changes).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>response</strong> – Response as returned by <a class="reference internal" href="#fastf1.api.fetch_page" title="fastf1.api.fetch_page"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_page()</span></code></a> can be passed if it was downloaded already.</p></li>
+<li><p><strong>livedata</strong> – An instance of <a class="reference internal" href="livetiming.html#fastf1.livetiming.data.LiveTimingData" title="fastf1.livetiming.data.LiveTimingData"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.livetiming.data.LiveTimingData</span></code></a> to use as a source instead of the api</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame contianing one column for each data channel as listed above.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fastf1.api.SessionNotAvailableError" title="fastf1.api.SessionNotAvailableError"><strong>SessionNotAvailableError</strong></a> – in case the F1 livetiming api returns no data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.car_data">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">car_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livedata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#car_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.car_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch and parse car data.</p>
+<dl class="simple">
+<dt>Car data provides the following data channels per sample:</dt><dd><ul class="simple">
+<li><p>Time (pandas.Timedelta): session timestamp (time only); inaccurate, has duplicate values; use Date instead</p></li>
+<li><p>Date (pandas.Timestamp): timestamp for this sample as Date + Time; more or less exact</p></li>
+<li><p>Speed (int): Km/h</p></li>
+<li><p>RPM (int)</p></li>
+<li><p>Gear (int): [called ‘nGear’ in the data!]</p></li>
+<li><p>Throttle (int): 0-100%</p></li>
+<li><p>Brake (bool)</p></li>
+<li><p>DRS (int): 0-14 (Odd DRS is Disabled, Even DRS is Enabled?)
+(More Research Needed?)</p>
+<ul>
+<li><p>0 =  Off</p></li>
+<li><p>1 =  Off</p></li>
+<li><p>2 =  (?)</p></li>
+<li><p>3 =  (?)</p></li>
+<li><p>8 =  Detected, Eligible once in Activation Zone (Noted Sometimes)</p></li>
+<li><p>10 = On (Unknown Distinction)</p></li>
+<li><p>12 = On (Unknown Distinction)</p></li>
+<li><p>14 = On (Unknown Distinction)</p></li>
+</ul>
+</li>
+<li><p>Source (str): Indicates the source of a sample; ‘car’ for all values here</p></li>
+</ul>
+</dd>
+</dl>
+<p>The data stream has a sample rate of (usually) 240ms. The samples from the data streams for position data and
+car data do not line up. Resampling/interpolation is required to merge them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>response</strong> – Response as returned by <a class="reference internal" href="#fastf1.api.fetch_page" title="fastf1.api.fetch_page"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_page()</span></code></a> can be passed if it was downloaded already.</p></li>
+<li><p><strong>livedata</strong> – An instance of <a class="reference internal" href="livetiming.html#fastf1.livetiming.data.LiveTimingData" title="fastf1.livetiming.data.LiveTimingData"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.livetiming.data.LiveTimingData</span></code></a> to use as a source instead of the api</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><div class="line-block">
+<div class="line">A dictionary containing one pandas DataFrame per driver. Dictionary keys are the driver’s numbers as
+string (e.g. ‘16’). You should never assume that a number exists!</div>
+<div class="line">Each dataframe contains one column for each data channel as listed above</div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fastf1.api.SessionNotAvailableError" title="fastf1.api.SessionNotAvailableError"><strong>SessionNotAvailableError</strong></a> – in case the F1 livetiming api returns no data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.position_data">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">position_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livedata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#position_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.position_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch and parse position data.</p>
+<dl class="simple">
+<dt>Position data provides the following data channels per sample:</dt><dd><ul class="simple">
+<li><p>Time (pandas.Timedelta): session timestamp (time only); inaccurate, has duplicate values; use Date instead</p></li>
+<li><p>Date (pandas.Timestamp): timestamp for this sample as Date + Time; more or less exact</p></li>
+<li><p>Status (str): ‘OnTrack’ or ‘OffTrack’</p></li>
+<li><p>X, Y, Z (int): Position coordinates; starting from 2020 the coordinates are given in 1/10 meter</p></li>
+<li><p>Source (str): Indicates the source of a sample; ‘pos’ for all values here</p></li>
+</ul>
+</dd>
+</dl>
+<p>The data stream has a sample rate of (usually) 220ms. The samples from the data streams for position data and
+car data do not line up. Resampling/interpolation is required to merge them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>response</strong> – Response as returned by <a class="reference internal" href="#fastf1.api.fetch_page" title="fastf1.api.fetch_page"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_page()</span></code></a> can be passed if it was downloaded already.</p></li>
+<li><p><strong>livedata</strong> – An instance of <a class="reference internal" href="livetiming.html#fastf1.livetiming.data.LiveTimingData" title="fastf1.livetiming.data.LiveTimingData"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.livetiming.data.LiveTimingData</span></code></a> to use as a source instead of the api</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><div class="line-block">
+<div class="line">A dictionary containing one pandas DataFrame per driver. Dictionary keys are the driver’s numbers as
+string (e.g. ‘16’). You should never assume that a number exists!</div>
+<div class="line">Each dataframe contains one column for each data channel as listed above</div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fastf1.api.SessionNotAvailableError" title="fastf1.api.SessionNotAvailableError"><strong>SessionNotAvailableError</strong></a> – in case the F1 livetiming api returns no data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.track_status_data">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">track_status_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livedata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#track_status_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.track_status_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch and parse track status data.</p>
+<p>Track status contains information on yellow/red/green flags, safety car and virtual safety car. It provides the
+following data channels per sample:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Time (datetime.timedelta): session timestamp (time only)</p></li>
+<li><p>Status (str): contains track status changes as numeric values (described below)</p></li>
+<li><p>Message (str): contains the same information as status but in easily understandable
+words (‘Yellow’, ‘AllClear’,…)</p></li>
+</ul>
+</div></blockquote>
+<p>A new value is sent every time the track status changes.</p>
+<p>Track status is indicated using single digit integer status codes (as string). List of known statuses:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>‘1’: Track clear (beginning of session ot to indicate the end of another status)</p></li>
+<li><p>‘2’: Yellow flag (sectors are unknown)</p></li>
+<li><p>‘3’: ??? Never seen so far, does not exist?</p></li>
+<li><p>‘4’: Safety Car</p></li>
+<li><p>‘5’: Red Flag</p></li>
+<li><p>‘6’: Virtual Safety Car deployed</p></li>
+<li><p>‘7’: Virtual Safety Car ending (As indicated on the drivers steering wheel, on tv and so on; status ‘1’
+will mark the actual end)</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>response</strong> – Response as returned by <a class="reference internal" href="#fastf1.api.fetch_page" title="fastf1.api.fetch_page"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_page()</span></code></a> can be passed if it was downloaded already.</p></li>
+<li><p><strong>livedata</strong> – An instance of <a class="reference internal" href="livetiming.html#fastf1.livetiming.data.LiveTimingData" title="fastf1.livetiming.data.LiveTimingData"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.livetiming.data.LiveTimingData</span></code></a> to use as a source instead of the api</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing one key for each data channel and a list of values per key.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fastf1.api.SessionNotAvailableError" title="fastf1.api.SessionNotAvailableError"><strong>SessionNotAvailableError</strong></a> – in case the F1 livetiming api returns no data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.session_status_data">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">session_status_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livedata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#session_status_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.session_status_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch and parse session status data.</p>
+<p>Session status contains information on when a session was started and when it ended (amongst others). It
+provides the following data channels per sample:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Time (datetime.timedelta): session timestamp (time only)</p></li>
+<li><p>Status (str): status messages</p></li>
+</ul>
+</div></blockquote>
+<p>A new value is sent every time the session status changes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>response</strong> – Response as returned by <a class="reference internal" href="#fastf1.api.fetch_page" title="fastf1.api.fetch_page"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_page()</span></code></a> can be passed if it was downloaded already.</p></li>
+<li><p><strong>livedata</strong> – An instance of <a class="reference internal" href="livetiming.html#fastf1.livetiming.data.LiveTimingData" title="fastf1.livetiming.data.LiveTimingData"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.livetiming.data.LiveTimingData</span></code></a> to use as a source instead of the api</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing one key for each data channel and a list of values per key.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fastf1.api.SessionNotAvailableError" title="fastf1.api.SessionNotAvailableError"><strong>SessionNotAvailableError</strong></a> – in case the F1 livetiming api returns no data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.race_control_messages">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">race_control_messages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livedata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#race_control_messages"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.race_control_messages" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch and parse race control messages.</p>
+<p>Race control messages are sent by race control to all teams to notify of
+decisions and statuses of the session.</p>
+<p>Every message has the following attributes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Utc: Message timestamp</p></li>
+<li><p>Category (str): Type of message, “Other”, “Flag”, “Drs”, “CarEvent”</p></li>
+<li><p>Message (str): Content of message</p></li>
+</ul>
+</div></blockquote>
+<p>Other possible attributes are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Status (str): Status of context, e.g. “DISABLED” for disabling DRS</p></li>
+<li><p>Flag (str): Type of flag being waved “GREEN”, “RED”, “YELLOW”,
+“CLEAR”, “CHEQUERED”</p></li>
+<li><p>Scope (str): Scope of message “Track”, “Sector”, “Driver”</p></li>
+<li><p>Sector (int): Affected track sector for sector-scoped messages</p></li>
+<li><p>RacingNumber (str): Affected driver for CarEvent messages</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>response</strong> – Response as returned by <a class="reference internal" href="#fastf1.api.fetch_page" title="fastf1.api.fetch_page"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_page()</span></code></a> can be passed if
+it was downloaded already.</p></li>
+<li><p><strong>livedata</strong> – An instance of
+<a class="reference internal" href="livetiming.html#fastf1.livetiming.data.LiveTimingData" title="fastf1.livetiming.data.LiveTimingData"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.livetiming.data.LiveTimingData</span></code></a> to use as a source
+instead of the api</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing one key for each data channel and a list of
+values per key.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fastf1.api.SessionNotAvailableError" title="fastf1.api.SessionNotAvailableError"><strong>SessionNotAvailableError</strong></a> – in case the F1 livetiming api returns no data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.lap_count">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">lap_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livedata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#lap_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.lap_count" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch and parse lap count data.</p>
+<dl class="simple">
+<dt>It provides the following data channels per sample:</dt><dd><ul class="simple">
+<li><p>Time: session timestamp (time only)</p></li>
+<li><p>TotalLaps (int): Intended number of total laps</p></li>
+<li><p>CurrentLap (int): Current race lap</p></li>
+</ul>
+</dd>
+</dl>
+<p>A value can have both ‘TotalLaps’ and ‘CurrentLap’ or only one of them.</p>
+<p>A new value is sent every time a lap is completed or
+the intended number of laps changes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>response</strong> – Response as returned by <a class="reference internal" href="#fastf1.api.fetch_page" title="fastf1.api.fetch_page"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_page()</span></code></a> can be passed if
+it was downloaded already.</p></li>
+<li><p><strong>livedata</strong> – An instance of
+<a class="reference internal" href="livetiming.html#fastf1.livetiming.data.LiveTimingData" title="fastf1.livetiming.data.LiveTimingData"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.livetiming.data.LiveTimingData</span></code></a> to use as a source
+instead of the api</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing one key for each data channel and a list of
+values per key.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fastf1.api.SessionNotAvailableError" title="fastf1.api.SessionNotAvailableError"><strong>SessionNotAvailableError</strong></a> – in case the F1 livetiming api returns no data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.driver_info">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">driver_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livedata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#driver_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.driver_info" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch driver information.</p>
+<p>Driver information contains the following information about each driver:</p>
+<blockquote>
+<div><p><cite>[‘RacingNumber’, ‘BroadcastName’, ‘FullName’, ‘Tla’, ‘Line’,
+‘TeamName’, ‘TeamColour’, ‘FirstName’, ‘LastName’, ‘Reference’,
+‘HeadshotUrl’]</cite></p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>response</strong> – Response as returned by <a class="reference internal" href="#fastf1.api.fetch_page" title="fastf1.api.fetch_page"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_page()</span></code></a>
+can be passed if it was downloaded already.</p></li>
+<li><p><strong>livedata</strong> – An instance of <a class="reference internal" href="livetiming.html#fastf1.livetiming.data.LiveTimingData" title="fastf1.livetiming.data.LiveTimingData"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.livetiming.data.LiveTimingData</span></code></a>
+to use as a source instead of the api</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing one entry for each driver
+with the drivers racing number as key</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fastf1.api.SessionNotAvailableError" title="fastf1.api.SessionNotAvailableError"><strong>SessionNotAvailableError</strong></a> – in case the F1 livetiming api returns no data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.weather_data">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">weather_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livedata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#weather_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.weather_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch and parse weather data.</p>
+<p>Weather data provides the following data channels per sample:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Time (datetime.timedelta): session timestamp (time only)</p></li>
+<li><p>AirTemp (float): Air temperature [°C]</p></li>
+<li><p>Humidity (float): Relative humidity [%]</p></li>
+<li><p>Pressure (float): Air pressure [mbar]</p></li>
+<li><p>Rainfall (bool): Shows if there is rainfall</p></li>
+<li><p>TrackTemp (float): Track temperature [°C]</p></li>
+<li><p>WindDirection (int): Wind direction [°] (0°-359°)</p></li>
+<li><p>WindSpeed (float): Wind speed [km/h]</p></li>
+</ul>
+</div></blockquote>
+<p>Weather data is updated once per minute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>response</strong> – Response as returned by <a class="reference internal" href="#fastf1.api.fetch_page" title="fastf1.api.fetch_page"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_page()</span></code></a> can
+be passed if it was downloaded already.</p></li>
+<li><p><strong>livedata</strong> – An instance of
+<a class="reference internal" href="livetiming.html#fastf1.livetiming.data.LiveTimingData" title="fastf1.livetiming.data.LiveTimingData"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.livetiming.data.LiveTimingData</span></code></a>
+to use as a source instead of the api</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing one key for each data channel and a list
+of values per key.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#fastf1.api.SessionNotAvailableError" title="fastf1.api.SessionNotAvailableError"><strong>SessionNotAvailableError</strong></a> – in case the F1 live timing api
+    returns no data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.fetch_page">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">fetch_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#fetch_page"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.fetch_page" title="Permalink to this definition">#</a></dt>
+<dd><p>Fetch data from the formula1 livetiming web api, given url base path and page name. An attempt
+to parse json or decode known messages is made.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – api path base string (usually <code class="docutils literal notranslate"><span class="pre">Session.api_path</span></code>)</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – page name (see <a class="reference internal" href="#fastf1.api.pages" title="fastf1.api.pages"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pages</span></code></a> for all known pages)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>dictionary if content was json</p></li>
+<li><p>list of entries if jsonStream, where each entry again contains two elements: [timestamp, content]. Content is
+parsed with <a class="reference internal" href="#fastf1.api.parse" title="fastf1.api.parse"><code class="xref py py-func docutils literal notranslate"><span class="pre">parse()</span></code></a> and will usually be a dictionary created from json data.</p></li>
+<li><p>None if request failed</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.api.parse">
+<span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zipped</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.parse" title="Permalink to this definition">#</a></dt>
+<dd><p>Parse json and jsonStream as returned by livetiming.formula1.com</p>
+<p>This function can only pass one data entry at a time, not a whole response.
+Timestamps and data need to be separated before and only the data must be passed as a string to be parsed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – The string which should be parsed</p></li>
+<li><p><strong>zipped</strong> (<em>bool</em>) – Whether or not the text is compressed. This is the case for ‘.z’ data (e.g. position data=)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>a dictionary created as a result of loading json data</p></li>
+<li><p>a string</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Depending on data of which page is parsed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="fastf1.api.SessionNotAvailableError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fastf1.api.</span></span><span class="sig-name descname"><span class="pre">SessionNotAvailableError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/api.html#SessionNotAvailableError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.api.SessionNotAvailableError" title="Permalink to this definition">#</a></dt>
+<dd><p>Raised if an api request returned no data for the requested session.
+A likely cause is that the session does not exist because it was cancelled.</p>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="ergast.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Ergast API Interface - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.ergast</span></code></div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="events.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, theOehrly
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">F1 API - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a><ul>
+<li><a class="reference internal" href="#fastf1.api.pages"><code class="docutils literal notranslate"><span class="pre">pages</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.Cache"><code class="docutils literal notranslate"><span class="pre">Cache</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.make_path"><code class="docutils literal notranslate"><span class="pre">make_path()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.timing_data"><code class="docutils literal notranslate"><span class="pre">timing_data()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.timing_app_data"><code class="docutils literal notranslate"><span class="pre">timing_app_data()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.car_data"><code class="docutils literal notranslate"><span class="pre">car_data()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.position_data"><code class="docutils literal notranslate"><span class="pre">position_data()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.track_status_data"><code class="docutils literal notranslate"><span class="pre">track_status_data()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.session_status_data"><code class="docutils literal notranslate"><span class="pre">session_status_data()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.race_control_messages"><code class="docutils literal notranslate"><span class="pre">race_control_messages()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.lap_count"><code class="docutils literal notranslate"><span class="pre">lap_count()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.driver_info"><code class="docutils literal notranslate"><span class="pre">driver_info()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.weather_data"><code class="docutils literal notranslate"><span class="pre">weather_data()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.fetch_page"><code class="docutils literal notranslate"><span class="pre">fetch_page()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.parse"><code class="docutils literal notranslate"><span class="pre">parse()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.api.SessionNotAvailableError"><code class="docutils literal notranslate"><span class="pre">SessionNotAvailableError</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>

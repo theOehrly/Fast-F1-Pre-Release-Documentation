@@ -1,0 +1,499 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+
+    <!-- Generated with Sphinx 6.1.2 and Furo 2022.12.07 -->
+        <title>fastf1.livetiming.client - Fast F1 2.3.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Fast F1 2.3.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Fast F1 2.3.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/theOehrly/Fast-F1">← Back to Github</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/basics.html">Getting started with the basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples_gallery/index.html">Examples Gallery</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/example_fastf1_signalrclient.html">Using the Fast-F1 signalr client?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_speed_traces.html">Overlaying speed traces of two laps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_gear_shifts_on_track.html">Gear shifts on track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_qualifying_results.html">Qualifying results overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_who_can_still_win_wdc.html">Who can still win the drivers WDC?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core.html#api-reference">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Api Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.pages"><code class="docutils literal notranslate"><span class="pre">pages</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.Cache"><code class="docutils literal notranslate"><span class="pre">Cache</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.make_path"><code class="docutils literal notranslate"><span class="pre">make_path()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.timing_data"><code class="docutils literal notranslate"><span class="pre">timing_data()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.timing_app_data"><code class="docutils literal notranslate"><span class="pre">timing_app_data()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.car_data"><code class="docutils literal notranslate"><span class="pre">car_data()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.position_data"><code class="docutils literal notranslate"><span class="pre">position_data()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.track_status_data"><code class="docutils literal notranslate"><span class="pre">track_status_data()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.session_status_data"><code class="docutils literal notranslate"><span class="pre">session_status_data()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.race_control_messages"><code class="docutils literal notranslate"><span class="pre">race_control_messages()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.lap_count"><code class="docutils literal notranslate"><span class="pre">lap_count()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.driver_info"><code class="docutils literal notranslate"><span class="pre">driver_info()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.weather_data"><code class="docutils literal notranslate"><span class="pre">weather_data()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.fetch_page"><code class="docutils literal notranslate"><span class="pre">fetch_page()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.parse"><code class="docutils literal notranslate"><span class="pre">parse()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html#fastf1.api.SessionNotAvailableError"><code class="docutils literal notranslate"><span class="pre">SessionNotAvailableError</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ergast.html">Ergast API Interface - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.ergast</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html#fastf1.utils.delta_time"><code class="docutils literal notranslate"><span class="pre">delta_time()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html#fastf1.utils.recursive_dict_get"><code class="docutils literal notranslate"><span class="pre">recursive_dict_get()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html#fastf1.utils.to_timedelta"><code class="docutils literal notranslate"><span class="pre">to_timedelta()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html#fastf1.utils.to_datetime"><code class="docutils literal notranslate"><span class="pre">to_datetime()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html#fastf1.plotting.TEAM_COLORS"><code class="docutils literal notranslate"><span class="pre">TEAM_COLORS</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html#fastf1.plotting.TEAM_TRANSLATE"><code class="docutils literal notranslate"><span class="pre">TEAM_TRANSLATE</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html#fastf1.plotting.DRIVER_COLORS"><code class="docutils literal notranslate"><span class="pre">DRIVER_COLORS</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html#fastf1.plotting.DRIVER_TRANSLATE"><code class="docutils literal notranslate"><span class="pre">DRIVER_TRANSLATE</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html#fastf1.plotting.COLOR_PALETTE"><code class="docutils literal notranslate"><span class="pre">COLOR_PALETTE</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html#fastf1.plotting.setup_mpl"><code class="docutils literal notranslate"><span class="pre">setup_mpl()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html#fastf1.plotting.driver_color"><code class="docutils literal notranslate"><span class="pre">driver_color()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html#fastf1.plotting.team_color"><code class="docutils literal notranslate"><span class="pre">team_color()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html#fastf1.plotting.lapnumber_axis"><code class="docutils literal notranslate"><span class="pre">lapnumber_axis()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../legacy.html#fastf1.legacy.REFERENCE_LAP_RESOLUTION"><code class="docutils literal notranslate"><span class="pre">REFERENCE_LAP_RESOLUTION</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../legacy.html#fastf1.legacy.inject_driver_ahead"><code class="docutils literal notranslate"><span class="pre">inject_driver_ahead()</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../time_explanation.html">Time, Date and Timing - Explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto_accurate_calculations.html">How to perform calculations accurately</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../known_bugs.html">Known bugs and caveats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/devenv_setup.html">Setting up FastF1 for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/documenting_fastf1.html">Writing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/coding_guide.html">Pull request guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <h1>Source code for fastf1.livetiming.client</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">concurrent.futures</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">from</span> <span class="nn">fastf1.signalr_aio</span> <span class="kn">import</span> <span class="n">Connection</span>
+
+<span class="kn">import</span> <span class="nn">fastf1</span>
+
+
+<div class="viewcode-block" id="messages_from_raw"><a class="viewcode-back" href="../../../livetiming.html#fastf1.livetiming.client.messages_from_raw">[docs]</a><span class="k">def</span> <span class="nf">messages_from_raw</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Extract data messages from raw recorded SignalR data.</span>
+
+<span class="sd">    This function can be used to extract message data from raw SignalR data</span>
+<span class="sd">    which was saved using :class:`SignalRClient` in debug mode.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        r (iterable) : Iterable containing raw SignalR responses.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="n">errorcount</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+        <span class="c1"># fix F1&#39;s not json compliant data</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">)</span> \
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="s1">&#39;true&#39;</span><span class="p">)</span> \
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="s1">&#39;false&#39;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
+            <span class="n">errorcount</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="n">messages</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;M&#39;</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">inner_data</span> <span class="ow">in</span> <span class="n">messages</span><span class="p">:</span>
+            <span class="n">hub</span> <span class="o">=</span> <span class="n">inner_data</span><span class="p">[</span><span class="s1">&#39;H&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;H&#39;</span> <span class="ow">in</span> <span class="n">inner_data</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">hub</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;streaming&#39;</span><span class="p">:</span>
+                <span class="c1"># method = inner_data[&#39;M&#39;]</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="n">inner_data</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
+                <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ret</span><span class="p">,</span> <span class="n">errorcount</span></div>
+
+
+<div class="viewcode-block" id="SignalRClient"><a class="viewcode-back" href="../../../livetiming.html#fastf1.livetiming.client.SignalRClient">[docs]</a><span class="k">class</span> <span class="nc">SignalRClient</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;A client for receiving and saving F1 timing data which is streamed</span>
+<span class="sd">    live over the SignalR protocol.</span>
+
+<span class="sd">    During an F1 session, timing data and telemetry data are streamed live</span>
+<span class="sd">    using the SignalR protocol. This class can be used to connect to the</span>
+<span class="sd">    stream and save the received data into a file.</span>
+
+<span class="sd">    The data will be saved in a raw text format without any postprocessing.</span>
+<span class="sd">    It is **not** possible to use this data during a session. Instead, the</span>
+<span class="sd">    data can be processed after the session using the :mod:`fastf1.api` and</span>
+<span class="sd">    :mod:`fastf1.core`</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filename (str) : filename (opt. with path) for the output file</span>
+<span class="sd">        filemode (str, optional) : one of &#39;w&#39; or &#39;a&#39;; append to or overwrite</span>
+<span class="sd">            file content it the file already exists. Append-mode may be useful</span>
+<span class="sd">            if the client is restarted during a session.</span>
+<span class="sd">        debug (bool, optional) : When set to true, the complete SignalR</span>
+<span class="sd">            message is saved. By default, only the actual data from a</span>
+<span class="sd">            message is saved.</span>
+<span class="sd">        timeout (int, optional) : Number of seconds after which the client</span>
+<span class="sd">            will automatically exit when no message data is received.</span>
+<span class="sd">            Set to zero to disable.</span>
+<span class="sd">        logger (Logger or None) : By default, errors are logged to the</span>
+<span class="sd">            console. If you wish to customize logging, you can pass an</span>
+<span class="sd">            instance of :class:`logging.Logger` (see: :mod:`logging`).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_connection_url</span> <span class="o">=</span> <span class="s1">&#39;https://livetiming.formula1.com/signalr&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-agent&#39;</span><span class="p">:</span> <span class="s1">&#39;BestHTTP&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Accept-Encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;gzip, identity&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Connection&#39;</span><span class="p">:</span> <span class="s1">&#39;keep-alive, Upgrade&#39;</span><span class="p">}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">topics</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Heartbeat&quot;</span><span class="p">,</span> <span class="s2">&quot;CarData.z&quot;</span><span class="p">,</span> <span class="s2">&quot;Position.z&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;ExtrapolatedClock&quot;</span><span class="p">,</span> <span class="s2">&quot;TopThree&quot;</span><span class="p">,</span> <span class="s2">&quot;RcmSeries&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;TimingStats&quot;</span><span class="p">,</span> <span class="s2">&quot;TimingAppData&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;WeatherData&quot;</span><span class="p">,</span> <span class="s2">&quot;TrackStatus&quot;</span><span class="p">,</span> <span class="s2">&quot;DriverList&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;RaceControlMessages&quot;</span><span class="p">,</span> <span class="s2">&quot;SessionInfo&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;SessionData&quot;</span><span class="p">,</span> <span class="s2">&quot;LapCount&quot;</span><span class="p">,</span> <span class="s2">&quot;TimingData&quot;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filemode</span> <span class="o">=</span> <span class="n">filemode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">logger</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+                <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> - </span><span class="si">%(levelname)s</span><span class="s2">: </span><span class="si">%(message)s</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;SignalR&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_output_file</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_t_last_message</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_to_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">msg</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_output_file</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_on_do_nothing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="c1"># just do nothing with the message; intended for debug mode where some</span>
+        <span class="c1"># callback method still needs to be provided</span>
+        <span class="k">pass</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_on_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_t_last_message</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+                <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span>
+                    <span class="n">pool</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_file</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Exception while writing message to file&quot;</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_on_debug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;M&#39;</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_t_last_message</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+        <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+                <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span>
+                    <span class="n">pool</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_file</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Exception while writing message to file&quot;</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">filemode</span><span class="p">)</span>
+        <span class="c1"># Create connection</span>
+        <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span> <span class="o">=</span> <span class="n">Connection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_connection_url</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">)</span>
+
+        <span class="c1"># Register hub</span>
+        <span class="n">hub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">register_hub</span><span class="p">(</span><span class="s1">&#39;Streaming&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">:</span>
+            <span class="c1"># Assign error handler</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">error</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_debug</span>
+            <span class="c1"># Assign debug message handler to save raw responses</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">received</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_debug</span>
+            <span class="n">hub</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s1">&#39;feed&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_do_nothing</span><span class="p">)</span>  <span class="c1"># need to connect an async method</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Assign hub message handler</span>
+            <span class="n">hub</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s1">&#39;feed&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_message</span><span class="p">)</span>
+
+        <span class="n">hub</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="s2">&quot;Subscribe&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">topics</span><span class="p">)</span>
+
+        <span class="c1"># Start the client</span>
+        <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+        <span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+            <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="n">pool</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_supervise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_t_last_message</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">!=</span> <span class="mi">0</span>
+                    <span class="ow">and</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_last_message</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Timeout - received no data for more &quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;than </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="si">}</span><span class="s2"> seconds!&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">return</span>
+            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_async_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting FastF1 live timing client &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;[v</span><span class="si">{</span><span class="n">fastf1</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_supervise</span><span class="p">()),</span>
+                             <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_run</span><span class="p">()))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_output_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Exiting...&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SignalRClient.start"><a class="viewcode-back" href="../../../livetiming.html#fastf1.livetiming.client.SignalRClient.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Connect to the data stream and start writing the data to a file.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_async_start</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Keyboard interrupt - exiting...&quot;</span><span class="p">)</span>
+            <span class="k">return</span></div></div>
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, theOehrly
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    </body>
+</html>

@@ -1,0 +1,621 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Examples Gallery" href="../examples_gallery/index.html" /><link rel="prev" title="Getting Started" href="index.html" />
+
+    <!-- Generated with Sphinx 6.1.2 and Furo 2022.12.07 -->
+        <title>Getting started with the basics - Fast F1 3.0.0-ergast-a0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Fast F1 3.0.0-ergast-a0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Fast F1 3.0.0-ergast-a0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/theOehrly/Fast-F1">← Back to Github</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Getting started with the basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples_gallery/index.html">Examples Gallery</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples_gallery/example_fastf1_signalrclient.html">Using the Fast-F1 signalr client?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples_gallery/plot_speed_traces.html">Overlaying speed traces of two laps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples_gallery/plot_gear_shifts_on_track.html">Gear shifts on track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples_gallery/plot_qualifying_results.html">Qualifying results overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples_gallery/plot_who_can_still_win_wdc.html">Who can still win the drivers WDC?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html#api-reference">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">F1 API - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ergast.html">Ergast API Interface - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.ergast</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../time_explanation.html">Time, Date and Timing - Explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto_accurate_calculations.html">How to perform calculations accurately</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../known_bugs.html">Known bugs and caveats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/devenv_setup.html">Setting up FastF1 for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/documenting_fastf1.html">Writing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/coding_guide.html">Pull request guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="getting-started-with-the-basics">
+<h1>Getting started with the basics<a class="headerlink" href="#getting-started-with-the-basics" title="Permalink to this heading">#</a></h1>
+<p>FastF1 is built mainly around Pandas DataFrame and Series objects.
+If you are familiar with Pandas you’ll immediately recognize this and working
+with the data will be fairly straight forward. (If you’re
+not familiar with Pandas at all, it might be helpful to check out a short
+tutorial.)</p>
+<section id="loading-a-session-or-an-event">
+<h2>Loading a session or an event<a class="headerlink" href="#loading-a-session-or-an-event" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../core.html#fastf1.core.Session" title="fastf1.core.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.Session</span></code></a> object is an important starting point for
+everything you do with FastF1. Usually the first thing you want to do
+is loading a session. For this, you should use
+<a class="reference internal" href="../fastf1.html#fastf1.get_session" title="fastf1.get_session"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.get_session()</span></code></a>.</p>
+<p>For example, let’s load the Qualifying of the 7th race of the 2021 season:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fastf1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Qualifying&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">date</span>
+<span class="go">Timestamp(&#39;2021-06-19 00:00:00&#39;)</span>
+</pre></div>
+</div>
+<p>Now, which race weekend are we actually looking at here?
+For this we have the <a class="reference internal" href="../events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a> object which holds
+information about each event. An event can be a race weekend or a testing
+event and usually consists of multiple sessions. It is accessible through the
+session object.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">event</span>
+<span class="go">RoundNumber                                                     7</span>
+<span class="go">Country                                                    France</span>
+<span class="go">Location                                             Le Castellet</span>
+<span class="go">OfficialEventName    FORMULA 1 EMIRATES GRAND PRIX DE FRANCE 2021</span>
+<span class="go">EventDate                                     2021-06-20 00:00:00</span>
+<span class="go">EventName                                       French Grand Prix</span>
+<span class="go">EventFormat                                          conventional</span>
+<span class="go">Session1                                               Practice 1</span>
+<span class="go">Session1Date                                  2021-06-18 00:00:00</span>
+<span class="go">Session2                                               Practice 2</span>
+<span class="go">Session2Date                                  2021-06-18 00:00:00</span>
+<span class="go">Session3                                               Practice 3</span>
+<span class="go">Session3Date                                  2021-06-19 00:00:00</span>
+<span class="go">Session4                                               Qualifying</span>
+<span class="go">Session4Date                                  2021-06-19 00:00:00</span>
+<span class="go">Session5                                                     Race</span>
+<span class="go">Session5Date                                  2021-06-20 00:00:00</span>
+<span class="go">F1ApiSupport                                                 True</span>
+<span class="go">Name: French Grand Prix, dtype: object</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="../events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a> object is a subclass of a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Series</span></code>. The individual values can therefore be accessed as it
+is common for pandas objects:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;EventName&#39;</span><span class="p">]</span>
+<span class="go">&#39;French Grand Prix&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;EventDate&#39;</span><span class="p">]</span>  <span class="c1"># this is the date of the race day</span>
+<span class="go">Timestamp(&#39;2021-06-20 00:00:00&#39;)</span>
+</pre></div>
+</div>
+<p>You can also load an event directly, by using the function
+<a class="reference internal" href="../fastf1.html#fastf1.get_session" title="fastf1.get_session"><code class="xref py py-func docutils literal notranslate"><span class="pre">fastf1.get_session()</span></code></a>. The <a class="reference internal" href="../events.html#fastf1.events.Event" title="fastf1.events.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a> object in turn
+provides methods for accessing the individual associated sessions.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event</span>
+<span class="go">RoundNumber                                                     7</span>
+<span class="go">Country                                                    France</span>
+<span class="go">Location                                             Le Castellet</span>
+<span class="go">OfficialEventName    FORMULA 1 EMIRATES GRAND PRIX DE FRANCE 2021</span>
+<span class="go">EventDate                                     2021-06-20 00:00:00</span>
+<span class="go">EventName                                       French Grand Prix</span>
+<span class="go">EventFormat                                          conventional</span>
+<span class="go">Session1                                               Practice 1</span>
+<span class="go">Session1Date                                  2021-06-18 00:00:00</span>
+<span class="go">Session2                                               Practice 2</span>
+<span class="go">Session2Date                                  2021-06-18 00:00:00</span>
+<span class="go">Session3                                               Practice 3</span>
+<span class="go">Session3Date                                  2021-06-19 00:00:00</span>
+<span class="go">Session4                                               Qualifying</span>
+<span class="go">Session4Date                                  2021-06-19 00:00:00</span>
+<span class="go">Session5                                                     Race</span>
+<span class="go">Session5Date                                  2021-06-20 00:00:00</span>
+<span class="go">F1ApiSupport                                                 True</span>
+<span class="go">Name: French Grand Prix, dtype: object</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">get_race</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Race&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="loading-a-session-or-and-event-by-name">
+<h2>Loading a session or and event by name<a class="headerlink" href="#loading-a-session-or-and-event-by-name" title="Permalink to this heading">#</a></h2>
+<p>As an alternative to specifying an event number you can also load
+events by using a clearly identifying name.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;French Grand Prix&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;EventName&#39;</span><span class="p">]</span>
+<span class="go">&#39;French Grand Prix&#39;</span>
+</pre></div>
+</div>
+<p>You do not need to provide the exact event name. FastF1 will return the
+event (or session) that matches your provided name best. Even if you don’t
+specify the correct name chances are high that FastF1 will find the event
+you are looking for.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;EventName&#39;</span><span class="p">]</span>
+<span class="go">&#39;Spanish Grand Prix&#39;</span>
+</pre></div>
+</div>
+<p>But be aware that this does not always work. Sometimes another name just
+matches the provided string better. For example, what we actually want is the
+‘Emiligia Romagna Grand Prix’ but we get the ‘Belgian Grand Prix’ if we don’t
+specify the name fully and/or correct enough. Why? Because FastF1 is not a
+proper intelligent search engine. So check your results.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;Emilian&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;EventName&#39;</span><span class="p">]</span>
+<span class="go">&#39;Belgian Grand Prix&#39;</span>
+</pre></div>
+</div>
+<p>We need to be a bit more precise here.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;Emilia Romagna&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;EventName&#39;</span><span class="p">]</span>
+<span class="go">&#39;Emilia Romagna Grand Prix&#39;</span>
+</pre></div>
+</div>
+<p>Events and sessions can also be loaded by their country or location.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;Silverstone&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;EventName&#39;</span><span class="p">]</span>
+<span class="go">&#39;British Grand Prix&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="working-with-the-event-schedule">
+<h2>Working with the event schedule<a class="headerlink" href="#working-with-the-event-schedule" title="Permalink to this heading">#</a></h2>
+<p>Instead of loading a specific session or event, it is possible to load the
+full event schedule for a season. The <a class="reference internal" href="../events.html#fastf1.events.EventSchedule" title="fastf1.events.EventSchedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventSchedule</span></code></a>
+is a subclass of a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">schedule</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_event_schedule</span><span class="p">(</span><span class="mi">2021</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schedule</span>
+<span class="go">    RoundNumber       Country      Location  ... Session5 Session5Date F1ApiSupport</span>
+<span class="go">0             0       Bahrain        Sakhir  ...     None          NaT         True</span>
+<span class="go">1             1       Bahrain        Sakhir  ...     Race   2021-03-28         True</span>
+<span class="go">2             2         Italy         Imola  ...     Race   2021-04-18         True</span>
+<span class="go">3             3      Portugal      Portimão  ...     Race   2021-05-02         True</span>
+<span class="go">4             4         Spain      Montmeló  ...     Race   2021-05-09         True</span>
+<span class="go">5             5        Monaco   Monte-Carlo  ...     Race   2021-05-23         True</span>
+<span class="go">6             6    Azerbaijan          Baku  ...     Race   2021-06-06         True</span>
+<span class="go">7             7        France  Le Castellet  ...     Race   2021-06-20         True</span>
+<span class="go">8             8       Austria     Spielberg  ...     Race   2021-06-27         True</span>
+<span class="go">9             9       Austria     Spielberg  ...     Race   2021-07-04         True</span>
+<span class="go">10           10            UK   Silverstone  ...     Race   2021-07-18         True</span>
+<span class="go">11           11       Hungary      Budapest  ...     Race   2021-08-01         True</span>
+<span class="go">12           12       Belgium           Spa  ...     Race   2021-08-29         True</span>
+<span class="go">13           13   Netherlands     Zandvoort  ...     Race   2021-09-05         True</span>
+<span class="go">14           14         Italy         Monza  ...     Race   2021-09-12         True</span>
+<span class="go">15           15        Russia         Sochi  ...     Race   2021-09-26         True</span>
+<span class="go">16           16        Turkey      Istanbul  ...     Race   2021-10-10         True</span>
+<span class="go">17           17           USA        Austin  ...     Race   2021-10-24         True</span>
+<span class="go">18           18        Mexico   Mexico City  ...     Race   2021-11-07         True</span>
+<span class="go">19           19        Brazil     São Paulo  ...     Race   2021-11-14         True</span>
+<span class="go">20           20         Qatar     Al Daayen  ...     Race   2021-11-21         True</span>
+<span class="go">21           21  Saudi Arabia        Jeddah  ...     Race   2021-12-05         True</span>
+<span class="go">22           22           UAE     Abu Dhabi  ...     Race   2021-12-12         True</span>
+
+<span class="go">[23 rows x 18 columns]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schedule</span><span class="o">.</span><span class="n">columns</span>  
+<span class="go">Index([&#39;RoundNumber&#39;, &#39;Country&#39;, &#39;Location&#39;, &#39;OfficialEventName&#39;, &#39;EventDate&#39;,</span>
+<span class="go">     &#39;EventName&#39;, &#39;EventFormat&#39;, &#39;Session1&#39;, &#39;Session1Date&#39;, &#39;Session2&#39;,</span>
+<span class="go">     &#39;Session2Date&#39;, &#39;Session3&#39;, &#39;Session3Date&#39;, &#39;Session4&#39;, &#39;Session4Date&#39;,</span>
+<span class="go">     &#39;Session5&#39;, &#39;Session5Date&#39;, &#39;F1ApiSupport&#39;],</span>
+<span class="go">    dtype=&#39;object&#39;)</span>
+</pre></div>
+</div>
+<p>The event schedule provides methods for selecting specific events:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gp_12</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get_event_by_round</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp_12</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span>
+<span class="go">&#39;Belgium&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp_austin</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get_event_by_name</span><span class="p">(</span><span class="s1">&#39;Austin&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp_austin</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span>
+<span class="go">&#39;USA&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="displaying-driver-info-and-session-results">
+<h2>Displaying driver info and session results<a class="headerlink" href="#displaying-driver-info-and-session-results" title="Permalink to this heading">#</a></h2>
+<p>We have created a session now but everything has been rather boring so far.
+So lets make it a bit more interesting by taking a look at the results of
+this session. For this, it is first necessary to call
+<a class="reference internal" href="../core.html#fastf1.core.Session.load" title="fastf1.core.Session.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">Session.load</span></code></a>. This will load all available data for the
+session from various APIs. Downloading and processing of the data may take a
+few seconds. It is highly recommended to utilize FastF1’s builtin caching
+functionality to speed up data loading and to prevent excessive API requests.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fastf1</span><span class="o">.</span><span class="n">Cache</span><span class="o">.</span><span class="n">enable_cache</span><span class="p">(</span><span class="s2">&quot;path/to/empty/folder&quot;</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;French Grand Prix&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">results</span>
+<span class="go">   DriverNumber BroadcastName Abbreviation  ... Time Status Points</span>
+<span class="go">33           33  M VERSTAPPEN          VER  ...  NaT           0.0</span>
+<span class="go">44           44    L HAMILTON          HAM  ...  NaT           0.0</span>
+<span class="go">77           77      V BOTTAS          BOT  ...  NaT           0.0</span>
+<span class="go">11           11       S PEREZ          PER  ...  NaT           0.0</span>
+<span class="go">55           55       C SAINZ          SAI  ...  NaT           0.0</span>
+<span class="go">10           10       P GASLY          GAS  ...  NaT           0.0</span>
+<span class="go">16           16     C LECLERC          LEC  ...  NaT           0.0</span>
+<span class="go">4             4      L NORRIS          NOR  ...  NaT           0.0</span>
+<span class="go">14           14      F ALONSO          ALO  ...  NaT           0.0</span>
+<span class="go">3             3   D RICCIARDO          RIC  ...  NaT           0.0</span>
+<span class="go">31           31        E OCON          OCO  ...  NaT           0.0</span>
+<span class="go">5             5      S VETTEL          VET  ...  NaT           0.0</span>
+<span class="go">99           99  A GIOVINAZZI          GIO  ...  NaT           0.0</span>
+<span class="go">63           63     G RUSSELL          RUS  ...  NaT           0.0</span>
+<span class="go">47           47  M SCHUMACHER          MSC  ...  NaT           0.0</span>
+<span class="go">6             6      N LATIFI          LAT  ...  NaT           0.0</span>
+<span class="go">7             7   K RAIKKONEN          RAI  ...  NaT           0.0</span>
+<span class="go">9             9     N MAZEPIN          MAZ  ...  NaT           0.0</span>
+<span class="go">18           18      L STROLL          STR  ...  NaT           0.0</span>
+<span class="go">22           22     Y TSUNODA          TSU  ...  NaT           0.0</span>
+
+<span class="go">[20 rows x 16 columns]</span>
+</pre></div>
+</div>
+<p>The results object (<a class="reference internal" href="../core.html#fastf1.core.SessionResults" title="fastf1.core.SessionResults"><code class="xref py py-class docutils literal notranslate"><span class="pre">fastf1.core.SessionResults</span></code></a>) is a subclass of a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. Therefore, we can take a look at what data columns
+there are:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">columns</span>  
+<span class="go">Index([&#39;DriverNumber&#39;, &#39;BroadcastName&#39;, &#39;Abbreviation&#39;, &#39;TeamName&#39;,</span>
+<span class="go">       &#39;TeamColor&#39;, &#39;FirstName&#39;, &#39;LastName&#39;, &#39;FullName&#39;, &#39;Position&#39;,</span>
+<span class="go">       &#39;GridPosition&#39;, &#39;Q1&#39;, &#39;Q2&#39;, &#39;Q3&#39;, &#39;Time&#39;, &#39;Status&#39;, &#39;Points&#39;],</span>
+<span class="go">      dtype=&#39;object&#39;)</span>
+</pre></div>
+</div>
+<p>As an example, lets display the top ten drivers and their
+respective Q3 times. The results are sorted by finishing position, therefore,
+this is easy.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;Abbreviation&#39;</span><span class="p">,</span> <span class="s1">&#39;Q3&#39;</span><span class="p">]]</span>
+<span class="go">   Abbreviation                     Q3</span>
+<span class="go">33          VER 0 days 00:01:29.990000</span>
+<span class="go">44          HAM 0 days 00:01:30.248000</span>
+<span class="go">77          BOT 0 days 00:01:30.376000</span>
+<span class="go">11          PER 0 days 00:01:30.445000</span>
+<span class="go">55          SAI 0 days 00:01:30.840000</span>
+<span class="go">10          GAS 0 days 00:01:30.868000</span>
+<span class="go">16          LEC 0 days 00:01:30.987000</span>
+<span class="go">4           NOR 0 days 00:01:31.252000</span>
+<span class="go">14          ALO 0 days 00:01:31.340000</span>
+<span class="go">3           RIC 0 days 00:01:31.382000</span>
+</pre></div>
+</div>
+</section>
+<section id="working-with-laps-and-lap-times">
+<h2>Working with laps and lap times<a class="headerlink" href="#working-with-laps-and-lap-times" title="Permalink to this heading">#</a></h2>
+<p>All individual laps of a session can be accessed through the property
+<a class="reference internal" href="../core.html#fastf1.core.Session.laps" title="fastf1.core.Session.laps"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Session.laps</span></code></a>. The laps are represented in
+as <a class="reference internal" href="../core.html#fastf1.core.Laps" title="fastf1.core.Laps"><code class="xref py py-class docutils literal notranslate"><span class="pre">Laps</span></code></a> object which again is a subclass of a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;French Grand Prix&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fastf1</span><span class="o">.</span><span class="n">Cache</span><span class="o">.</span><span class="n">enable_cache</span><span class="p">(</span><span class="s2">&quot;path/to/empty/folder&quot;</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">laps</span>
+<span class="go">                      Time DriverNumber  ... IsAccurate            LapStartDate</span>
+<span class="go">0   0 days 00:28:44.908000           33  ...      False 2021-06-19 13:03:06.950</span>
+<span class="go">1   0 days 00:31:14.909000           33  ...      False 2021-06-19 13:14:12.111</span>
+<span class="go">2   0 days 00:32:45.910000           33  ...       True 2021-06-19 13:16:42.112</span>
+<span class="go">3   0 days 00:50:42.329000           33  ...      False 2021-06-19 13:18:13.113</span>
+<span class="go">4   0 days 00:52:59.529000           33  ...      False 2021-06-19 13:36:10.262</span>
+<span class="go">..                     ...          ...  ...        ...                     ...</span>
+<span class="go">265 0 days 00:39:10.594000           18  ...      False 2021-06-19 13:22:15.102</span>
+<span class="go">266 0 days 00:41:23.178000           18  ...       True 2021-06-19 13:24:37.797</span>
+<span class="go">267 0 days 00:41:30.642000           18  ...      False 2021-06-19 13:26:50.381</span>
+<span class="go">268 0 days 00:17:40.791000           22  ...      False 2021-06-19 13:00:22.952</span>
+<span class="go">269 0 days 00:26:20.982000           22  ...      False 2021-06-19 13:03:07.994</span>
+
+<span class="go">[270 rows x 27 columns]</span>
+</pre></div>
+</div>
+<p>That’s more than 250 laps right there and 26 columns of information.</p>
+<p>The following data columns are available:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">laps</span><span class="o">.</span><span class="n">columns</span>  
+<span class="go">Index([&#39;Time&#39;, &#39;DriverNumber&#39;, &#39;LapTime&#39;, &#39;LapNumber&#39;, &#39;PitOutTime&#39;,</span>
+<span class="go">       &#39;PitInTime&#39;, &#39;Sector1Time&#39;, &#39;Sector2Time&#39;, &#39;Sector3Time&#39;,</span>
+<span class="go">       &#39;Sector1SessionTime&#39;, &#39;Sector2SessionTime&#39;, &#39;Sector3SessionTime&#39;,</span>
+<span class="go">       &#39;SpeedI1&#39;, &#39;SpeedI2&#39;, &#39;SpeedFL&#39;, &#39;SpeedST&#39;, &#39;IsPersonalBest&#39;,</span>
+<span class="go">       &#39;Compound&#39;, &#39;TyreLife&#39;, &#39;FreshTyre&#39;, &#39;Stint&#39;, &#39;LapStartTime&#39;, &#39;Team&#39;,</span>
+<span class="go">       &#39;Driver&#39;, &#39;TrackStatus&#39;, &#39;IsAccurate&#39;, &#39;LapStartDate&#39;],</span>
+<span class="go">      dtype=&#39;object&#39;)</span>
+</pre></div>
+</div>
+<p>The detailed explanation for all these columns can be found in the
+documentation of the <a class="reference internal" href="../core.html#fastf1.core.Laps" title="fastf1.core.Laps"><code class="xref py py-class docutils literal notranslate"><span class="pre">Laps</span></code></a> class.</p>
+<p>The <a class="reference internal" href="../core.html#fastf1.core.Laps" title="fastf1.core.Laps"><code class="xref py py-class docutils literal notranslate"><span class="pre">Laps</span></code></a> object is not a simple DataFrame though.
+Like FastF1’s other data objects it provides some more features specifically
+for working with Formula 1 data.</p>
+<p>One of these additional features are methods for selecting specific laps.
+So let’s see what the fastest laptime was and who is on pole.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fastest_lap</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">laps</span><span class="o">.</span><span class="n">pick_fastest</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fastest_lap</span><span class="p">[</span><span class="s1">&#39;LapTime&#39;</span><span class="p">]</span>
+<span class="go">Timedelta(&#39;0 days 00:01:29.990000&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fastest_lap</span><span class="p">[</span><span class="s1">&#39;Driver&#39;</span><span class="p">]</span>
+<span class="go">&#39;VER&#39;</span>
+</pre></div>
+</div>
+<p>Check out this example that shows how you can plot lap times:
+<a class="reference internal" href="../examples_gallery/plot_qualifying_results.html#sphx-glr-examples-gallery-plot-qualifying-results-py"><span class="std std-ref">Qualifying results overview</span></a></p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../examples_gallery/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Examples Gallery</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Getting Started</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, theOehrly
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Getting started with the basics</a><ul>
+<li><a class="reference internal" href="#loading-a-session-or-an-event">Loading a session or an event</a></li>
+<li><a class="reference internal" href="#loading-a-session-or-and-event-by-name">Loading a session or and event by name</a></li>
+<li><a class="reference internal" href="#working-with-the-event-schedule">Working with the event schedule</a></li>
+<li><a class="reference internal" href="#displaying-driver-info-and-session-results">Displaying driver info and session results</a></li>
+<li><a class="reference internal" href="#working-with-laps-and-lap-times">Working with laps and lap times</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

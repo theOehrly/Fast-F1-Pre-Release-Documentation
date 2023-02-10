@@ -1,0 +1,519 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Live Timing Client - fastf1.livetiming" href="livetiming.html" /><link rel="prev" title="Utils module - fastf1.utils" href="utils.html" />
+
+    <!-- Generated with Sphinx 6.1.2 and Furo 2022.12.07 -->
+        <title>Plotting - fastf1.plotting - Fast F1 3.0.0-ergast-a0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Fast F1 3.0.0-ergast-a0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Fast F1 3.0.0-ergast-a0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/theOehrly/Fast-F1">← Back to Github</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/basics.html">Getting started with the basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples_gallery/index.html">Examples Gallery</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/example_fastf1_signalrclient.html">Using the Fast-F1 signalr client?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_speed_traces.html">Overlaying speed traces of two laps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_gear_shifts_on_track.html">Gear shifts on track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_qualifying_results.html">Qualifying results overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_who_can_still_win_wdc.html">Who can still win the drivers WDC?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html#api-reference">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">F1 API - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ergast.html">Ergast API Interface - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.ergast</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="time_explanation.html">Time, Date and Timing - Explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto_accurate_calculations.html">How to perform calculations accurately</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known_bugs.html">Known bugs and caveats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/devenv_setup.html">Setting up FastF1 for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/documenting_fastf1.html">Writing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing/coding_guide.html">Pull request guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-fastf1.plotting">
+<span id="plotting-fastf1-plotting"></span><h1>Plotting - <a class="reference internal" href="#module-fastf1.plotting" title="fastf1.plotting"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a><a class="headerlink" href="#module-fastf1.plotting" title="Permalink to this heading">#</a></h1>
+<p>Helper functions for creating data plots.</p>
+<p><a class="reference internal" href="#module-fastf1.plotting" title="fastf1.plotting"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a> provides optional functionality with the intention of making
+it easy to create nice plots.</p>
+<dl class="simple">
+<dt>This module offers mainly two things:</dt><dd><ul class="simple">
+<li><p>team names and colors</p></li>
+<li><p>matplotlib mods and helper functions</p></li>
+</ul>
+</dd>
+</dl>
+<p>Fast-F1 focuses on plotting data with matplotlib. Of course, you are not
+required to use matplotlib and you can use any other tool you like.</p>
+<p>If you wish to use matplotlib, it is highly recommended to enable some
+helper functions by calling <a class="reference internal" href="#fastf1.plotting.setup_mpl" title="fastf1.plotting.setup_mpl"><code class="xref py py-func docutils literal notranslate"><span class="pre">setup_mpl()</span></code></a>.</p>
+<p>If you don’t want to use matplotlib, you can still use the team names
+and colors which are provided below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Plotting related functionality is likely to change in a future
+release.</p>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="fastf1.plotting.TEAM_COLORS">
+<span class="sig-prename descclassname"><span class="pre">fastf1.plotting.</span></span><span class="sig-name descname"><span class="pre">TEAM_COLORS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'alfa</span> <span class="pre">romeo':</span> <span class="pre">'#900000',</span> <span class="pre">'alphatauri':</span> <span class="pre">'#2b4562',</span> <span class="pre">'alpine':</span> <span class="pre">'#0090ff',</span> <span class="pre">'aston</span> <span class="pre">martin':</span> <span class="pre">'#006f62',</span> <span class="pre">'ferrari':</span> <span class="pre">'#dc0000',</span> <span class="pre">'haas':</span> <span class="pre">'#ffffff',</span> <span class="pre">'mclaren':</span> <span class="pre">'#ff8700',</span> <span class="pre">'mercedes':</span> <span class="pre">'#00d2be',</span> <span class="pre">'red</span> <span class="pre">bull':</span> <span class="pre">'#0600ef',</span> <span class="pre">'williams':</span> <span class="pre">'#005aff'}</span></em><a class="headerlink" href="#fastf1.plotting.TEAM_COLORS" title="Permalink to this definition">#</a></dt>
+<dd><p>Mapping of team colors (hex color code) to team names.
+(current season only)</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="fastf1.plotting.TEAM_TRANSLATE">
+<span class="sig-prename descclassname"><span class="pre">fastf1.plotting.</span></span><span class="sig-name descname"><span class="pre">TEAM_TRANSLATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'AMR':</span> <span class="pre">'aston</span> <span class="pre">martin',</span> <span class="pre">'APN':</span> <span class="pre">'alpine',</span> <span class="pre">'APT':</span> <span class="pre">'alphatauri',</span> <span class="pre">'ARR':</span> <span class="pre">'alfa</span> <span class="pre">romeo',</span> <span class="pre">'FER':</span> <span class="pre">'ferrari',</span> <span class="pre">'HAA':</span> <span class="pre">'haas',</span> <span class="pre">'MCL':</span> <span class="pre">'mclaren',</span> <span class="pre">'MER':</span> <span class="pre">'mercedes',</span> <span class="pre">'RBR':</span> <span class="pre">'red</span> <span class="pre">bull',</span> <span class="pre">'WIL':</span> <span class="pre">'williams'}</span></em><a class="headerlink" href="#fastf1.plotting.TEAM_TRANSLATE" title="Permalink to this definition">#</a></dt>
+<dd><p>Mapping of team names to theirs respective abbreviations.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="fastf1.plotting.DRIVER_COLORS">
+<span class="sig-prename descclassname"><span class="pre">fastf1.plotting.</span></span><span class="sig-name descname"><span class="pre">DRIVER_COLORS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'alexander</span> <span class="pre">albon':</span> <span class="pre">'#005aff',</span> <span class="pre">'carlos</span> <span class="pre">sainz':</span> <span class="pre">'#ff8181',</span> <span class="pre">'charles</span> <span class="pre">leclerc':</span> <span class="pre">'#dc0000',</span> <span class="pre">'daniel</span> <span class="pre">ricciardo':</span> <span class="pre">'#ff8700',</span> <span class="pre">'esteban</span> <span class="pre">ocon':</span> <span class="pre">'#70c2ff',</span> <span class="pre">'fernando</span> <span class="pre">alonso':</span> <span class="pre">'#0090ff',</span> <span class="pre">'george</span> <span class="pre">russell':</span> <span class="pre">'#24ffff',</span> <span class="pre">'kevin</span> <span class="pre">magnussen':</span> <span class="pre">'#ffffff',</span> <span class="pre">'lance</span> <span class="pre">stroll':</span> <span class="pre">'#25a617',</span> <span class="pre">'lando</span> <span class="pre">norris':</span> <span class="pre">'#eeb370',</span> <span class="pre">'lewis</span> <span class="pre">hamilton':</span> <span class="pre">'#00d2be',</span> <span class="pre">'max</span> <span class="pre">verstappen':</span> <span class="pre">'#0600ef',</span> <span class="pre">'mick</span> <span class="pre">schumacher':</span> <span class="pre">'#cacaca',</span> <span class="pre">'nicholas</span> <span class="pre">latifi':</span> <span class="pre">'#012564',</span> <span class="pre">'nico</span> <span class="pre">hulkenberg':</span> <span class="pre">'#2f9b90',</span> <span class="pre">'pierre</span> <span class="pre">gasly':</span> <span class="pre">'#2b4562',</span> <span class="pre">'sebastian</span> <span class="pre">vettel':</span> <span class="pre">'#006f62',</span> <span class="pre">'sergio</span> <span class="pre">perez':</span> <span class="pre">'#716de2',</span> <span class="pre">'valtteri</span> <span class="pre">bottas':</span> <span class="pre">'#900000',</span> <span class="pre">'yuki</span> <span class="pre">tsunoda':</span> <span class="pre">'#356cac',</span> <span class="pre">'zhou</span> <span class="pre">guanyu':</span> <span class="pre">'#500000'}</span></em><a class="headerlink" href="#fastf1.plotting.DRIVER_COLORS" title="Permalink to this definition">#</a></dt>
+<dd><p>Mapping of driver colors (hex color code) to driver names.
+(current season only)</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="fastf1.plotting.DRIVER_TRANSLATE">
+<span class="sig-prename descclassname"><span class="pre">fastf1.plotting.</span></span><span class="sig-name descname"><span class="pre">DRIVER_TRANSLATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'ALB':</span> <span class="pre">'alexander</span> <span class="pre">albon',</span> <span class="pre">'ALO':</span> <span class="pre">'fernando</span> <span class="pre">alonso',</span> <span class="pre">'BOT':</span> <span class="pre">'valtteri</span> <span class="pre">bottas',</span> <span class="pre">'GAS':</span> <span class="pre">'pierre</span> <span class="pre">gasly',</span> <span class="pre">'HAM':</span> <span class="pre">'lewis</span> <span class="pre">hamilton',</span> <span class="pre">'HUL':</span> <span class="pre">'nico</span> <span class="pre">hulkenberg',</span> <span class="pre">'LAT':</span> <span class="pre">'nicholas</span> <span class="pre">latifi',</span> <span class="pre">'LEC':</span> <span class="pre">'charles</span> <span class="pre">leclerc',</span> <span class="pre">'MAG':</span> <span class="pre">'kevin</span> <span class="pre">magnussen',</span> <span class="pre">'MSC':</span> <span class="pre">'mick</span> <span class="pre">schumacher',</span> <span class="pre">'NOR':</span> <span class="pre">'lando</span> <span class="pre">norris',</span> <span class="pre">'OCO':</span> <span class="pre">'esteban</span> <span class="pre">ocon',</span> <span class="pre">'PER':</span> <span class="pre">'sergio</span> <span class="pre">perez',</span> <span class="pre">'RIC':</span> <span class="pre">'daniel</span> <span class="pre">ricciardo',</span> <span class="pre">'RUS':</span> <span class="pre">'george</span> <span class="pre">russell',</span> <span class="pre">'SAI':</span> <span class="pre">'carlos</span> <span class="pre">sainz',</span> <span class="pre">'STR':</span> <span class="pre">'lance</span> <span class="pre">stroll',</span> <span class="pre">'TSU':</span> <span class="pre">'yuki</span> <span class="pre">tsunoda',</span> <span class="pre">'VER':</span> <span class="pre">'max</span> <span class="pre">verstappen',</span> <span class="pre">'VET':</span> <span class="pre">'sebastian</span> <span class="pre">vettel',</span> <span class="pre">'ZHO':</span> <span class="pre">'zhou</span> <span class="pre">guanyu'}</span></em><a class="headerlink" href="#fastf1.plotting.DRIVER_TRANSLATE" title="Permalink to this definition">#</a></dt>
+<dd><p>Mapping of driver names to theirs respective abbreviations.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="fastf1.plotting.COLOR_PALETTE">
+<span class="sig-prename descclassname"><span class="pre">fastf1.plotting.</span></span><span class="sig-name descname"><span class="pre">COLOR_PALETTE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FF79C6',</span> <span class="pre">'#50FA7B',</span> <span class="pre">'#8BE9FD',</span> <span class="pre">'#BD93F9',</span> <span class="pre">'#FFB86C',</span> <span class="pre">'#FF5555',</span> <span class="pre">'#F1FA8C']</span></em><a class="headerlink" href="#fastf1.plotting.COLOR_PALETTE" title="Permalink to this definition">#</a></dt>
+<dd><p>The default color palette for matplotlib plot lines in fastf1’s color
+scheme.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.plotting.setup_mpl">
+<span class="sig-prename descclassname"><span class="pre">fastf1.plotting.</span></span><span class="sig-name descname"><span class="pre">setup_mpl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mpl_timedelta_support</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_scheme</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fastf1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">misc_mpl_mods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/plotting.html#setup_mpl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.plotting.setup_mpl" title="Permalink to this definition">#</a></dt>
+<dd><p>Setup matplotlib for use with fastf1.</p>
+<p>This is optional but, at least partly, highly recommended.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mpl_timedelta_support</strong> (<em>bool</em>) – <p>Matplotlib itself offers very limited functionality for plotting
+timedelta values. (Lap times, sector times and other kinds of time
+spans are represented as timedelta.)</p>
+<p>Enabling this option will patch some internal matplotlib functions
+and register converters, formatters and locators for tick
+formatting. The heavy lifting for this is done by an external
+package called ‘Timple’. See <a class="reference external" href="https://github.com/theOehrly/Timple">https://github.com/theOehrly/Timple</a> if
+you wish to customize the tick formatting for timedelta.</p>
+</p></li>
+<li><p><strong>color_scheme</strong> (<em>str</em><em>, </em><em>None</em>) – This enables the Fast-F1 color scheme that you can see in all example
+images.
+Valid color scheme names are: [‘fastf1’, None]</p></li>
+<li><p><strong>misc_mpl_mods</strong> (<em>bool</em>) – <p>This enables a collection of patches for the following mpl features:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.savefig</span></code> (saving of figures)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.bar</span></code>/<code class="docutils literal notranslate"><span class="pre">.barh</span></code> (plotting of bar graphs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code> (for creating a nice background grid)</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.plotting.driver_color">
+<span class="sig-prename descclassname"><span class="pre">fastf1.plotting.</span></span><span class="sig-name descname"><span class="pre">driver_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/plotting.html#driver_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.plotting.driver_color" title="Permalink to this definition">#</a></dt>
+<dd><p>Get a driver’s color from a driver name or abbreviation.</p>
+<p>This function will try to find a matching driver for any identifier string
+that is passed to it. This involves case insensitive matching and partial
+string matching.</p>
+<p>If you want exact string matching, you should use the
+<a class="reference internal" href="#fastf1.plotting.DRIVER_COLORS" title="fastf1.plotting.DRIVER_COLORS"><code class="xref any py py-data docutils literal notranslate"><span class="pre">DRIVER_COLORS</span></code></a> dictionary directly, using <a class="reference internal" href="#fastf1.plotting.DRIVER_TRANSLATE" title="fastf1.plotting.DRIVER_TRANSLATE"><code class="xref any py py-data docutils literal notranslate"><span class="pre">DRIVER_TRANSLATE</span></code></a> to
+convert abbreviations to team names if necessary.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">driver_color</span><span class="p">(</span><span class="s1">&#39;charles leclerc&#39;</span><span class="p">)</span>
+<span class="go">&#39;#dc0000&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">driver_color</span><span class="p">(</span><span class="s1">&#39;max verstappen&#39;</span><span class="p">)</span>
+<span class="go">&#39;#0600ef&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">driver_color</span><span class="p">(</span><span class="s1">&#39;ver&#39;</span><span class="p">)</span>
+<span class="go">&#39;#0600ef&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">driver_color</span><span class="p">(</span><span class="s1">&#39;lec&#39;</span><span class="p">)</span>
+<span class="go">&#39;#dc0000&#39;</span>
+
+<span class="go">shortened driver names and typos can be dealt with</span>
+<span class="go">too (within reason)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">driver_color</span><span class="p">(</span><span class="s1">&#39;Max Verst&#39;</span><span class="p">)</span>
+<span class="go">&#39;#0600ef&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">driver_color</span><span class="p">(</span><span class="s1">&#39;Charles&#39;</span><span class="p">)</span>
+<span class="go">&#39;#dc0000&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>identifier</strong> (<em>str</em>) – Abbreviation or uniquely identifying name of the driver.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hex color code</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.plotting.team_color">
+<span class="sig-prename descclassname"><span class="pre">fastf1.plotting.</span></span><span class="sig-name descname"><span class="pre">team_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/plotting.html#team_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.plotting.team_color" title="Permalink to this definition">#</a></dt>
+<dd><p>Get a team’s color from a team name or abbreviation.</p>
+<p>This function will try to find a matching team for any identifier string
+that is passed to it. This involves case insensitive matching and partial
+string matching.</p>
+<p>If you want exact string matching, you should use the
+<a class="reference internal" href="#fastf1.plotting.TEAM_COLORS" title="fastf1.plotting.TEAM_COLORS"><code class="xref any py py-data docutils literal notranslate"><span class="pre">TEAM_COLORS</span></code></a> dictionary directly, using <a class="reference internal" href="#fastf1.plotting.TEAM_TRANSLATE" title="fastf1.plotting.TEAM_TRANSLATE"><code class="xref any py py-data docutils literal notranslate"><span class="pre">TEAM_TRANSLATE</span></code></a> to
+convert abbreviations to team names if necessary.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">team_color</span><span class="p">(</span><span class="s1">&#39;Red Bull&#39;</span><span class="p">)</span>
+<span class="go">&#39;#0600ef&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">team_color</span><span class="p">(</span><span class="s1">&#39;redbull&#39;</span><span class="p">)</span>
+<span class="go">&#39;#0600ef&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">team_color</span><span class="p">(</span><span class="s1">&#39;Red&#39;</span><span class="p">)</span>
+<span class="go">&#39;#0600ef&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">team_color</span><span class="p">(</span><span class="s1">&#39;RBR&#39;</span><span class="p">)</span>
+<span class="go">&#39;#0600ef&#39;</span>
+
+<span class="go">shortened team names, included sponsors and typos can be dealt with</span>
+<span class="go">too (within reason)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">team_color</span><span class="p">(</span><span class="s1">&#39;Mercedes&#39;</span><span class="p">)</span>
+<span class="go">&#39;#00d2be&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">team_color</span><span class="p">(</span><span class="s1">&#39;Merc&#39;</span><span class="p">)</span>
+<span class="go">&#39;#00d2be&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">team_color</span><span class="p">(</span><span class="s1">&#39;Merecds&#39;</span><span class="p">)</span>
+<span class="go">&#39;#00d2be&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">team_color</span><span class="p">(</span><span class="s1">&#39;Mercedes-AMG Petronas F1 Team&#39;</span><span class="p">)</span>
+<span class="go">&#39;#00d2be&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>identifier</strong> (<em>str</em>) – Abbreviation or uniquely identifying name of the team.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hex color code</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fastf1.plotting.lapnumber_axis">
+<span class="sig-prename descclassname"><span class="pre">fastf1.plotting.</span></span><span class="sig-name descname"><span class="pre">lapnumber_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xaxis'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fastf1/plotting.html#lapnumber_axis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastf1.plotting.lapnumber_axis" title="Permalink to this definition">#</a></dt>
+<dd><p>Set axis to integer ticks only.”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ax</strong> – matplotlib axis</p></li>
+<li><p><strong>axis</strong> (<em>='xaxis'</em><em>, </em><em>optional</em>) – can be ‘xaxis’ or ‘yaxis’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the modified axis instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="livetiming.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="utils.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, theOehrly
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a><ul>
+<li><a class="reference internal" href="#fastf1.plotting.TEAM_COLORS"><code class="docutils literal notranslate"><span class="pre">TEAM_COLORS</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.plotting.TEAM_TRANSLATE"><code class="docutils literal notranslate"><span class="pre">TEAM_TRANSLATE</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.plotting.DRIVER_COLORS"><code class="docutils literal notranslate"><span class="pre">DRIVER_COLORS</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.plotting.DRIVER_TRANSLATE"><code class="docutils literal notranslate"><span class="pre">DRIVER_TRANSLATE</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.plotting.COLOR_PALETTE"><code class="docutils literal notranslate"><span class="pre">COLOR_PALETTE</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.plotting.setup_mpl"><code class="docutils literal notranslate"><span class="pre">setup_mpl()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.plotting.driver_color"><code class="docutils literal notranslate"><span class="pre">driver_color()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.plotting.team_color"><code class="docutils literal notranslate"><span class="pre">team_color()</span></code></a></li>
+<li><a class="reference internal" href="#fastf1.plotting.lapnumber_axis"><code class="docutils literal notranslate"><span class="pre">lapnumber_axis()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>
