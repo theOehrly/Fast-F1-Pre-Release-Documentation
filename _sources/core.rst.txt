@@ -4,33 +4,8 @@
   API Reference
   -------------
 
-
-
-  Functions
-  *********
-
-  get_session
-  +++++++++++
-
-    .. automethod:: fastf1.core.get_session
-
-  get_round
-  +++++++++
-
-    .. automethod:: fastf1.core.get_round
-
-
-
   Data Objects
   ************
-
-  Weekend
-  +++++++
-
-    .. autoclass:: fastf1.core.Weekend
-      :members:
-      :autosummary:
-      :show-inheritance:
 
   Session
   +++++++
@@ -38,7 +13,6 @@
     .. autoclass:: fastf1.core.Session
       :members:
       :autosummary:
-      :show-inheritance:
 
   Laps
   ++++
@@ -46,7 +20,6 @@
     .. autoclass:: fastf1.core.Laps
       :members:
       :autosummary:
-      :show-inheritance:
 
   Lap
   +++
@@ -54,7 +27,6 @@
     .. autoclass:: fastf1.core.Lap
       :members:
       :autosummary:
-      :show-inheritance:
 
   Telemetry
   +++++++++
@@ -62,7 +34,6 @@
     .. autoclass:: fastf1.core.Telemetry
       :members:
       :autosummary:
-      :show-inheritance:
 
   Results
   +++++++
@@ -70,13 +41,18 @@
     .. autoclass:: fastf1.core.SessionResults
       :members:
       :autosummary:
-      :show-inheritance:
 
     .. autoclass:: fastf1.core.DriverResult
       :members:
       :autosummary:
-      :show-inheritance:
 
+
+  CircuitInfo
+  +++++++++++
+
+    .. autoclass:: fastf1.mvapi.data.CircuitInfo
+      :members:
+      :autosummary:
 
 
   Exceptions

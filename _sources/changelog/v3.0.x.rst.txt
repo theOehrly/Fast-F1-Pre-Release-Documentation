@@ -1,0 +1,337 @@
+What's new in v3.0.7
+--------------------
+
+(released 17/07/2023)
+
+Bug Fixes and Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Fixed an issue that prevented telemetry data from being loaded when position
+  data is missing (and vice versa) (#412)
+
+- Fixed loading of Sprint Shootout results
+  (#413, regression introduced in v3.0.3)
+
+- Added driver color for Ricciardo at AlphaTauri (by @pesaventofilippo in #418)
+
+
+What's new in v3.0.6
+--------------------
+
+(released 21/06/2023)
+
+Release forces a cache update after updating from v3.0.4 and lower. Else, the
+changes from v3.0.5 are not applied if the data is cached already.
+
+
+What's new in v3.0.5
+--------------------
+
+(released 21/06/2023)
+
+Bug Fixes and Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Fixed an error when loading historic sessions (#400).
+
+- Fixed an error where lap times are incorrectly not marked as 'Personal Best'.
+  This also caused :meth:`~fastf1.core.Laps.pick_fastest` to return incorrect
+  laps. (#403)
+
+
+
+What's new in v3.0.4
+--------------------
+
+(released 03/06/2023)
+
+Bug Fixes and Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Added missing color for compound "TEST-UNKNOWN" (by @Casper-Guo)
+
+- Bumped minimum version requirement for dependency 'timple'
+
+
+
+What's new in v3.0.3
+--------------------
+
+(released 19/05/2023)
+
+Bug Fixes and Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Fixed incorrectly formatted color codes for tyre compound colors.
+  (by @Casper-Guo)
+
+- Fixed a bug that prevented the calculation of results for Qualifying-like
+  sessions (for example Sprint Shootout) that only occurred on Pandas v1.5.3
+  and older.
+
+
+
+What's new in v3.0.2
+--------------------
+
+(released 09/05/2023)
+
+Bug Fixes and Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Improved support for Sprint Shootout sessions and added session results for
+  these. (by @mdsakalu)
+
+- Improved exception handling on various internal functions
+
+
+
+What's new in v3.0.1
+--------------------
+
+(released 07/05/2023)
+
+Bug Fixes
+^^^^^^^^^
+
+- fixed a bug that prevented the use of the livetiming client from the
+  commandline
+
+
+
+What's new in v3.0.0
+--------------------
+
+(released 02/05/2023)
+
+New Features
+^^^^^^^^^^^^
+
+- Caching is now enabled by default and does not need to be manually configured
+  anymore. The cache defaults to using operating system specific default
+  locations that are intended for storing temporary files.
+  The cache directory can either be changed from within a script or by setting
+  and environemnt variable to define an alternative cache loaction.
+  See: :class:`fastf1.Cache`
+  (by @oscr)
+
+- Full support for the Ergast F1 API has now been added, replacing the very
+  limited functionality that was previously available. Features of the new
+  implementation:
+
+  - all endpoints supported
+  - all query filters supported
+  - can return data as Pandas DataFrames or raw
+  - can do automatic type casting to the best suited data type
+  - uses caching
+  - supports result limits and pagination
+  - enforces rate limits defined by Ergast (with cached requests not counting
+    towards the rate limits)
+
+  See: :ref:`ergast`
+
+- The livetiming client now supports all current versions of Python. The limit
+  to version 3.9 and lower no longer exists for this feature. A big thank you
+  to @oscr for integrating the problematic python-signalr-client dependency
+  into FastF1 and fixing the problems that existed with Python 3.10 and higher.
+
+- The log level for all parts of FastF1 can now be easily configured using
+  :func:`fastf1.set_log_level`. The logging system in FastF1 has been
+  reimplemented to make debugging easier. See :ref:`logging`
+
+- A partial last lap will now be added to :class:`fastf1.core.Laps` when a
+  driver retires on track. This especially will make it easier to plot
+  telemetry data of such a lap as there is now a corresponding
+  :class:`fastf1.core.Lap`.
+
+- When loaded, race control messages will now be parsed to find which laps
+  were deleted. The :class:`fastf1.core.Laps` object gets two new columns
+  'Deleted' and 'DeletedReason' that indicate that a lap was deleted and why
+  it was deleted.
+
+- The intended total lap count of a race or sprint session is now available
+  through :attr:`fastf1.core.Session.total_laps`.
+  (by @Toskosz)
+
+- Added method :func:`fastf1.core.Laps.split_qualifying_sessions` to split
+  laps for a qualifying session into Q1, Q2 and Q3.
+
+- The F1 timing data API has been added as an additional fallback backend for
+  retrieving event schedule data (#260).
+
+- In the event schedule, ``Session*Date`` will now be a timezone-aware local
+  timestamp (previously: local, but not timezone-aware). Additionally, for each
+  session there now exists a non-timezone aware UTC timestamp in
+  ``Session*DateUtc`` (#253). Timezone information and UTC timestamps are only
+  available when using one of ``'fastf1'`` or ``'f1timing'`` as backend.
+
+- Added ``strict_search`` parameter to :func:`fastf1.get_event` that disables
+  fuzzy matching for exact matching of session names. (by @Neron-png)
+
+- Added track status data as :attr:`fastf1.core.Session.track_status`.
+  (by @SpyrosKoun)
+
+- Added function :func:`fastf1.core.Telemetry.add_track_status` for adding
+  track status information to telemetry data. (by @SpyrosKoun))
+
+- Added function :func:`fastf1.core.Laps.pick_lap` for conveniently selecting
+  specific laps by their lap number. (by @TracingInsights)
+
+- Added a custom ``__repr__`` to :class:`fastf1.core.Session` for a more
+  meaningful string representation of the object. Now, information about the
+  year, round, event name and session name will be shown. (by @Casper-Guo)
+
+- FastF1 can now be installed using conda-forge. (by @daylinmorgan)
+
+- Added ``HeadshotURL`` and ``CountryCode`` to
+  :class:`fastf1.core.SessionResults` and :class:`fastf1.core.DriverResult`.
+  (by @lmontrieux)
+
+- Tyre compound colors are now available through
+  :attr:`fastf1.plotting.COMPOUND_COLORS`. (by @Caspar-Guo)
+
+- The cache now supports "offline mode" where only cached responses are
+  returned and no actual requests are sent even if an internet connection
+  is available. Offline mode can be enabled using
+  :func:`fastf1.Cache.offline_mode`.
+
+- For race sessions, the previously missing first lap time is now automatically
+  added from Ergast (#293).
+
+- For race sessions, lap start and end times are now correctly aligned between
+  drivers. Previously, there was a small difference in the order of a few tens
+  of milliseconds.
+
+- Add current ``Position`` at the end of each lap to :class:`fastf1.core.Laps`
+  and :class:`fastf1.core.Lap` (#295).
+
+- Add official classification as ``ClassifiedPosition`` for Races and Sprints
+  to :class:`fastf1.core.SessionResults` and :class:`fastf1.core.DriverResult`.
+  The ``ClassifiedPosition`` lists the finishing position for drivers who are
+  officially classified or a reason for not being classified, for example if
+  a driver retired, was disqualified or similar. (#294)
+
+
+Other Changes
+^^^^^^^^^^^^^
+
+- All columns in :class:`fastf1.core.Laps` that were previously of type ``int``
+  are now ``float`` to support ``NaN`` values.
+
+
+Bug Fixes
+^^^^^^^^^
+
+- The API parser will now correctly detect when lap times were deleted and
+  will not mark these lap times as personal best time anymore if the deleted
+  lap was a drivers fastest lap. (#165)
+
+- Enforce creation of :class:`fastf1.core.Laps` with default columns and
+  default dtypes (when created through :func:`fastf1.core.Session.load`)
+  (#310).
+
+- Fixed a bug where FastF1 Series-like objects where returned instead of a
+  native pandas ``Series`` when getting a single column of a FastF1
+  DataFrame-like object by slicing vertically.
+
+- Improve loading of session results when F1 data is partially incomplete.
+
+- Improved type hints throughout FastF1 (by @transorsmth)
+
+- Enforce default column dtypes when creating a new :class:`fastf1.core.Laps`
+  object. (#310)
+
+- Fixed an issues were dtypes were always enforced when a new
+  :class:`fastf1.core.SessionResults` object was created, even if
+  ``force_default_cols=False``.
+
+- Fixed incorrectly set ``_internal_names`` for objects inheriting from
+  DataFrame or Series. This potentially caused incorrect warnings about
+  incorrectly creating new columns.
+
+- Added missing ``__finalize__`` calls for subclasses of DataFrames and Series
+  that resulted in metadata being lost.
+
+- Fixed incorrectly spelled driver name for Hulkenberg. (by @lmontrieux)
+
+- Documentation improvements. (by @lmontrieux)
+
+- Fixed a bug where specific temporary error responses from Ergast where
+  cached. This then required the cache to be cleared so that the specific
+  API request would work again.
+
+- Fixed a bug where lap times and sector times were missing if the previous
+  value was exactly equal
+
+- Fixed a bug in the API parser that created ghost laps with no real data and
+  no driver
+
+
+Backwards Incompatible API Changes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- :func:`fastf1.utils.to_datetime` and :func:`fastf1.utils.to_timedelta` will
+  now return ``None`` instead of raising an exception when a string cannot
+  be parsed.
+
+- The name of a Sprint session will now always be 'Sprint'. Previously, it was
+  'Sprint Qualifying' for the 2021 seasons and 'Sprint' for all subsequent
+  seasons.
+
+
+Removals
+^^^^^^^^
+
+The following deprecated API elements have been removed:
+
+- Properties :attr:`fastf1.events.Event.name`,
+  :attr:`fastf1.events.Event.date` and :attr:`fastf1.events.Event.gp`
+
+- Creating an :class:`fastf1.events.Event` object by not specifying a the
+  ``identifier`` argument for :func:`fastf1.get_session` and
+  :func:`fastf1.events.get_session` is no longer supported.
+
+- The argument ``event`` is no longer supported by
+  :func:`fastf1.get_session` and :func:`fastf1.events.get_session` and
+  replaced by ``identifier``.
+
+- Functions :func:`fastf1.core.get_session` (use
+  :func:`fastf1.get_session`) and :func:`fastf1.core.get_round`
+  (no replacement) have been removed.
+
+- Methods :func:`fastf1.core.Session.load_laps` and
+  :func:`fastf1.core.Session.load_telemetry` have been removed,
+
+- Property :attr:`fastf1.core.Session.weekend` has been removed
+
+- Properties :attr:`fastf1.core.DriverResult.name`,
+  :attr:`fastf1.core.DriverResult.familyname`,
+  :attr:`fastf1.core.DriverResult.grid`,
+  :attr:`fastf1.core.DriverResult.position`,
+  :attr:`fastf1.core.DriverResult.team` have been removed
+
+- :class:`fastf1.core.Driver` has been removed
+
+- :class:`fastf1.core.Weekend` has been removed
+
+- :func:`fastf1.ergast.fetch_weekend` has been removed
+
+
+Performance Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+- performance improvement in :func:``fastf1.api.car_data``
+  and :func:``fastf1.api.pos_data``
+
+
+Deprecations
+^^^^^^^^^^^^
+
+- :mod:`fastf1.api` will be considered private in future releases and may be
+  removed or changed. Please do not use functionality from :mod:`fastf1.api`.
+  If you currently require functionality from there, please open an issue
+  on Github with details about what you require and why.
+
+- :mod:`fastf1.utils.delta_time` is considered deprecated and will be modified or
+  removed in a future release because it has a tendency to give inaccurate
+  results.

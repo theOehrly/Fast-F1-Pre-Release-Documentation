@@ -1,0 +1,462 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Plot driver standings in a heatmap" href="plot_results_tracker.html" /><link rel="prev" title="Speed visualization on track map" href="plot_speed_on_track.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Draw a track map with numbered corners - FastF1 3.2.1.dev7</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ce641c91" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">FastF1 <small>3.2.1.dev7</small></div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">FastF1 <small>3.2.1.dev7</small></span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/theOehrly/Fast-F1">← Back to Github</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/basics.html">Getting started with the basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Examples Gallery</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples Gallery</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="example_fastf1_signalrclient.html">Using the Fast-F1 signalr client?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_position_changes.html">Position changes during a race</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_speed_traces.html">Overlaying speed traces of two laps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_driver_laptimes.html">Driver Laptimes Scatterplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_gear_shifts_on_track.html">Gear shifts on track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_team_pace_ranking.html">Team Pace Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_strategy.html">Tyre strategies during a race</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_annotate_speed_trace.html">Plot speed traces with corner annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_qualifying_results.html">Qualifying results overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_laptimes_distribution.html">Driver Laptimes Distribution Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_who_can_still_win_wdc.html">Who can still win the drivers WDC?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_speed_on_track.html">Speed visualization on track map</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Draw a track map with numbered corners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_results_tracker.html">Plot driver standings in a heatmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html#api-reference">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">F1 API - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ergast.html">Ergast API Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../circuit_info.html">Circuit Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logging.html">Logging - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.logger</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../time_explanation.html">Time, Date and Timing - Explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto_accurate_calculations.html">How to perform calculations accurately</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../known_bugs.html">Known bugs and caveats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/devenv_setup.html">Setting up FastF1 for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/testing.html#linting-code-style-tests">Linting - Code style tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/documenting_fastf1.html">Writing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/coding_guide.html">Pull request guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/index.html">Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-gallery-plot-annotate-corners-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="draw-a-track-map-with-numbered-corners">
+<span id="sphx-glr-examples-gallery-plot-annotate-corners-py"></span><h1>Draw a track map with numbered corners<a class="headerlink" href="#draw-a-track-map-with-numbered-corners" title="Link to this heading">#</a></h1>
+<p>Use the position data of a single lap to draw a track map.
+Then annotate the map with corner numbers.</p>
+<p>Import FastF1 and load the data. Use the telemetry from the fastest for the
+track map. (You could also use any other lap instead.)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">fastf1</span>
+
+
+<span class="n">session</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="s1">&#39;Silverstone&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+<span class="n">lap</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">laps</span><span class="o">.</span><span class="n">pick_fastest</span><span class="p">()</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">lap</span><span class="o">.</span><span class="n">get_pos_data</span><span class="p">()</span>
+
+<span class="n">circuit_info</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get_circuit_info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:478: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:478: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:662: FutureWarning:
+
+Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:478: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:662: FutureWarning:
+
+Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+</pre></div>
+</div>
+<p>Define a helper function for rotating points around the origin of the
+coordinate system.</p>
+<p>The matrix <code class="docutils literal notranslate"><span class="pre">[[cos,</span> <span class="pre">sin],</span> <span class="pre">[-sin,</span> <span class="pre">cos]]</span></code> is called a rotation matrix.</p>
+<p>By matrix multiplication of the rotation matrix with a vector [x, y], a new
+rotated vector [x_rot, y_rot] is obtained.
+(See also: <a class="reference external" href="https://en.wikipedia.org/wiki/Rotation_matrix">https://en.wikipedia.org/wiki/Rotation_matrix</a>)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+    <span class="n">rot_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)],</span>
+                        <span class="p">[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)]])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">rot_mat</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Get the coordinates of the track map from the telemetry of the lap and
+rotate the coordinates using the rotation from <code class="docutils literal notranslate"><span class="pre">circuit_info</span></code> so that
+the track map is oriented correctly. After that, plot the rotated track map.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get an array of shape [n, 2] where n is the number of points and the second</span>
+<span class="c1"># axis is x and y.</span>
+<span class="n">track</span> <span class="o">=</span> <span class="n">pos</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+<span class="c1"># Convert the rotation angle from degrees to radian.</span>
+<span class="n">track_angle</span> <span class="o">=</span> <span class="n">circuit_info</span><span class="o">.</span><span class="n">rotation</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="c1"># Rotate and plot the track map.</span>
+<span class="n">rotated_track</span> <span class="o">=</span> <span class="n">rotate</span><span class="p">(</span><span class="n">track</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="n">track_angle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rotated_track</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">rotated_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D object at 0x000002CADF5F73E0&gt;]
+</pre></div>
+</div>
+<p>Finally, the corner markers are plotted. To plot the numbers next to the
+track, an offset vector that points straight up is defined. This offset
+vector is then rotated by the angle that is given for each corner marker.
+A line and circular bubble are drawn and the corner marker text is printed
+inside the bubble.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">offset_vector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># offset length is chosen arbitrarily to &#39;look good&#39;</span>
+
+<span class="c1"># Iterate over all corners.</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">corner</span> <span class="ow">in</span> <span class="n">circuit_info</span><span class="o">.</span><span class="n">corners</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="c1"># Create a string from corner number and letter</span>
+    <span class="n">txt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">corner</span><span class="p">[</span><span class="s1">&#39;Number&#39;</span><span class="p">]</span><span class="si">}{</span><span class="n">corner</span><span class="p">[</span><span class="s1">&#39;Letter&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="c1"># Convert the angle from degrees to radian.</span>
+    <span class="n">offset_angle</span> <span class="o">=</span> <span class="n">corner</span><span class="p">[</span><span class="s1">&#39;Angle&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+    <span class="c1"># Rotate the offset vector so that it points sideways from the track.</span>
+    <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span> <span class="o">=</span> <span class="n">rotate</span><span class="p">(</span><span class="n">offset_vector</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="n">offset_angle</span><span class="p">)</span>
+
+    <span class="c1"># Add the offset to the position of the corner</span>
+    <span class="n">text_x</span> <span class="o">=</span> <span class="n">corner</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">offset_x</span>
+    <span class="n">text_y</span> <span class="o">=</span> <span class="n">corner</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">offset_y</span>
+
+    <span class="c1"># Rotate the text position equivalently to the rest of the track map</span>
+    <span class="n">text_x</span><span class="p">,</span> <span class="n">text_y</span> <span class="o">=</span> <span class="n">rotate</span><span class="p">([</span><span class="n">text_x</span><span class="p">,</span> <span class="n">text_y</span><span class="p">],</span> <span class="n">angle</span><span class="o">=</span><span class="n">track_angle</span><span class="p">)</span>
+
+    <span class="c1"># Rotate the center of the corner equivalently to the rest of the track map</span>
+    <span class="n">track_x</span><span class="p">,</span> <span class="n">track_y</span> <span class="o">=</span> <span class="n">rotate</span><span class="p">([</span><span class="n">corner</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">corner</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]],</span> <span class="n">angle</span><span class="o">=</span><span class="n">track_angle</span><span class="p">)</span>
+
+    <span class="c1"># Draw a circle next to the track.</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">text_x</span><span class="p">,</span> <span class="n">text_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">140</span><span class="p">)</span>
+
+    <span class="c1"># Draw a line from the track to this circle.</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">track_x</span><span class="p">,</span> <span class="n">text_x</span><span class="p">],</span> <span class="p">[</span><span class="n">track_y</span><span class="p">,</span> <span class="n">text_y</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Finally, print the corner number inside the circle.</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">text_x</span><span class="p">,</span> <span class="n">text_y</span><span class="p">,</span> <span class="n">txt</span><span class="p">,</span>
+             <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center_baseline&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Add a title, remove tick labels to clean up the plot, set equal axis ratio,
+so that the track is not distorted and show the plot.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;Location&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_plot_annotate_corners_001.png" srcset="../_images/sphx_glr_plot_annotate_corners_001.png" alt="Silverstone" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 13.411 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-gallery-plot-annotate-corners-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/754266a2f40f15371b4c8f696418cd49/plot_annotate_corners.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_annotate_corners.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/bae543fd73e064612801f0ae9d60410c/plot_annotate_corners.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_annotate_corners.py</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="plot_results_tracker.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Plot driver standings in a heatmap</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="plot_speed_on_track.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Speed visualization on track map</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, theOehrly
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div>
+    <script data-goatcounter="https://ey2kpxm326wjqcsfzewz.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+    <script src="../_static/documentation_options.js?v=02998675"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    
+</body>
+</html>

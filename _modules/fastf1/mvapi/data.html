@@ -1,0 +1,458 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>fastf1.mvapi.data - FastF1 3.2.1.dev7</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ce641c91" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">FastF1 <small>3.2.1.dev7</small></div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">FastF1 <small>3.2.1.dev7</small></span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/theOehrly/Fast-F1">← Back to Github</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/basics.html">Getting started with the basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples_gallery/index.html">Examples Gallery</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples Gallery</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/example_fastf1_signalrclient.html">Using the Fast-F1 signalr client?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_position_changes.html">Position changes during a race</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_speed_traces.html">Overlaying speed traces of two laps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_driver_laptimes.html">Driver Laptimes Scatterplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_gear_shifts_on_track.html">Gear shifts on track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_team_pace_ranking.html">Team Pace Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_strategy.html">Tyre strategies during a race</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_annotate_speed_trace.html">Plot speed traces with corner annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_qualifying_results.html">Qualifying results overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_laptimes_distribution.html">Driver Laptimes Distribution Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_who_can_still_win_wdc.html">Who can still win the drivers WDC?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_speed_on_track.html">Speed visualization on track map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_annotate_corners.html">Draw a track map with numbered corners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples_gallery/plot_results_tracker.html">Plot driver standings in a heatmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core.html">Timing and Telemetry Data - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.core</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core.html#api-reference">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">F1 API - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ergast.html">Ergast API Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../circuit_info.html">Circuit Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../logging.html">Logging - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.logger</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../time_explanation.html">Time, Date and Timing - Explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto_accurate_calculations.html">How to perform calculations accurately</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../known_bugs.html">Known bugs and caveats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/devenv_setup.html">Setting up FastF1 for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/testing.html#linting-code-style-tests">Linting - Code style tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/documenting_fastf1.html">Writing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/coding_guide.html">Pull request guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/index.html">Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <h1>Source code for fastf1.mvapi.data</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">fastf1.core</span>
+<span class="kn">from</span> <span class="nn">fastf1.mvapi.api</span> <span class="kn">import</span> <span class="n">get_circuit</span>
+<span class="kn">from</span> <span class="nn">fastf1.mvapi.internals</span> <span class="kn">import</span> <span class="n">_logger</span>
+
+
+<div class="viewcode-block" id="CircuitInfo">
+<a class="viewcode-back" href="../../../core.html#fastf1.mvapi.CircuitInfo">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">CircuitInfo</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Holds information about the circuit that is useful for visualizing and</span>
+<span class="sd">    annotating data.</span>
+
+<span class="sd">    ``corners``, ``marshal_lights`` and ``marshal_sectors`` are track markers</span>
+<span class="sd">    that all use a similar DataFrame format.</span>
+<span class="sd">    Each set of these track markers has the following DataFrame columns:</span>
+
+<span class="sd">        Columns: ``X &lt;float&gt;, Y &lt;float&gt;, Number &lt;int&gt;, Letter &lt;str&gt;,</span>
+<span class="sd">        Angle &lt;float&gt;, Distance &lt;float&gt;``</span>
+
+<span class="sd">        - ``X`` and ``Y`` specify the position on the track map</span>
+<span class="sd">        - ``Number`` is the number of the corner. ``Letter`` is optionally used</span>
+<span class="sd">          to differentiate corners with the same number on some circuits,</span>
+<span class="sd">          e.g. &quot;2A&quot;.</span>
+<span class="sd">        - ``Angle`` is an angle in degrees, used to visually offset the</span>
+<span class="sd">          marker&#39;s placement on a track map in a logical direction (usually</span>
+<span class="sd">          orthogonal to the track).</span>
+<span class="sd">        - ``Distance`` is the location of the marker as a distance from the</span>
+<span class="sd">          start/finish line. This value needs to be computed using car</span>
+<span class="sd">          telemetry as a reference. It will therefore only be available,</span>
+<span class="sd">          if telemetry data is loaded.</span>
+
+<span class="sd">    .. note:: This data has been manually created and is not highly accurate</span>
+<span class="sd">        but sufficient for visualization. A big thanks to MultiViewer</span>
+<span class="sd">        (https://multiviewer.app/) for providing this data to FastF1.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">corners</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Location of corners.</span>
+
+<span class="sd">    (DataFrame format described above)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">marshal_lights</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Location of marshal lights.</span>
+
+<span class="sd">    (DataFrame format described above)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">marshal_sectors</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Location of marshal sectors.</span>
+
+<span class="sd">    (DataFrame format described above)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Rotation of the circuit in degrees. This can be used to rotate the</span>
+<span class="sd">    coordinate system of the telemetry (position) data to match the orientation</span>
+<span class="sd">    of the official track map.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">add_marker_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reference_lap</span><span class="p">:</span> <span class="s2">&quot;fastf1.core.Lap&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;:meta private:</span>
+<span class="sd">        Computes the &#39;Distance&#39; value for each track marker using the</span>
+<span class="sd">        telemetry data of a provided reference lap.</span>
+
+<span class="sd">        The distance values are computed using a best-fit approach by selecting</span>
+<span class="sd">        the distance value of a telemetry sample, where the squared error of</span>
+<span class="sd">        the xy-coordinates between telemetry data and track marker position</span>
+<span class="sd">        is minimal.&quot;&quot;&quot;</span>
+
+        <span class="c1"># get merged reference telemetry and limit to data source &#39;pos&#39; so that</span>
+        <span class="c1"># only position values are used that are not interpolated</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">tel</span> <span class="o">=</span> <span class="n">reference_lap</span><span class="o">.</span><span class="n">get_telemetry</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="s1">&#39;original&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">DataNotLoadedError</span><span class="p">:</span>
+            <span class="n">_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Failed to generate marker distance information: &quot;</span>
+                            <span class="s2">&quot;telemetry data has not been loaded&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">tel</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Failed to generate marker distance information: &quot;</span>
+                            <span class="s2">&quot;telemetry data is empty&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">tel</span> <span class="o">=</span> <span class="n">tel</span><span class="p">[</span><span class="n">tel</span><span class="p">[</span><span class="s1">&#39;Source&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;pos&#39;</span><span class="p">]</span>
+        <span class="c1"># create a numpy array of xy track coordinates</span>
+        <span class="n">xy_ref_array</span> <span class="o">=</span> <span class="n">tel</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">corners</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marshal_sectors</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marshal_lights</span><span class="p">):</span>
+            <span class="c1"># create a numpy array of xy marker arrays</span>
+            <span class="n">marker_xy_array</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+            <span class="n">n_markers</span> <span class="o">=</span> <span class="n">marker_xy_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="c1"># create an array of xy track coordinates with an additional</span>
+            <span class="c1"># dimension that has the size of the number of markers</span>
+            <span class="n">xy_array</span> <span class="o">=</span> <span class="n">xy_ref_array</span> \
+                <span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> \
+                <span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">n_markers</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># subtract each marker position from a full set of track</span>
+            <span class="c1"># coordinates and calculate the squared xy error</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="n">xy_array</span> <span class="o">-</span> <span class="n">marker_xy_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="n">diff</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">diff</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+
+            <span class="c1"># return the index in the track coordinates at which the squared</span>
+            <span class="c1"># error is minimal for each marker</span>
+            <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanargmin</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1"># get the best distance value for each marker from the telemetry</span>
+            <span class="c1"># data and add them to the marker data frame</span>
+            <span class="n">distances</span> <span class="o">=</span> <span class="n">tel</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">][</span><span class="s1">&#39;Distance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Distance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">distances</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">get_circuit_info</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">year</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">circuit_key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CircuitInfo</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;:meta private:</span>
+<span class="sd">    Load circuit information from the MultiViewer API and convert it into</span>
+<span class="sd">    as :class:``SessionInfo`` object.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        year: The championship year</span>
+<span class="sd">        circuit_key: The unique circuit key (defined by the F1 livetiming API)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_circuit</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">,</span> <span class="n">circuit_key</span><span class="o">=</span><span class="n">circuit_key</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Failed to load circuit info&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">ret</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;corners&#39;</span><span class="p">,</span> <span class="s1">&#39;marshalLights&#39;</span><span class="p">,</span> <span class="s1">&#39;marshalSectors&#39;</span><span class="p">):</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">cat</span><span class="p">]:</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">((</span>
+                <span class="nb">float</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;trackPosition&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)),</span>
+                <span class="nb">float</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;trackPosition&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)),</span>
+                <span class="nb">int</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;letter&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)),</span>
+                <span class="nb">float</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;angle&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)),</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="p">))</span>
+        <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="n">rows</span><span class="p">,</span>
+                <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Number&#39;</span><span class="p">,</span> <span class="s1">&#39;Letter&#39;</span><span class="p">,</span> <span class="s1">&#39;Angle&#39;</span><span class="p">,</span> <span class="s1">&#39;Distance&#39;</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="n">rotation</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;rotation&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+
+    <span class="n">circuit_info</span> <span class="o">=</span> <span class="n">CircuitInfo</span><span class="p">(</span>
+        <span class="n">corners</span><span class="o">=</span><span class="n">ret</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">marshal_lights</span><span class="o">=</span><span class="n">ret</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">marshal_sectors</span><span class="o">=</span><span class="n">ret</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+        <span class="n">rotation</span><span class="o">=</span><span class="n">rotation</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">circuit_info</span>
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, theOehrly
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div>
+    <script data-goatcounter="https://ey2kpxm326wjqcsfzewz.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+    <script src="../../../_static/documentation_options.js?v=02998675"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    
+</body>
+</html>

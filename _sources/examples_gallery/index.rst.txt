@@ -18,7 +18,7 @@ Examples Gallery
 .. only:: html
 
   .. image:: /examples_gallery/images/thumb/sphx_glr_example_fastf1_signalrclient_thumb.png
-    :alt: Using the Fast-F1 signalr client?
+    :alt:
 
   :ref:`sphx_glr_examples_gallery_example_fastf1_signalrclient.py`
 
@@ -30,12 +30,29 @@ Examples Gallery
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot the position of each driver at the end of each lap.">
+
+.. only:: html
+
+  .. image:: /examples_gallery/images/thumb/sphx_glr_plot_position_changes_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_plot_position_changes.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Position changes during a race</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Compare two fastest laps by overlaying their speed traces.">
 
 .. only:: html
 
   .. image:: /examples_gallery/images/thumb/sphx_glr_plot_speed_traces_thumb.png
-    :alt: Overlaying speed traces of two laps
+    :alt:
 
   :ref:`sphx_glr_examples_gallery_plot_speed_traces.py`
 
@@ -47,12 +64,29 @@ Examples Gallery
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot a driver&#x27;s lap times in a race, with color coding for the compounds.">
+
+.. only:: html
+
+  .. image:: /examples_gallery/images/thumb/sphx_glr_plot_driver_laptimes_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_plot_driver_laptimes.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Driver Laptimes Scatterplot</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Plot which gear is being used at which point of the track">
 
 .. only:: html
 
   .. image:: /examples_gallery/images/thumb/sphx_glr_plot_gear_shifts_on_track_thumb.png
-    :alt: Gear shifts on track
+    :alt:
 
   :ref:`sphx_glr_examples_gallery_plot_gear_shifts_on_track.py`
 
@@ -64,12 +98,63 @@ Examples Gallery
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Team Pace Comparison">
+
+.. only:: html
+
+  .. image:: /examples_gallery/images/thumb/sphx_glr_plot_team_pace_ranking_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_plot_team_pace_ranking.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Team Pace Comparison</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot all drivers&#x27; tyre strategies during a race.">
+
+.. only:: html
+
+  .. image:: /examples_gallery/images/thumb/sphx_glr_plot_strategy_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_plot_strategy.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Tyre strategies during a race</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot the speed over the course of a lap and add annotations to mark corners.">
+
+.. only:: html
+
+  .. image:: /examples_gallery/images/thumb/sphx_glr_plot_annotate_speed_trace_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_plot_annotate_speed_trace.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Plot speed traces with corner annotations</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Plot the qualifying result with visualization the fastest times.">
 
 .. only:: html
 
   .. image:: /examples_gallery/images/thumb/sphx_glr_plot_qualifying_results_thumb.png
-    :alt: Qualifying results overview
+    :alt:
 
   :ref:`sphx_glr_examples_gallery_plot_qualifying_results.py`
 
@@ -81,12 +166,29 @@ Examples Gallery
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Driver Laptimes Distribution Visualization">
+
+.. only:: html
+
+  .. image:: /examples_gallery/images/thumb/sphx_glr_plot_laptimes_distribution_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_plot_laptimes_distribution.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Driver Laptimes Distribution Visualization</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Calculates which drivers still has chance to win the WDC. Simplified since it doesn&#x27;t compare p...">
 
 .. only:: html
 
   .. image:: /examples_gallery/images/thumb/sphx_glr_plot_who_can_still_win_wdc_thumb.png
-    :alt: Who can still win the drivers WDC?
+    :alt:
 
   :ref:`sphx_glr_examples_gallery_plot_who_can_still_win_wdc.py`
 
@@ -103,13 +205,47 @@ Examples Gallery
 .. only:: html
 
   .. image:: /examples_gallery/images/thumb/sphx_glr_plot_speed_on_track_thumb.png
-    :alt: Speed visualization on track map
+    :alt:
 
   :ref:`sphx_glr_examples_gallery_plot_speed_on_track.py`
 
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Speed visualization on track map</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use the position data of a single lap to draw a track map. Then annotate the map with corner nu...">
+
+.. only:: html
+
+  .. image:: /examples_gallery/images/thumb/sphx_glr_plot_annotate_corners_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_plot_annotate_corners.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Draw a track map with numbered corners</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot the points for each driven in each race of a given season in a heatmap, as https://public....">
+
+.. only:: html
+
+  .. image:: /examples_gallery/images/thumb/sphx_glr_plot_results_tracker_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_plot_results_tracker.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Plot driver standings in a heatmap</div>
     </div>
 
 
@@ -122,11 +258,19 @@ Examples Gallery
    :hidden:
 
    /examples_gallery/example_fastf1_signalrclient
+   /examples_gallery/plot_position_changes
    /examples_gallery/plot_speed_traces
+   /examples_gallery/plot_driver_laptimes
    /examples_gallery/plot_gear_shifts_on_track
+   /examples_gallery/plot_team_pace_ranking
+   /examples_gallery/plot_strategy
+   /examples_gallery/plot_annotate_speed_trace
    /examples_gallery/plot_qualifying_results
+   /examples_gallery/plot_laptimes_distribution
    /examples_gallery/plot_who_can_still_win_wdc
    /examples_gallery/plot_speed_on_track
+   /examples_gallery/plot_annotate_corners
+   /examples_gallery/plot_results_tracker
 
 
 

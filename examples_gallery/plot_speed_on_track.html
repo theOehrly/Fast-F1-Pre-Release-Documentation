@@ -1,21 +1,21 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="General Functions - fastf1" href="../fastf1.html" /><link rel="prev" title="Who can still win the drivers WDC?" href="plot_who_can_still_win_wdc.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Draw a track map with numbered corners" href="plot_annotate_corners.html" /><link rel="prev" title="Who can still win the drivers WDC?" href="plot_who_can_still_win_wdc.html" />
 
-    <!-- Generated with Sphinx 6.1.2 and Furo 2022.12.07 -->
-        <title>Speed visualization on track map - Fast F1 3.0.0-ergast-a0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Speed visualization on track map - FastF1 3.2.1.dev7</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ce641c91" />
     
     
 
@@ -129,7 +129,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Fast F1 3.0.0-ergast-a0 documentation</div></a>
+      <a href="../index.html"><div class="brand">FastF1 <small>3.2.1.dev7</small></div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -152,7 +152,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Fast F1 3.0.0-ergast-a0 documentation</span>
+  <span class="sidebar-brand-text">FastF1 <small>3.2.1.dev7</small></span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -165,17 +165,25 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../examples/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../examples/basics.html">Getting started with the basics</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Examples Gallery</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Examples Gallery</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples Gallery</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="example_fastf1_signalrclient.html">Using the Fast-F1 signalr client?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_position_changes.html">Position changes during a race</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_speed_traces.html">Overlaying speed traces of two laps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_driver_laptimes.html">Driver Laptimes Scatterplot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_gear_shifts_on_track.html">Gear shifts on track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_team_pace_ranking.html">Team Pace Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_strategy.html">Tyre strategies during a race</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_annotate_speed_trace.html">Plot speed traces with corner annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_qualifying_results.html">Qualifying results overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_laptimes_distribution.html">Driver Laptimes Distribution Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_who_can_still_win_wdc.html">Who can still win the drivers WDC?</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Speed visualization on track map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_annotate_corners.html">Draw a track map with numbered corners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_results_tracker.html">Plot driver standings in a heatmap</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../fastf1.html">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></a></li>
@@ -183,10 +191,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../core.html#api-reference">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../events.html">Event Schedule - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.events</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">F1 API - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.api</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ergast.html">Ergast API Interface - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.ergast</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ergast.html">Ergast API Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../circuit_info.html">Circuit Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utils.html">Utils module - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.utils</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../plotting.html">Plotting - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.plotting</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../livetiming.html">Live Timing Client - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.livetiming</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logging.html">Logging - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.logger</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../legacy.html">Legacy Functionality - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1.legacy</span></code></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Information:</span></p>
@@ -195,15 +205,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../howto_accurate_calculations.html">How to perform calculations accurately</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../known_bugs.html">Known bugs and caveats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/contributing.html">Contributing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/devenv_setup.html">Setting up FastF1 for development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/testing.html#linting-code-style-tests">Linting - Code style tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/documenting_fastf1.html">Writing documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/coding_guide.html">Pull request guidelines</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/index.html">Release Notes</a></li>
 </ul>
 
 </div>
@@ -240,26 +251,23 @@
         <article role="main">
           <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-examples-gallery-plot-speed-on-track-py"><span class="std std-ref">here</span></a>
+<p><a class="reference internal" href="#sphx-glr-download-examples-gallery-plot-speed-on-track-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="speed-visualization-on-track-map">
-<span id="sphx-glr-examples-gallery-plot-speed-on-track-py"></span><h1>Speed visualization on track map<a class="headerlink" href="#speed-visualization-on-track-map" title="Permalink to this heading">#</a></h1>
+<span id="sphx-glr-examples-gallery-plot-speed-on-track-py"></span><h1>Speed visualization on track map<a class="headerlink" href="#speed-visualization-on-track-map" title="Link to this heading">#</a></h1>
 <p>(Example provided by &#64;JSEHV on Github)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fastf1</span> <span class="k">as</span> <span class="nn">ff1</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">LineCollection</span>
 
-
-<span class="n">ff1</span><span class="o">.</span><span class="n">Cache</span><span class="o">.</span><span class="n">enable_cache</span><span class="p">(</span><span class="s1">&#39;../doc_cache&#39;</span><span class="p">)</span>  <span class="c1"># replace with your cache directory</span>
+<span class="kn">import</span> <span class="nn">fastf1</span> <span class="k">as</span> <span class="nn">ff1</span>
 </pre></div>
 </div>
 <p>First, we define some variables that allow us to conveniently control what
 we want to plot.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2021</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2021</span>
 <span class="n">wknd</span> <span class="o">=</span> <span class="mi">9</span>
 <span class="n">ses</span> <span class="o">=</span> <span class="s1">&#39;R&#39;</span>
 <span class="n">driver</span> <span class="o">=</span> <span class="s1">&#39;RIC&#39;</span>
@@ -267,7 +275,7 @@ we want to plot.</p>
 </pre></div>
 </div>
 <p>Next, we load the session and select the desired data.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">session</span> <span class="o">=</span> <span class="n">ff1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">wknd</span><span class="p">,</span> <span class="n">ses</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">session</span> <span class="o">=</span> <span class="n">ff1</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">wknd</span><span class="p">,</span> <span class="n">ses</span><span class="p">)</span>
 <span class="n">weekend</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">event</span>
 <span class="n">session</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 <span class="n">lap</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">laps</span><span class="o">.</span><span class="n">pick_driver</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span><span class="o">.</span><span class="n">pick_fastest</span><span class="p">()</span>
@@ -278,106 +286,79 @@ we want to plot.</p>
 <span class="n">color</span> <span class="o">=</span> <span class="n">lap</span><span class="o">.</span><span class="n">telemetry</span><span class="p">[</span><span class="s1">&#39;Speed&#39;</span><span class="p">]</span>      <span class="c1"># value to base color gradient on</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:519: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  merged.loc[:, col] = merged.loc[:, col].astype(dtype_map[col])
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:600: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  ret.loc[:, ch] = ret.loc[:, ch].ffill().ffill().bfill()
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:519: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  merged.loc[:, col] = merged.loc[:, col].astype(dtype_map[col])
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:600: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  ret.loc[:, ch] = ret.loc[:, ch].ffill().ffill().bfill()
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:519: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  merged.loc[:, col] = merged.loc[:, col].astype(dtype_map[col])
-C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-  data_slice.loc[:, &#39;Time&#39;] = data_slice[&#39;SessionTime&#39;] - start_time
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\_api.py:1183: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\_api.py:1183: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\_api.py:1183: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:478: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:478: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:662: FutureWarning:
+
+Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:478: FutureWarning:
+
+A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:662: FutureWarning:
+
+Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
 </pre></div>
 </div>
 <p>Now, we create a set of line segments so that we can color them
 individually. This creates the points as a N x 1 x 2 array so that we can
 stack points  together easily to get the segments. The segments array for
 line collection needs to be (numlines) x (points per line) x 2 (for x and y)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">segments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">points</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">:]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>After this, we can actually plot the data.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># We create a plot with title and adjust some setting to make it look good.</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># We create a plot with title and adjust some setting to make it look good.</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mf">6.75</span><span class="p">))</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">weekend</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">driver</span><span class="si">}</span><span class="s1"> - Speed&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.97</span><span class="p">)</span>
 
@@ -388,11 +369,13 @@ line collection needs to be (numlines) x (points per line) x 2 (for x and y)</p>
 
 <span class="c1"># After this, we plot the data itself.</span>
 <span class="c1"># Create background track line</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lap</span><span class="o">.</span><span class="n">telemetry</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">lap</span><span class="o">.</span><span class="n">telemetry</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lap</span><span class="o">.</span><span class="n">telemetry</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">lap</span><span class="o">.</span><span class="n">telemetry</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Create a continuous norm to map from data points to colors</span>
 <span class="n">norm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">color</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">lc</span> <span class="o">=</span> <span class="n">LineCollection</span><span class="p">(</span><span class="n">segments</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">lc</span> <span class="o">=</span> <span class="n">LineCollection</span><span class="p">(</span><span class="n">segments</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+                    <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># Set the values used for colormapping</span>
 <span class="n">lc</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
@@ -404,25 +387,21 @@ line collection needs to be (numlines) x (points per line) x 2 (for x and y)</p>
 <span class="c1"># Finally, we create a color bar as a legend.</span>
 <span class="n">cbaxes</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">])</span>
 <span class="n">normlegend</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">legend</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">ColorbarBase</span><span class="p">(</span><span class="n">cbaxes</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">normlegend</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
+<span class="n">legend</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">ColorbarBase</span><span class="p">(</span><span class="n">cbaxes</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">normlegend</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span>
+                                   <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># Show the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_speed_on_track_001.png" srcset="../_images/sphx_glr_plot_speed_on_track_001.png" alt="Austrian Grand Prix 2021 - RIC - Speed" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\Dateien\Code\Formula1\Fast-F1\fastf1\events.py:715: FutureWarning: The `Weekend.name` property is deprecated and will beremoved in a future version.
-Use `Event[&#39;EventName&#39;]` or `Event.EventName` instead.
-  warnings.warn(
-</pre></div>
-</div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  23.928 seconds)</p>
+<img src="../_images/sphx_glr_plot_speed_on_track_001.png" srcset="../_images/sphx_glr_plot_speed_on_track_001.png" alt="9 2021 - RIC - Speed" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 21.537 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-gallery-plot-speed-on-track-py">
-<div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/d3da706681ce1bd2d428a095e614b0b2/plot_speed_on_track.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_speed_on_track.py</span></code></a></p>
-</div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/9c4f09e470a16421a1db3cd9143416e9/plot_speed_on_track.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_speed_on_track.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/d3da706681ce1bd2d428a095e614b0b2/plot_speed_on_track.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_speed_on_track.py</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -433,12 +412,12 @@ Use `Event[&#39;EventName&#39;]` or `Event.EventName` instead.
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../fastf1.html">
+          <a class="next-page" href="plot_annotate_corners.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">General Functions - <code class="xref py py-mod docutils literal notranslate"><span class="pre">fastf1</span></code></div>
+                <div class="title">Draw a track map with numbered corners</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -457,7 +436,7 @@ Use `Event[&#39;EventName&#39;]` or `Event.EventName` instead.
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2023, theOehrly
+                Copyright &#169; 2024, theOehrly
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -477,9 +456,13 @@ Use `Event[&#39;EventName&#39;]` or `Event.EventName` instead.
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/furo.js"></script>
-    </body>
+</div>
+    <script data-goatcounter="https://ey2kpxm326wjqcsfzewz.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+    <script src="../_static/documentation_options.js?v=02998675"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    
+</body>
 </html>

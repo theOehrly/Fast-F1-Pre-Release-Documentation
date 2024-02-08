@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_examples_gallery_plot_gear_shifts_on_track.py>`
+        :ref:`Go to the end <sphx_glr_download_examples_gallery_plot_gear_shifts_on_track.py>`
         to download the full example code
 
 .. rst-class:: sphx-glr-example-title
@@ -26,20 +26,18 @@ Plot which gear is being used at which point of the track
 
 Import FastF1 and load the data
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-25
+.. GENERATED FROM PYTHON SOURCE LINES 8-23
 
-.. code-block:: default
+.. code-block:: Python
 
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+    from matplotlib import colormaps
+    from matplotlib.collections import LineCollection
 
     import fastf1
 
-    import matplotlib.pyplot as plt
-    from matplotlib.collections import LineCollection
-    from matplotlib import cm
-    import numpy as np
-
-
-    fastf1.Cache.enable_cache('../doc_cache')  # replace with your cache directory
 
     session = fastf1.get_session(2021, 'Austrian Grand Prix', 'Q')
     session.load()
@@ -55,78 +53,53 @@ Import FastF1 and load the data
 
  .. code-block:: none
 
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:519: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      merged.loc[:, col] = merged.loc[:, col].astype(dtype_map[col])
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:600: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      ret.loc[:, ch] = ret.loc[:, ch].ffill().ffill().bfill()
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:519: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      merged.loc[:, col] = merged.loc[:, col].astype(dtype_map[col])
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:600: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      ret.loc[:, ch] = ret.loc[:, ch].ffill().ffill().bfill()
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:519: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      merged.loc[:, col] = merged.loc[:, col].astype(dtype_map[col])
-    C:\Dateien\Code\Formula1\Fast-F1\fastf1\core.py:388: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
-      data_slice.loc[:, 'Time'] = data_slice['SessionTime'] - start_time
+    C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:478: FutureWarning:
+
+    A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+    The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+    For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+    C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:478: FutureWarning:
+
+    A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+    The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+    For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+    C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:662: FutureWarning:
+
+    Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+
+    C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:478: FutureWarning:
+
+    A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+    The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+    For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+
+    C:\Dateien\Code\Formula1\Fast-F1\src\fastf1\core.py:662: FutureWarning:
+
+    Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-29
+
+.. GENERATED FROM PYTHON SOURCE LINES 25-27
 
 Prepare the data for plotting by converting it to the appropriate numpy
 data types
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-37
+.. GENERATED FROM PYTHON SOURCE LINES 27-35
 
-.. code-block:: default
+.. code-block:: Python
 
 
     x = np.array(tel['X'].values)
@@ -143,17 +116,17 @@ data types
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-41
+.. GENERATED FROM PYTHON SOURCE LINES 37-39
 
 Create a line collection. Set a segmented colormap and normalize the plot
 to full integer values of the colormap
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-47
+.. GENERATED FROM PYTHON SOURCE LINES 39-45
 
-.. code-block:: default
+.. code-block:: Python
 
 
-    cmap = cm.get_cmap('Paired')
+    cmap = colormaps['Paired']
     lc_comp = LineCollection(segments, norm=plt.Normalize(1, cmap.N+1), cmap=cmap)
     lc_comp.set_array(gear)
     lc_comp.set_linewidth(4)
@@ -165,13 +138,13 @@ to full integer values of the colormap
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-50
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
 
 Create the plot
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-61
+.. GENERATED FROM PYTHON SOURCE LINES 48-59
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plt.gca().add_collection(lc_comp)
@@ -191,17 +164,18 @@ Create the plot
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-65
+.. GENERATED FROM PYTHON SOURCE LINES 61-63
 
 Add a colorbar to the plot. Shift the colorbar ticks by +0.5 so that they
 are centered for each color segment.
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-72
+.. GENERATED FROM PYTHON SOURCE LINES 63-71
 
-.. code-block:: default
+.. code-block:: Python
 
 
-    cbar = plt.colorbar(mappable=lc_comp, label="Gear", boundaries=np.arange(1, 10))
+    cbar = plt.colorbar(mappable=lc_comp, label="Gear",
+                        boundaries=np.arange(1, 10))
     cbar.set_ticks(np.arange(1.5, 9.5))
     cbar.set_ticklabels(np.arange(1, 9))
 
@@ -222,7 +196,7 @@ are centered for each color segment.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.134 seconds)
+   **Total running time of the script:** (0 minutes 13.940 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_plot_gear_shifts_on_track.py:
@@ -231,14 +205,13 @@ are centered for each color segment.
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
+
+      :download:`Download Jupyter notebook: plot_gear_shifts_on_track.ipynb <plot_gear_shifts_on_track.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_gear_shifts_on_track.py <plot_gear_shifts_on_track.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_gear_shifts_on_track.ipynb <plot_gear_shifts_on_track.ipynb>`
 
 
 .. only:: html

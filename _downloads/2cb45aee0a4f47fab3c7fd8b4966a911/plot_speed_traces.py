@@ -8,14 +8,11 @@ Compare two fastest laps by overlaying their speed traces.
 import matplotlib.pyplot as plt
 
 import fastf1.plotting
-from fastf1 import Cache
 
-
-Cache.enable_cache('../doc_cache')  # replace with your cache directory
 
 # enable some matplotlib patches for plotting timedelta values and load
 # FastF1's default color scheme
-fastf1.plotting.setup_mpl()
+fastf1.plotting.setup_mpl(misc_mpl_mods=False)
 
 # load a session and its telemetry data
 session = fastf1.get_session(2021, 'Spanish Grand Prix', 'Q')

@@ -3,15 +3,13 @@
 
 (Example provided by @JSEHV on Github)
 """
-import fastf1 as ff1
-import numpy as np
 import matplotlib as mpl
-
+import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.collections import LineCollection
 
+import fastf1 as ff1
 
-ff1.Cache.enable_cache('../doc_cache')  # replace with your cache directory
 
 ##############################################################################
 # First, we define some variables that allow us to conveniently control what
@@ -59,11 +57,13 @@ ax.axis('off')
 
 # After this, we plot the data itself.
 # Create background track line
-ax.plot(lap.telemetry['X'], lap.telemetry['Y'], color='black', linestyle='-', linewidth=16, zorder=0)
+ax.plot(lap.telemetry['X'], lap.telemetry['Y'],
+        color='black', linestyle='-', linewidth=16, zorder=0)
 
 # Create a continuous norm to map from data points to colors
 norm = plt.Normalize(color.min(), color.max())
-lc = LineCollection(segments, cmap=colormap, norm=norm, linestyle='-', linewidth=5)
+lc = LineCollection(segments, cmap=colormap, norm=norm,
+                    linestyle='-', linewidth=5)
 
 # Set the values used for colormapping
 lc.set_array(color)
@@ -75,7 +75,8 @@ line = ax.add_collection(lc)
 # Finally, we create a color bar as a legend.
 cbaxes = fig.add_axes([0.25, 0.05, 0.5, 0.05])
 normlegend = mpl.colors.Normalize(vmin=color.min(), vmax=color.max())
-legend = mpl.colorbar.ColorbarBase(cbaxes, norm=normlegend, cmap=colormap, orientation="horizontal")
+legend = mpl.colorbar.ColorbarBase(cbaxes, norm=normlegend, cmap=colormap,
+                                   orientation="horizontal")
 
 
 # Show the plot
